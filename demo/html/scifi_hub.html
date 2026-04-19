@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>指挥中心 - 科幻风</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 900px; height: 560px;
+      background-color: #0a0e14;
+      background-image:
+        linear-gradient(rgba(0,255,200,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,200,0.03) 1px, transparent 1px);
+      font-family: "Consolas", "Courier New", monospace;
+      display: flex; flex-direction: column;
+      padding: 16px; gap: 12px;
+      color: #00ffc8;
+      border: 1px solid #00ffc8;
+    }
+
+    .header {
+      display: flex; flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(0,255,200,0.3);
+    }
+    .header-title {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      color: #00ffc8;
+    }
+    .header-status {
+      font-size: 12px;
+      color: #4a7a6a;
+    }
+    .header-status .online { color: #00ff88; }
+
+    .content {
+      display: flex; flex-direction: row;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .panel {
+      background-color: rgba(10, 20, 30, 0.9);
+      border: 1px solid rgba(0,255,200,0.2);
+      border-radius: 2px;
+      padding: 10px;
+      display: flex; flex-direction: column;
+      gap: 8px;
+    }
+    .panel-title {
+      font-size: 11px;
+      color: #4a7a6a;
+      letter-spacing: 2px;
+      border-bottom: 1px solid rgba(0,255,200,0.15);
+      padding-bottom: 4px;
+    }
+
+    .left {
+      width: 220px;
+    }
+    .center {
+      flex: 1;
+    }
+    .right {
+      width: 220px;
+    }
+
+    .stat-block {
+      padding: 4px 0;
+    }
+    .stat-line {
+      display: flex; flex-direction: row;
+      justify-content: space-between;
+      font-size: 12px;
+      padding: 2px 0;
+    }
+    .stat-key { color: #4a7a6a; }
+    .stat-val { color: #00ffc8; }
+    .stat-val.warning { color: #ff6040; }
+    .stat-val.good { color: #00ff88; }
+
+    .energy-bar {
+      height: 8px;
+      background-color: #0a1520;
+      border: 1px solid rgba(0,255,200,0.15);
+      border-radius: 1px;
+    }
+    .energy-fill {
+      height: 6px;
+      border-radius: 0px;
+    }
+    .energy-shield {
+      width: 72%;
+      background: linear-gradient(90deg, #0066ff, #00aaff);
+    }
+    .energy-fuel {
+      width: 38%;
+      background: linear-gradient(90deg, #ff6600, #ffaa00);
+    }
+
+    .map-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 2px;
+      flex: 1;
+    }
+    .map-cell {
+      aspect-ratio: 1;
+      background-color: #0a1520;
+      border: 1px solid rgba(0,255,200,0.08);
+      border-radius: 1px;
+    }
+    .map-cell.active {
+      background-color: #00ffc8;
+      border-color: #00ffc8;
+    }
+    .map-cell.enemy {
+      background-color: #ff2040;
+      border-color: #ff2040;
+    }
+    .map-cell.ally {
+      background-color: #0066ff;
+      border-color: #0066ff;
+    }
+    .map-cell.objective {
+      background-color: #ffaa00;
+      border-color: #ffaa00;
+    }
+
+    .crew-list {
+      display: flex; flex-direction: column;
+      gap: 6px;
+    }
+    .crew-item {
+      display: flex; flex-direction: row;
+      align-items: center;
+      gap: 6px;
+      padding: 4px;
+      background-color: #0a1520;
+      border: 1px solid rgba(0,255,200,0.1);
+      border-radius: 2px;
+      font-size: 12px;
+    }
+    .crew-dot {
+      width: 6px; height: 6px;
+      border-radius: 3px;
+    }
+    .crew-dot.green { background-color: #00ff88; }
+    .crew-dot.yellow { background-color: #ffaa00; }
+    .crew-dot.red { background-color: #ff2040; }
+    .crew-name { color: #00ffc8; flex: 1; }
+    .crew-hp { color: #4a7a6a; }
+
+    .log-area {
+      display: flex; flex-direction: column;
+      gap: 3px;
+      flex: 1;
+      overflow: hidden;
+    }
+    .log-line {
+      font-size: 11px;
+      color: #3a6a5a;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .log-line .time { color: #2a4a3a; }
+    .log-line .warn { color: #ffaa00; }
+    .log-line .danger { color: #ff2040; }
+    .log-line .info { color: #00aaff; }
+
+    .action-bar {
+      display: flex; flex-direction: row;
+      gap: 8px;
+      justify-content: center;
+      padding-top: 4px;
+      border-top: 1px solid rgba(0,255,200,0.15);
+    }
+    .action-btn {
+      width: 120px; height: 34px;
+      background-color: rgba(0,255,200,0.08);
+      border: 1px solid rgba(0,255,200,0.3);
+      border-radius: 2px;
+      color: #00ffc8;
+      font-family: "Consolas", monospace;
+      font-size: 12px;
+      cursor: pointer;
+      letter-spacing: 1px;
+    }
+    .action-btn:hover {
+      background-color: rgba(0,255,200,0.15);
+      border-color: #00ffc8;
+    }
+    .action-btn.danger {
+      border-color: rgba(255,32,64,0.4);
+      color: #ff4060;
+    }
+    .action-btn.danger:hover {
+      background-color: rgba(255,32,64,0.15);
+      border-color: #ff4060;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="header-title" id="title">[ 指挥中心 ]</span>
+    <span class="header-status">STATUS: <span class="online">■ ONLINE</span> | SECTOR: <span id="sector">A-7</span></span>
+  </div>
+
+  <div class="content">
+    <div class="panel left">
+      <div class="panel-title">// 舰船状态</div>
+      <div class="stat-block">
+        <div class="stat-line"><span class="stat-key">舰体完整度</span><span class="stat-val good" id="hull">87%</span></div>
+        <div class="energy-bar"><div class="energy-fill energy-shield"></div></div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-line"><span class="stat-key">燃料储备</span><span class="stat-val warning" id="fuel">38%</span></div>
+        <div class="energy-bar"><div class="energy-fill energy-fuel"></div></div>
+      </div>
+      <div class="stat-line"><span class="stat-key">护盾功率</span><span class="stat-val">720 MW</span></div>
+      <div class="stat-line"><span class="stat-key">武器系统</span><span class="stat-val good">就绪</span></div>
+      <div class="stat-line"><span class="stat-key">引擎推力</span><span class="stat-val">82%</span></div>
+
+      <div class="panel-title" style="margin-top:8px">// 船员</div>
+      <div class="crew-list">
+        <div class="crew-item"><span class="crew-dot green"></span><span class="crew-name">指挥官</span><span class="crew-hp">HP 100%</span></div>
+        <div class="crew-item"><span class="crew-dot green"></span><span class="crew-name">工程师</span><span class="crew-hp">HP 92%</span></div>
+        <div class="crew-item"><span class="crew-dot yellow"></span><span class="crew-name">医疗官</span><span class="crew-hp">HP 61%</span></div>
+        <div class="crew-item"><span class="crew-dot red"></span><span class="crew-name">导航员</span><span class="crew-hp">HP 24%</span></div>
+      </div>
+    </div>
+
+    <div class="panel center">
+      <div class="panel-title">// 区域地图 A-7</div>
+      <div class="map-grid">
+        <div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell enemy"></div>
+        <div class="map-cell"></div><div class="map-cell"></div><div class="map-cell ally"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div>
+        <div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell active"></div><div class="map-cell"></div><div class="map-cell enemy"></div><div class="map-cell"></div>
+        <div class="map-cell enemy"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell ally"></div><div class="map-cell"></div><div class="map-cell"></div>
+        <div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell objective"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell enemy"></div>
+        <div class="map-cell"></div><div class="map-cell ally"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div><div class="map-cell"></div>
+      </div>
+    </div>
+
+    <div class="panel right">
+      <div class="panel-title">// 系统日志</div>
+      <div class="log-area">
+        <div class="log-line"><span class="time">[14:32:01]</span> <span class="info">扫描完毕，发现 3 个敌对目标</span></div>
+        <div class="log-line"><span class="time">[14:31:45]</span> 航线校正完成</div>
+        <div class="log-line"><span class="time">[14:31:20]</span> <span class="warn">燃料低于 40%，建议补给</span></div>
+        <div class="log-line"><span class="time">[14:30:55]</span> 友方舰船进入通讯范围</div>
+        <div class="log-line"><span class="time">[14:30:12]</span> <span class="danger">导航员受伤，效率降低</span></div>
+        <div class="log-line"><span class="time">[14:29:30]</span> 进入 A-7 区域</div>
+      </div>
+
+      <div class="panel-title" style="margin-top:8px">// 任务目标</div>
+      <div class="stat-block">
+        <div class="stat-line"><span class="stat-key">主线</span><span class="stat-val">夺取补给站</span></div>
+        <div class="stat-line"><span class="stat-key">支线</span><span class="stat-val">营救被困船员</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-bar">
+    <button class="action-btn" id="btn_scan">扫描</button>
+    <button class="action-btn" id="btn_move">移动</button>
+    <button class="action-btn" id="btn_attack">攻击</button>
+    <button class="action-btn" id="btn_comm">通讯</button>
+    <button class="action-btn danger" id="btn_retreat">撤退</button>
+  </div>
+</body>
+</html>

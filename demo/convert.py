@@ -20,6 +20,10 @@ def convert_all():
         "inventory.html": "inventory_page",
         "settings.html": "settings_page",
         "shop.html": "shop_page",
+        "rpg_status.html": "rpg_status_page",
+        "scifi_hub.html": "scifi_hub_page",
+        "casual_menu.html": "casual_menu_page",
+        "arena_result.html": "arena_result_page",
     }
 
     for html_file, page_name in pages.items():

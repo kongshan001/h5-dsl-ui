@@ -1,0 +1,295 @@
+{
+  "version": 1,
+  "name": "casual_menu_page",
+  "root": {
+    "type": "Panel",
+    "props": {},
+    "style": {
+      "layout": "vertical",
+      "gap": 16,
+      "width": 480,
+      "height": 640
+    },
+    "children": [
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "color": "#ffffff",
+          "fontSize": 36,
+          "bold": true,
+          "cornerRadius": 20
+        }
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "width": 400,
+          "height": 60
+        },
+        "children": [
+          {
+            "type": "Text",
+            "props": {
+              "value": "☁️"
+            },
+            "style": {
+              "fontSize": 28
+            }
+          },
+          {
+            "type": "Text",
+            "props": {
+              "value": "☁️"
+            },
+            "style": {
+              "fontSize": 28
+            }
+          },
+          {
+            "type": "Text",
+            "props": {
+              "value": "☁️"
+            },
+            "style": {
+              "fontSize": 28
+            }
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "fontSize": 72,
+          "padding": 8
+        }
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "vertical",
+          "gap": 12,
+          "width": 280
+        },
+        "children": [
+          {
+            "type": "Button",
+            "props": {
+              "text": "开始冒险"
+            },
+            "style": {
+              "color": "#ffffff",
+              "fontSize": 18,
+              "bold": true,
+              "cornerRadius": 26,
+              "height": 52
+            },
+            "id": "btn_adventure"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "每日任务"
+            },
+            "style": {
+              "color": "#ffffff",
+              "fontSize": 18,
+              "bold": true,
+              "cornerRadius": 26,
+              "height": 52
+            },
+            "id": "btn_daily"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "神秘商店"
+            },
+            "style": {
+              "color": "#ffffff",
+              "fontSize": 18,
+              "bold": true,
+              "cornerRadius": 26,
+              "height": 52
+            },
+            "id": "btn_shop"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "图鉴收集"
+            },
+            "style": {
+              "color": "#ffffff",
+              "fontSize": 18,
+              "bold": true,
+              "cornerRadius": 26,
+              "height": 52
+            },
+            "id": "btn_collect"
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "gap": 20
+        },
+        "children": [
+          {
+            "type": "Button",
+            "props": {
+              "text": "📬邮件"
+            },
+            "style": {
+              "layout": "vertical",
+              "bgColor": "rgba(255,255,255,0.6)",
+              "fontSize": 24,
+              "cornerRadius": 28,
+              "width": 56,
+              "height": 56
+            },
+            "id": "btn_mail",
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "📬"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "邮件"
+                },
+                "style": {
+                  "color": "#5d4037",
+                  "fontSize": 9,
+                  "bold": true
+                }
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "👥好友"
+            },
+            "style": {
+              "layout": "vertical",
+              "bgColor": "rgba(255,255,255,0.6)",
+              "fontSize": 24,
+              "cornerRadius": 28,
+              "width": 56,
+              "height": 56
+            },
+            "id": "btn_friend",
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "👥"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "好友"
+                },
+                "style": {
+                  "color": "#5d4037",
+                  "fontSize": 9,
+                  "bold": true
+                }
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "🏆排行"
+            },
+            "style": {
+              "layout": "vertical",
+              "bgColor": "rgba(255,255,255,0.6)",
+              "fontSize": 24,
+              "cornerRadius": 28,
+              "width": 56,
+              "height": 56
+            },
+            "id": "btn_rank",
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "🏆"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "排行"
+                },
+                "style": {
+                  "color": "#5d4037",
+                  "fontSize": 9,
+                  "bold": true
+                }
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "⚙️设置"
+            },
+            "style": {
+              "layout": "vertical",
+              "bgColor": "rgba(255,255,255,0.6)",
+              "fontSize": 24,
+              "cornerRadius": 28,
+              "width": 56,
+              "height": 56
+            },
+            "id": "btn_setting",
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "⚙️"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "设置"
+                },
+                "style": {
+                  "color": "#5d4037",
+                  "fontSize": 9,
+                  "bold": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Text",
+        "props": {
+          "value": "v1.2.0"
+        },
+        "style": {
+          "color": "rgba(255,255,255,0.7)",
+          "fontSize": 11
+        }
+      }
+    ]
+  }
+}

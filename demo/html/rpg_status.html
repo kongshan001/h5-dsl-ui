@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>角色状态 - 暗黑奇幻风</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 600px; height: 500px;
+      background-color: #1a0a0a;
+      background-image: linear-gradient(135deg, #2a1515 0%, #1a0a0a 50%, #15101a 100%);
+      font-family: "SimHei", "Microsoft YaHei", serif;
+      display: flex; flex-direction: column;
+      padding: 12px; gap: 10px;
+      color: #d4a574;
+      border: 3px solid #8b6914;
+    }
+
+    .frame-top {
+      height: 6px;
+      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
+    }
+
+    .title-bar {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffd700;
+      letter-spacing: 8px;
+      padding: 4px;
+      border-bottom: 2px solid #5c4510;
+    }
+
+    .main {
+      display: flex; flex-direction: row;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .left-panel {
+      width: 180px;
+      display: flex; flex-direction: column;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .avatar-frame {
+      width: 160px; height: 160px;
+      background-color: #0d0505;
+      border: 2px solid #8b6914;
+      border-radius: 4px;
+      display: flex; flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .avatar-icon { font-size: 48px; color: #8b6914; }
+    .avatar-name { font-size: 16px; color: #ffd700; }
+    .avatar-class { font-size: 12px; color: #a08060; }
+
+    .level-badge {
+      width: 160px;
+      background-color: #2a1515;
+      border: 1px solid #5c4510;
+      border-radius: 4px;
+      padding: 6px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .level-num { color: #ffd700; font-size: 20px; font-weight: bold; }
+
+    .right-panel {
+      flex: 1;
+      display: flex; flex-direction: column;
+      gap: 8px;
+    }
+
+    .stat-section {
+      background-color: rgba(26, 10, 10, 0.8);
+      border: 1px solid #5c4510;
+      border-radius: 4px;
+      padding: 8px;
+    }
+    .stat-title {
+      font-size: 13px;
+      color: #c9a034;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #3a2510;
+    }
+
+    .stat-row {
+      display: flex; flex-direction: row;
+      justify-content: space-between;
+      padding: 3px 0;
+      font-size: 13px;
+    }
+    .stat-label { color: #a08060; }
+    .stat-value { color: #e8d5b0; font-weight: bold; }
+
+    .bar-container {
+      padding: 4px 0;
+    }
+    .bar-label {
+      font-size: 12px;
+      color: #a08060;
+      padding-bottom: 2px;
+      display: flex; flex-direction: row;
+      justify-content: space-between;
+    }
+    .bar-track {
+      height: 14px;
+      background-color: #0a0505;
+      border: 1px solid #3a2510;
+      border-radius: 2px;
+    }
+    .bar-hp {
+      width: 78%;
+      height: 12px;
+      background: linear-gradient(180deg, #d42020, #8b1010);
+      border-radius: 1px;
+    }
+    .bar-mp {
+      width: 45%;
+      height: 12px;
+      background: linear-gradient(180deg, #2040d4, #10108b);
+      border-radius: 1px;
+    }
+    .bar-exp {
+      width: 62%;
+      height: 12px;
+      background: linear-gradient(180deg, #d4a020, #8b6510);
+      border-radius: 1px;
+    }
+
+    .equip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+    .equip-slot {
+      height: 48px;
+      background-color: #0d0505;
+      border: 1px solid #5c4510;
+      border-radius: 2px;
+      display: flex; flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #a08060;
+    }
+    .equip-slot.has-item { border-color: #c9a034; color: #ffd700; }
+    .equip-slot-icon { font-size: 18px; }
+
+    .btn-row {
+      display: flex; flex-direction: row;
+      gap: 8px;
+      justify-content: center;
+      padding-top: 4px;
+    }
+    .btn {
+      width: 100px; height: 32px;
+      background: linear-gradient(180deg, #5c4510, #3a2a08);
+      border: 1px solid #8b6914;
+      border-radius: 3px;
+      color: #ffd700;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .btn:hover { background: linear-gradient(180deg, #7a5a18, #5c4510); }
+
+    .frame-bottom {
+      height: 6px;
+      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
+    }
+  </style>
+</head>
+<body>
+  <div class="frame-top"></div>
+
+  <div class="title-bar">角色状态</div>
+
+  <div class="main">
+    <div class="left-panel">
+      <div class="avatar-frame">
+        <span class="avatar-icon">⚔</span>
+        <span class="avatar-name" id="char_name">暗影剑士</span>
+        <span class="avatar-class">暗影行者 · Lv.<span class="level-num" id="char_level">42</span></span>
+      </div>
+      <div class="level-badge">
+        经验 <span id="exp_text">6200 / 10000</span>
+        <div class="bar-track">
+          <div class="bar-exp"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="stat-section">
+        <div class="stat-title">生命值 / 魔法值</div>
+        <div class="bar-container">
+          <div class="bar-label"><span>HP</span><span id="hp_text">780 / 1000</span></div>
+          <div class="bar-track">
+            <div class="bar-hp"></div>
+          </div>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label"><span>MP</span><span id="mp_text">225 / 500</span></div>
+          <div class="bar-track">
+            <div class="bar-mp"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-section">
+        <div class="stat-title">属性</div>
+        <div class="stat-row"><span class="stat-label">攻击力</span><span class="stat-value" id="atk">286</span></div>
+        <div class="stat-row"><span class="stat-label">防御力</span><span class="stat-value" id="def">142</span></div>
+        <div class="stat-row"><span class="stat-label">暴击率</span><span class="stat-value" id="crit">18.5%</span></div>
+        <div class="stat-row"><span class="stat-label">速度</span><span class="stat-value" id="spd">127</span></div>
+      </div>
+
+      <div class="stat-section">
+        <div class="stat-title">装备</div>
+        <div class="equip-grid">
+          <div class="equip-slot has-item"><span class="equip-slot-icon">🗡</span>暗影之刃</div>
+          <div class="equip-slot has-item"><span class="equip-slot-icon">🛡</span>龙鳞盾</div>
+          <div class="equip-slot"><span class="equip-slot-icon">📦</span>空</div>
+          <div class="equip-slot has-item"><span class="equip-slot-icon">👢</span>疾风靴</div>
+          <div class="equip-slot"><span class="equip-slot-icon">📦</span>空</div>
+          <div class="equip-slot has-item"><span class="equip-slot-icon">💍</span>灵魂指环</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn" id="btn_detail">详细属性</button>
+    <button class="btn" id="btn_equip">装备管理</button>
+    <button class="btn" id="btn_close">关闭</button>
+  </div>
+
+  <div class="frame-bottom"></div>
+</body>
+</html>

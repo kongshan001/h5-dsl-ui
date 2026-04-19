@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>竞技结算 - 电竞风</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720px; height: 480px;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      font-family: "Impact", "Microsoft YaHei", sans-serif;
+      display: flex; flex-direction: column;
+      padding: 20px; gap: 12px;
+      color: #ffffff;
+    }
+
+    .result-banner {
+      text-align: center;
+      padding: 10px;
+    }
+    .result-text {
+      font-size: 42px;
+      font-weight: bold;
+      letter-spacing: 8px;
+      background: linear-gradient(180deg, #ffd700, #ff8c00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .result-sub {
+      font-size: 14px;
+      color: #8888aa;
+      letter-spacing: 2px;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+
+    .scoreboard {
+      display: flex; flex-direction: row;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .team {
+      width: 320px;
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 10px;
+      display: flex; flex-direction: column;
+      gap: 6px;
+    }
+    .team-blue { border: 2px solid #4488ff; }
+    .team-red { border: 2px solid #ff4444; }
+
+    .team-header {
+      display: flex; flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .team-name {
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .team-blue .team-name { color: #4488ff; }
+    .team-red .team-name { color: #ff4444; }
+    .team-score {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .player-row {
+      display: flex; flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+      font-size: 13px;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+    .player-rank {
+      width: 24px; height: 24px;
+      border-radius: 12px;
+      display: flex; flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .rank-1 { background: linear-gradient(135deg, #ffd700, #ff8c00); color: #000; }
+    .rank-2 { background: linear-gradient(135deg, #c0c0c0, #808080); color: #000; }
+    .rank-3 { background: linear-gradient(135deg, #cd7f32, #8b4513); color: #fff; }
+    .rank-n { background-color: rgba(255,255,255,0.1); color: #888; }
+
+    .player-name { width: 80px; color: #ccccdd; }
+    .player-hero { width: 60px; color: #8888aa; font-size: 12px; }
+    .player-kda { width: 80px; color: #aaaacc; text-align: center; }
+    .player-dmg { width: 60px; color: #ff8844; text-align: right; font-weight: bold; }
+    .player-mvp {
+      padding: 2px 6px;
+      background: linear-gradient(135deg, #ffd700, #ff8c00);
+      border-radius: 3px;
+      font-size: 10px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .stats-row {
+      display: flex; flex-direction: row;
+      justify-content: space-around;
+      padding: 10px;
+      background-color: rgba(255,255,255,0.03);
+      border-radius: 6px;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffd700;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: #6666aa;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+
+    .action-row {
+      display: flex; flex-direction: row;
+      gap: 12px;
+      justify-content: center;
+      padding-top: 4px;
+    }
+    .action-btn {
+      width: 140px; height: 40px;
+      border-radius: 6px;
+      border: none;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      letter-spacing: 2px;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+    .btn-again {
+      background: linear-gradient(135deg, #ffd700, #ff8c00);
+      color: #000;
+    }
+    .btn-again:hover { opacity: 0.9; }
+    .btn-back {
+      background-color: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #aaaacc;
+    }
+    .btn-back:hover { background-color: rgba(255,255,255,0.15); }
+  </style>
+</head>
+<body>
+  <div class="result-banner">
+    <div class="result-text" id="result">VICTORY</div>
+    <div class="result-sub">对局时长 18:42 | 2026-04-19 14:30</div>
+  </div>
+
+  <div class="scoreboard">
+    <div class="team team-blue">
+      <div class="team-header">
+        <span class="team-name" id="blue_team">蓝方战队</span>
+        <span class="team-score" id="blue_score">32</span>
+      </div>
+      <div class="player-row">
+        <span class="player-rank rank-1">1</span>
+        <span class="player-name">暗影猎手</span>
+        <span class="player-hero">刺客</span>
+        <span class="player-kda">12/2/8</span>
+        <span class="player-dmg">28.4k</span>
+        <span class="player-mvp">MVP</span>
+      </div>
+      <div class="player-row">
+        <span class="player-rank rank-2">2</span>
+        <span class="player-name">冰霜法师</span>
+        <span class="player-hero">法师</span>
+        <span class="player-kda">8/3/14</span>
+        <span class="player-dmg">24.1k</span>
+      </div>
+      <div class="player-row">
+        <span class="player-rank rank-3">3</span>
+        <span class="player-name">钢铁守卫</span>
+        <span class="player-hero">坦克</span>
+        <span class="player-kda">3/1/18</span>
+        <span class="player-dmg">8.2k</span>
+      </div>
+    </div>
+
+    <div class="team team-red">
+      <div class="team-header">
+        <span class="team-name" id="red_team">红方战队</span>
+        <span class="team-score" id="red_score">21</span>
+      </div>
+      <div class="player-row">
+        <span class="player-rank rank-1">1</span>
+        <span class="player-name">烈焰射手</span>
+        <span class="player-hero">射手</span>
+        <span class="player-kda">9/5/6</span>
+        <span class="player-dmg">22.8k</span>
+      </div>
+      <div class="player-row">
+        <span class="player-rank rank-2">2</span>
+        <span class="player-name">风暴之子</span>
+        <span class="player-hero">战士</span>
+        <span class="player-kda">6/7/9</span>
+        <span class="player-dmg">16.5k</span>
+      </div>
+      <div class="player-row">
+        <span class="player-rank rank-3">3</span>
+        <span class="player-name">幽冥术士</span>
+        <span class="player-hero">辅助</span>
+        <span class="player-kda">2/8/13</span>
+        <span class="player-dmg">6.1k</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-num" id="my_kda">12/2/8</div>
+      <div class="stat-label">KDA</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" id="my_dmg">28,400</div>
+      <div class="stat-label">总伤害</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" id="my_gold">18,200</div>
+      <div class="stat-label">获取金币</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" id="my_rank">+24</div>
+      <div class="stat-label">积分变动</div>
+    </div>
+  </div>
+
+  <div class="action-row">
+    <button class="action-btn btn-again" id="btn_again">再来一局</button>
+    <button class="action-btn btn-back" id="btn_back">返回大厅</button>
+  </div>
+</body>
+</html>

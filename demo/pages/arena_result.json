@@ -1,0 +1,713 @@
+{
+  "version": 1,
+  "name": "arena_result_page",
+  "root": {
+    "type": "Panel",
+    "props": {},
+    "style": {
+      "layout": "vertical",
+      "color": "#ffffff",
+      "padding": 20,
+      "gap": 12,
+      "width": 720,
+      "height": 480
+    },
+    "children": [
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "padding": 10
+        },
+        "children": [
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "fontSize": 42,
+              "bold": true
+            },
+            "id": "result"
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "color": "#8888aa",
+              "fontSize": 14
+            }
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "gap": 16
+        },
+        "children": [
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "vertical",
+              "bgColor": "rgba(255,255,255,0.05)",
+              "cornerRadius": 8,
+              "padding": 10,
+              "gap": 6,
+              "width": 320
+            },
+            "children": [
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "horizontal"
+                },
+                "children": [
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "蓝方战队"
+                    },
+                    "style": {
+                      "fontSize": 16,
+                      "bold": true
+                    },
+                    "id": "blue_team"
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "32"
+                    },
+                    "style": {
+                      "fontSize": 28,
+                      "bold": true
+                    },
+                    "id": "blue_score"
+                  }
+                ]
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "horizontal",
+                  "fontSize": 13,
+                  "gap": 8
+                },
+                "children": [
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "1"
+                    },
+                    "style": {
+                      "layout": "vertical",
+                      "color": "#000",
+                      "fontSize": 12,
+                      "bold": true,
+                      "cornerRadius": 12,
+                      "width": 24,
+                      "height": 24
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "暗影猎手"
+                    },
+                    "style": {
+                      "color": "#ccccdd",
+                      "width": 80
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "刺客"
+                    },
+                    "style": {
+                      "color": "#8888aa",
+                      "fontSize": 12,
+                      "width": 60
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "12/2/8"
+                    },
+                    "style": {
+                      "color": "#aaaacc",
+                      "width": 80
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "28.4k"
+                    },
+                    "style": {
+                      "color": "#ff8844",
+                      "bold": true,
+                      "width": 60
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "MVP"
+                    },
+                    "style": {
+                      "color": "#000",
+                      "fontSize": 10,
+                      "bold": true,
+                      "cornerRadius": 3
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "horizontal",
+                  "fontSize": 13,
+                  "gap": 8
+                },
+                "children": [
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "2"
+                    },
+                    "style": {
+                      "layout": "vertical",
+                      "color": "#000",
+                      "fontSize": 12,
+                      "bold": true,
+                      "cornerRadius": 12,
+                      "width": 24,
+                      "height": 24
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "冰霜法师"
+                    },
+                    "style": {
+                      "color": "#ccccdd",
+                      "width": 80
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "法师"
+                    },
+                    "style": {
+                      "color": "#8888aa",
+                      "fontSize": 12,
+                      "width": 60
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "8/3/14"
+                    },
+                    "style": {
+                      "color": "#aaaacc",
+                      "width": 80
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "24.1k"
+                    },
+                    "style": {
+                      "color": "#ff8844",
+                      "bold": true,
+                      "width": 60
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "horizontal",
+                  "fontSize": 13,
+                  "gap": 8
+                },
+                "children": [
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "3"
+                    },
+                    "style": {
+                      "layout": "vertical",
+                      "color": "#fff",
+                      "fontSize": 12,
+                      "bold": true,
+                      "cornerRadius": 12,
+                      "width": 24,
+                      "height": 24
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "钢铁守卫"
+                    },
+                    "style": {
+                      "color": "#ccccdd",
+                      "width": 80
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "坦克"
+                    },
+                    "style": {
+                      "color": "#8888aa",
+                      "fontSize": 12,
+                      "width": 60
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "3/1/18"
+                    },
+                    "style": {
+                      "color": "#aaaacc",
+                      "width": 80
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "8.2k"
+                    },
+                    "style": {
+                      "color": "#ff8844",
+                      "bold": true,
+                      "width": 60
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "vertical",
+              "bgColor": "rgba(255,255,255,0.05)",
+              "cornerRadius": 8,
+              "padding": 10,
+              "gap": 6,
+              "width": 320
+            },
+            "children": [
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "horizontal"
+                },
+                "children": [
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "红方战队"
+                    },
+                    "style": {
+                      "fontSize": 16,
+                      "bold": true
+                    },
+                    "id": "red_team"
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "21"
+                    },
+                    "style": {
+                      "fontSize": 28,
+                      "bold": true
+                    },
+                    "id": "red_score"
+                  }
+                ]
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "horizontal",
+                  "fontSize": 13,
+                  "gap": 8
+                },
+                "children": [
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "1"
+                    },
+                    "style": {
+                      "layout": "vertical",
+                      "color": "#000",
+                      "fontSize": 12,
+                      "bold": true,
+                      "cornerRadius": 12,
+                      "width": 24,
+                      "height": 24
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "烈焰射手"
+                    },
+                    "style": {
+                      "color": "#ccccdd",
+                      "width": 80
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "射手"
+                    },
+                    "style": {
+                      "color": "#8888aa",
+                      "fontSize": 12,
+                      "width": 60
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "9/5/6"
+                    },
+                    "style": {
+                      "color": "#aaaacc",
+                      "width": 80
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "22.8k"
+                    },
+                    "style": {
+                      "color": "#ff8844",
+                      "bold": true,
+                      "width": 60
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "horizontal",
+                  "fontSize": 13,
+                  "gap": 8
+                },
+                "children": [
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "2"
+                    },
+                    "style": {
+                      "layout": "vertical",
+                      "color": "#000",
+                      "fontSize": 12,
+                      "bold": true,
+                      "cornerRadius": 12,
+                      "width": 24,
+                      "height": 24
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "风暴之子"
+                    },
+                    "style": {
+                      "color": "#ccccdd",
+                      "width": 80
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "战士"
+                    },
+                    "style": {
+                      "color": "#8888aa",
+                      "fontSize": 12,
+                      "width": 60
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "6/7/9"
+                    },
+                    "style": {
+                      "color": "#aaaacc",
+                      "width": 80
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "16.5k"
+                    },
+                    "style": {
+                      "color": "#ff8844",
+                      "bold": true,
+                      "width": 60
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "horizontal",
+                  "fontSize": 13,
+                  "gap": 8
+                },
+                "children": [
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "3"
+                    },
+                    "style": {
+                      "layout": "vertical",
+                      "color": "#fff",
+                      "fontSize": 12,
+                      "bold": true,
+                      "cornerRadius": 12,
+                      "width": 24,
+                      "height": 24
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "幽冥术士"
+                    },
+                    "style": {
+                      "color": "#ccccdd",
+                      "width": 80
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "辅助"
+                    },
+                    "style": {
+                      "color": "#8888aa",
+                      "fontSize": 12,
+                      "width": 60
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "2/8/13"
+                    },
+                    "style": {
+                      "color": "#aaaacc",
+                      "width": 80
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "6.1k"
+                    },
+                    "style": {
+                      "color": "#ff8844",
+                      "bold": true,
+                      "width": 60
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "bgColor": "rgba(255,255,255,0.03)",
+          "cornerRadius": 6,
+          "padding": 10
+        },
+        "children": [
+          {
+            "type": "Panel",
+            "props": {},
+            "children": [
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#ffd700",
+                  "fontSize": 22,
+                  "bold": true
+                },
+                "id": "my_kda"
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#6666aa",
+                  "fontSize": 11
+                }
+              }
+            ]
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "children": [
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#ffd700",
+                  "fontSize": 22,
+                  "bold": true
+                },
+                "id": "my_dmg"
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#6666aa",
+                  "fontSize": 11
+                }
+              }
+            ]
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "children": [
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#ffd700",
+                  "fontSize": 22,
+                  "bold": true
+                },
+                "id": "my_gold"
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#6666aa",
+                  "fontSize": 11
+                }
+              }
+            ]
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "children": [
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#ffd700",
+                  "fontSize": 22,
+                  "bold": true
+                },
+                "id": "my_rank"
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#6666aa",
+                  "fontSize": 11
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "gap": 12
+        },
+        "children": [
+          {
+            "type": "Button",
+            "props": {
+              "text": "再来一局"
+            },
+            "style": {
+              "color": "#000",
+              "fontSize": 15,
+              "bold": true,
+              "cornerRadius": 6,
+              "width": 140,
+              "height": 40
+            },
+            "id": "btn_again"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "返回大厅"
+            },
+            "style": {
+              "bgColor": "rgba(255,255,255,0.1)",
+              "color": "#aaaacc",
+              "fontSize": 15,
+              "bold": true,
+              "cornerRadius": 6,
+              "width": 140,
+              "height": 40
+            },
+            "id": "btn_back"
+          }
+        ]
+      }
+    ]
+  }
+}

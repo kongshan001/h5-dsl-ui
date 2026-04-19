@@ -1,0 +1,1196 @@
+{
+  "version": 1,
+  "name": "scifi_hub_page",
+  "root": {
+    "type": "Panel",
+    "props": {},
+    "style": {
+      "layout": "vertical",
+      "bgColor": "#0a0e14",
+      "color": "#00ffc8",
+      "padding": 16,
+      "gap": 12,
+      "width": 900,
+      "height": 560
+    },
+    "children": [
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal"
+        },
+        "children": [
+          {
+            "type": "Text",
+            "props": {
+              "value": "[ 指挥中心 ]"
+            },
+            "style": {
+              "color": "#00ffc8",
+              "fontSize": 20,
+              "bold": true
+            },
+            "id": "title"
+          },
+          {
+            "type": "Text",
+            "props": {
+              "value": "STATUS:■ ONLINE| SECTOR:A-7"
+            },
+            "style": {
+              "color": "#4a7a6a",
+              "fontSize": 12
+            },
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "■ ONLINE"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "A-7"
+                },
+                "id": "sector"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "gap": 12
+        },
+        "children": [
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "vertical",
+              "bgColor": "rgba(10, 20, 30, 0.9)",
+              "cornerRadius": 2,
+              "padding": 10,
+              "gap": 8,
+              "width": 220
+            },
+            "children": [
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#4a7a6a",
+                  "fontSize": 11
+                }
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "children": [
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "layout": "horizontal",
+                      "fontSize": 12
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "舰体完整度"
+                        },
+                        "style": {
+                          "color": "#4a7a6a"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "87%"
+                        },
+                        "style": {
+                          "color": "#00ffc8"
+                        },
+                        "id": "hull"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1,
+                      "height": 8
+                    },
+                    "children": [
+                      {
+                        "type": "Panel",
+                        "props": {},
+                        "style": {
+                          "cornerRadius": 0,
+                          "height": 6
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "children": [
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "layout": "horizontal",
+                      "fontSize": 12
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "燃料储备"
+                        },
+                        "style": {
+                          "color": "#4a7a6a"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "38%"
+                        },
+                        "style": {
+                          "color": "#00ffc8"
+                        },
+                        "id": "fuel"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1,
+                      "height": 8
+                    },
+                    "children": [
+                      {
+                        "type": "Panel",
+                        "props": {},
+                        "style": {
+                          "cornerRadius": 0,
+                          "height": 6
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "horizontal",
+                  "fontSize": 12
+                },
+                "children": [
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "护盾功率"
+                    },
+                    "style": {
+                      "color": "#4a7a6a"
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "720 MW"
+                    },
+                    "style": {
+                      "color": "#00ffc8"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "horizontal",
+                  "fontSize": 12
+                },
+                "children": [
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "武器系统"
+                    },
+                    "style": {
+                      "color": "#4a7a6a"
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "就绪"
+                    },
+                    "style": {
+                      "color": "#00ffc8"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "horizontal",
+                  "fontSize": 12
+                },
+                "children": [
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "引擎推力"
+                    },
+                    "style": {
+                      "color": "#4a7a6a"
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "value": "82%"
+                    },
+                    "style": {
+                      "color": "#00ffc8"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#4a7a6a",
+                  "fontSize": 11
+                }
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "vertical",
+                  "gap": 6
+                },
+                "children": [
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "layout": "horizontal",
+                      "bgColor": "#0a1520",
+                      "fontSize": 12,
+                      "cornerRadius": 2,
+                      "padding": 4,
+                      "gap": 6
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": ""
+                        },
+                        "style": {
+                          "cornerRadius": 3,
+                          "width": 6,
+                          "height": 6
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "指挥官"
+                        },
+                        "style": {
+                          "color": "#00ffc8"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "HP 100%"
+                        },
+                        "style": {
+                          "color": "#4a7a6a"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "layout": "horizontal",
+                      "bgColor": "#0a1520",
+                      "fontSize": 12,
+                      "cornerRadius": 2,
+                      "padding": 4,
+                      "gap": 6
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": ""
+                        },
+                        "style": {
+                          "cornerRadius": 3,
+                          "width": 6,
+                          "height": 6
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "工程师"
+                        },
+                        "style": {
+                          "color": "#00ffc8"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "HP 92%"
+                        },
+                        "style": {
+                          "color": "#4a7a6a"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "layout": "horizontal",
+                      "bgColor": "#0a1520",
+                      "fontSize": 12,
+                      "cornerRadius": 2,
+                      "padding": 4,
+                      "gap": 6
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": ""
+                        },
+                        "style": {
+                          "cornerRadius": 3,
+                          "width": 6,
+                          "height": 6
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "医疗官"
+                        },
+                        "style": {
+                          "color": "#00ffc8"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "HP 61%"
+                        },
+                        "style": {
+                          "color": "#4a7a6a"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "layout": "horizontal",
+                      "bgColor": "#0a1520",
+                      "fontSize": 12,
+                      "cornerRadius": 2,
+                      "padding": 4,
+                      "gap": 6
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": ""
+                        },
+                        "style": {
+                          "cornerRadius": 3,
+                          "width": 6,
+                          "height": 6
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "导航员"
+                        },
+                        "style": {
+                          "color": "#00ffc8"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "HP 24%"
+                        },
+                        "style": {
+                          "color": "#4a7a6a"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "vertical",
+              "bgColor": "rgba(10, 20, 30, 0.9)",
+              "cornerRadius": 2,
+              "padding": 10,
+              "gap": 8
+            },
+            "children": [
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#4a7a6a",
+                  "fontSize": 11
+                }
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "grid",
+                  "columns": 8,
+                  "gap": 2
+                },
+                "children": [
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0a1520",
+                      "cornerRadius": 1
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "vertical",
+              "bgColor": "rgba(10, 20, 30, 0.9)",
+              "cornerRadius": 2,
+              "padding": 10,
+              "gap": 8,
+              "width": 220
+            },
+            "children": [
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#4a7a6a",
+                  "fontSize": 11
+                }
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "layout": "vertical",
+                  "gap": 3
+                },
+                "children": [
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "color": "#3a6a5a",
+                      "fontSize": 11
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "[14:32:01]"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "扫描完毕，发现 3 个敌对目标"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "color": "#3a6a5a",
+                      "fontSize": 11
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "[14:31:45]"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "color": "#3a6a5a",
+                      "fontSize": 11
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "[14:31:20]"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "燃料低于 40%，建议补给"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "color": "#3a6a5a",
+                      "fontSize": 11
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "[14:30:55]"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "color": "#3a6a5a",
+                      "fontSize": 11
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "[14:30:12]"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "导航员受伤，效率降低"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "color": "#3a6a5a",
+                      "fontSize": 11
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "[14:29:30]"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "color": "#4a7a6a",
+                  "fontSize": 11
+                }
+              },
+              {
+                "type": "Panel",
+                "props": {},
+                "children": [
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "layout": "horizontal",
+                      "fontSize": 12
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "主线"
+                        },
+                        "style": {
+                          "color": "#4a7a6a"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "夺取补给站"
+                        },
+                        "style": {
+                          "color": "#00ffc8"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "layout": "horizontal",
+                      "fontSize": 12
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "支线"
+                        },
+                        "style": {
+                          "color": "#4a7a6a"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "营救被困船员"
+                        },
+                        "style": {
+                          "color": "#00ffc8"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "gap": 8
+        },
+        "children": [
+          {
+            "type": "Button",
+            "props": {
+              "text": "扫描"
+            },
+            "style": {
+              "bgColor": "rgba(0,255,200,0.08)",
+              "color": "#00ffc8",
+              "fontSize": 12,
+              "cornerRadius": 2,
+              "width": 120,
+              "height": 34
+            },
+            "id": "btn_scan"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "移动"
+            },
+            "style": {
+              "bgColor": "rgba(0,255,200,0.08)",
+              "color": "#00ffc8",
+              "fontSize": 12,
+              "cornerRadius": 2,
+              "width": 120,
+              "height": 34
+            },
+            "id": "btn_move"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "攻击"
+            },
+            "style": {
+              "bgColor": "rgba(0,255,200,0.08)",
+              "color": "#00ffc8",
+              "fontSize": 12,
+              "cornerRadius": 2,
+              "width": 120,
+              "height": 34
+            },
+            "id": "btn_attack"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "通讯"
+            },
+            "style": {
+              "bgColor": "rgba(0,255,200,0.08)",
+              "color": "#00ffc8",
+              "fontSize": 12,
+              "cornerRadius": 2,
+              "width": 120,
+              "height": 34
+            },
+            "id": "btn_comm"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "撤退"
+            },
+            "style": {
+              "bgColor": "rgba(0,255,200,0.08)",
+              "color": "#00ffc8",
+              "fontSize": 12,
+              "cornerRadius": 2,
+              "width": 120,
+              "height": 34
+            },
+            "id": "btn_retreat"
+          }
+        ]
+      }
+    ]
+  }
+}

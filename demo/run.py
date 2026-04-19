@@ -67,10 +67,34 @@ def shop_demo():
     page.show()
 
 
+def rpg_status_demo():
+    page = DSLPage().load(os.path.join(PAGES_DIR, "rpg_status.json"))
+    page.show()
+
+
+def scifi_hub_demo():
+    page = DSLPage().load(os.path.join(PAGES_DIR, "scifi_hub.json"))
+    page.show()
+
+
+def casual_menu_demo():
+    page = DSLPage().load(os.path.join(PAGES_DIR, "casual_menu.json"))
+    page.show()
+
+
+def arena_result_demo():
+    page = DSLPage().load(os.path.join(PAGES_DIR, "arena_result.json"))
+    page.show()
+
+
 DEMOS = {
     "inventory": inventory_demo,
     "settings": settings_demo,
     "shop": shop_demo,
+    "rpg": rpg_status_demo,
+    "scifi": scifi_hub_demo,
+    "casual": casual_menu_demo,
+    "arena": arena_result_demo,
 }
 
 if __name__ == "__main__":

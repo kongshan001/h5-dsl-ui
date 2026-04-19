@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>主菜单 - 休闲卡通风</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 480px; height: 640px;
+      background: linear-gradient(180deg, #4fc3f7 0%, #81d4fa 30%, #a5d6a7 60%, #66bb6a 100%);
+      font-family: "Microsoft YaHei", sans-serif;
+      display: flex; flex-direction: column;
+      align-items: center;
+      padding: 30px 40px;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 36px;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 6px;
+      padding: 12px 24px;
+      background: linear-gradient(180deg, #ff9800, #f44336);
+      border-radius: 20px;
+      border: 3px solid #fff;
+    }
+
+    .clouds {
+      width: 400px; height: 60px;
+      display: flex; flex-direction: row;
+      justify-content: space-around;
+    }
+    .cloud {
+      font-size: 28px;
+    }
+
+    .character {
+      font-size: 72px;
+      padding: 8px;
+    }
+
+    .menu-buttons {
+      display: flex; flex-direction: column;
+      gap: 12px;
+      width: 280px;
+    }
+
+    .menu-btn {
+      height: 52px;
+      border: 3px solid #fff;
+      border-radius: 26px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      cursor: pointer;
+      letter-spacing: 2px;
+    }
+    .menu-btn:hover { opacity: 0.9; }
+
+    .btn-adventure {
+      background: linear-gradient(180deg, #ff9800, #f44336);
+    }
+    .btn-daily {
+      background: linear-gradient(180deg, #66bb6a, #43a047);
+    }
+    .btn-shop {
+      background: linear-gradient(180deg, #ab47bc, #8e24aa);
+    }
+    .btn-collect {
+      background: linear-gradient(180deg, #42a5f5, #1e88e5);
+    }
+
+    .bottom-bar {
+      display: flex; flex-direction: row;
+      gap: 20px;
+      justify-content: center;
+      padding-top: 8px;
+    }
+    .bottom-btn {
+      width: 56px; height: 56px;
+      background-color: rgba(255,255,255,0.6);
+      border: 2px solid #fff;
+      border-radius: 28px;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex; flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .bottom-btn:hover { background-color: rgba(255,255,255,0.85); }
+    .bottom-label {
+      font-size: 9px;
+      color: #5d4037;
+      font-weight: bold;
+    }
+
+    .version {
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">冒 险 岛</div>
+
+  <div class="clouds">
+    <span class="cloud">☁️</span>
+    <span class="cloud">☁️</span>
+    <span class="cloud">☁️</span>
+  </div>
+
+  <div class="character">🐉</div>
+
+  <div class="menu-buttons">
+    <button class="menu-btn btn-adventure" id="btn_adventure">开始冒险</button>
+    <button class="menu-btn btn-daily" id="btn_daily">每日任务</button>
+    <button class="menu-btn btn-shop" id="btn_shop">神秘商店</button>
+    <button class="menu-btn btn-collect" id="btn_collect">图鉴收集</button>
+  </div>
+
+  <div class="bottom-bar">
+    <button class="bottom-btn" id="btn_mail"><span>📬</span><span class="bottom-label">邮件</span></button>
+    <button class="bottom-btn" id="btn_friend"><span>👥</span><span class="bottom-label">好友</span></button>
+    <button class="bottom-btn" id="btn_rank"><span>🏆</span><span class="bottom-label">排行</span></button>
+    <button class="bottom-btn" id="btn_setting"><span>⚙️</span><span class="bottom-label">设置</span></button>
+  </div>
+
+  <span class="version">v1.2.0</span>
+</body>
+</html>

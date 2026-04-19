@@ -35,9 +35,13 @@ def map_css_to_style(css_props):
     elif display == "grid":
         result["layout"] = "grid"
         cols = css_props.get("grid-template-columns", "")
-        col_count = len(cols.split())
-        if col_count > 0:
-            result["columns"] = col_count
+        repeat_match = re.match(r"repeat\((\d+)", cols.strip())
+        if repeat_match:
+            result["columns"] = int(repeat_match.group(1))
+        else:
+            col_count = len(cols.split())
+            if col_count > 0:
+                result["columns"] = col_count
 
     for css_key, dsl_key in CSS_TO_DSL.items():
         if css_key not in css_props:

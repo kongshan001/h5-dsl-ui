@@ -89,7 +89,8 @@
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 200,
-              "height": 30
+              "height": 30,
+              "border": {}
             },
             "id": "name_input"
           }
@@ -123,7 +124,8 @@
               "bgColor": "#0f3460",
               "cornerRadius": 12,
               "width": 48,
-              "height": 24
+              "height": 24,
+              "border": {}
             },
             "id": "sfx_toggle"
           }
@@ -157,7 +159,8 @@
               "bgColor": "#0f3460",
               "cornerRadius": 12,
               "width": 48,
-              "height": 24
+              "height": 24,
+              "border": {}
             },
             "id": "bgm_toggle"
           }
@@ -174,7 +177,8 @@
           "fontSize": 14,
           "cornerRadius": 4,
           "width": 120,
-          "height": 36
+          "height": 36,
+          "border": {}
         },
         "id": "save_btn"
       }

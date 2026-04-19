@@ -134,6 +134,14 @@ def convert_html(html_str, mappings=None):
     return _convert_node(root_tag, mappings or {}, css_rules)
 
 
+def _is_text_only(tag):
+    """判断元素是否只包含纯文本（无子元素）"""
+    for child in tag.children:
+        if hasattr(child, "name") and child.name:
+            return False
+    return bool(tag.get_text(strip=True))
+
+
 def _convert_node(tag, mappings, css_rules):
     tag_name = tag.name.lower()
 
@@ -142,6 +150,8 @@ def _convert_node(tag, mappings, css_rules):
         dsl_type = mappings[tag_name]
     elif tag_name == "body":
         dsl_type = "Panel"
+    elif _is_text_only(tag) and tag_name not in ("button", "input", "img", "ul", "ol"):
+        dsl_type = "Text"
     elif tag_name in TAG_MAP:
         dsl_type = TAG_MAP[tag_name]
     elif tag_name.startswith("x-"):

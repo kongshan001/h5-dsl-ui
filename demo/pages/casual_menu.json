@@ -8,17 +8,61 @@
       "layout": "vertical",
       "gap": 16,
       "width": 480,
-      "height": 640
+      "height": 640,
+      "gradient": {
+        "type": "linear",
+        "angle": 180,
+        "stops": [
+          {
+            "color": "#4fc3f7",
+            "pos": 0
+          },
+          {
+            "color": "#81d4fa",
+            "pos": 30
+          },
+          {
+            "color": "#a5d6a7",
+            "pos": 60
+          },
+          {
+            "color": "#66bb6a",
+            "pos": 100
+          }
+        ]
+      }
     },
     "children": [
       {
-        "type": "Panel",
-        "props": {},
+        "type": "Text",
+        "props": {
+          "value": "冒 险 岛"
+        },
         "style": {
           "color": "#ffffff",
           "fontSize": 36,
           "bold": true,
-          "cornerRadius": 20
+          "cornerRadius": 20,
+          "border": {
+            "width": 3,
+            "style": "solid",
+            "color": "#fff"
+          },
+          "letterSpacing": "6px",
+          "gradient": {
+            "type": "linear",
+            "angle": 180,
+            "stops": [
+              {
+                "color": "#ff9800",
+                "pos": 0
+              },
+              {
+                "color": "#f44336",
+                "pos": 100
+              }
+            ]
+          }
         }
       },
       {
@@ -60,8 +104,10 @@
         ]
       },
       {
-        "type": "Panel",
-        "props": {},
+        "type": "Text",
+        "props": {
+          "value": "🐉"
+        },
         "style": {
           "fontSize": 72,
           "padding": 8
@@ -86,7 +132,27 @@
               "fontSize": 18,
               "bold": true,
               "cornerRadius": 26,
-              "height": 52
+              "height": 52,
+              "border": {
+                "width": 3,
+                "style": "solid",
+                "color": "#fff"
+              },
+              "letterSpacing": "2px",
+              "gradient": {
+                "type": "linear",
+                "angle": 180,
+                "stops": [
+                  {
+                    "color": "#ff9800",
+                    "pos": 0
+                  },
+                  {
+                    "color": "#f44336",
+                    "pos": 100
+                  }
+                ]
+              }
             },
             "id": "btn_adventure"
           },
@@ -100,7 +166,27 @@
               "fontSize": 18,
               "bold": true,
               "cornerRadius": 26,
-              "height": 52
+              "height": 52,
+              "border": {
+                "width": 3,
+                "style": "solid",
+                "color": "#fff"
+              },
+              "letterSpacing": "2px",
+              "gradient": {
+                "type": "linear",
+                "angle": 180,
+                "stops": [
+                  {
+                    "color": "#66bb6a",
+                    "pos": 0
+                  },
+                  {
+                    "color": "#43a047",
+                    "pos": 100
+                  }
+                ]
+              }
             },
             "id": "btn_daily"
           },
@@ -114,7 +200,27 @@
               "fontSize": 18,
               "bold": true,
               "cornerRadius": 26,
-              "height": 52
+              "height": 52,
+              "border": {
+                "width": 3,
+                "style": "solid",
+                "color": "#fff"
+              },
+              "letterSpacing": "2px",
+              "gradient": {
+                "type": "linear",
+                "angle": 180,
+                "stops": [
+                  {
+                    "color": "#ab47bc",
+                    "pos": 0
+                  },
+                  {
+                    "color": "#8e24aa",
+                    "pos": 100
+                  }
+                ]
+              }
             },
             "id": "btn_shop"
           },
@@ -128,7 +234,27 @@
               "fontSize": 18,
               "bold": true,
               "cornerRadius": 26,
-              "height": 52
+              "height": 52,
+              "border": {
+                "width": 3,
+                "style": "solid",
+                "color": "#fff"
+              },
+              "letterSpacing": "2px",
+              "gradient": {
+                "type": "linear",
+                "angle": 180,
+                "stops": [
+                  {
+                    "color": "#42a5f5",
+                    "pos": 0
+                  },
+                  {
+                    "color": "#1e88e5",
+                    "pos": 100
+                  }
+                ]
+              }
             },
             "id": "btn_collect"
           }
@@ -149,11 +275,16 @@
             },
             "style": {
               "layout": "vertical",
-              "bgColor": "rgba(255,255,255,0.6)",
+              "bgColor": "#ffffff99",
               "fontSize": 24,
               "cornerRadius": 28,
               "width": 56,
-              "height": 56
+              "height": 56,
+              "border": {
+                "width": 2,
+                "style": "solid",
+                "color": "#fff"
+              }
             },
             "id": "btn_mail",
             "children": [
@@ -183,11 +314,16 @@
             },
             "style": {
               "layout": "vertical",
-              "bgColor": "rgba(255,255,255,0.6)",
+              "bgColor": "#ffffff99",
               "fontSize": 24,
               "cornerRadius": 28,
               "width": 56,
-              "height": 56
+              "height": 56,
+              "border": {
+                "width": 2,
+                "style": "solid",
+                "color": "#fff"
+              }
             },
             "id": "btn_friend",
             "children": [
@@ -217,11 +353,16 @@
             },
             "style": {
               "layout": "vertical",
-              "bgColor": "rgba(255,255,255,0.6)",
+              "bgColor": "#ffffff99",
               "fontSize": 24,
               "cornerRadius": 28,
               "width": 56,
-              "height": 56
+              "height": 56,
+              "border": {
+                "width": 2,
+                "style": "solid",
+                "color": "#fff"
+              }
             },
             "id": "btn_rank",
             "children": [
@@ -251,11 +392,16 @@
             },
             "style": {
               "layout": "vertical",
-              "bgColor": "rgba(255,255,255,0.6)",
+              "bgColor": "#ffffff99",
               "fontSize": 24,
               "cornerRadius": 28,
               "width": 56,
-              "height": 56
+              "height": 56,
+              "border": {
+                "width": 2,
+                "style": "solid",
+                "color": "#fff"
+              }
             },
             "id": "btn_setting",
             "children": [
@@ -286,7 +432,7 @@
           "value": "v1.2.0"
         },
         "style": {
-          "color": "rgba(255,255,255,0.7)",
+          "color": "#ffffffb2",
           "fontSize": 11
         }
       }

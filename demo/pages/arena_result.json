@@ -10,7 +10,25 @@
       "padding": 20,
       "gap": 12,
       "width": 720,
-      "height": 480
+      "height": 480,
+      "gradient": {
+        "type": "linear",
+        "angle": 135,
+        "stops": [
+          {
+            "color": "#0f0c29",
+            "pos": 0
+          },
+          {
+            "color": "#302b63",
+            "pos": 50
+          },
+          {
+            "color": "#24243e",
+            "pos": 100
+          }
+        ]
+      }
     },
     "children": [
       {
@@ -21,20 +39,40 @@
         },
         "children": [
           {
-            "type": "Panel",
-            "props": {},
+            "type": "Text",
+            "props": {
+              "value": "VICTORY"
+            },
             "style": {
               "fontSize": 42,
-              "bold": true
+              "bold": true,
+              "letterSpacing": "8px",
+              "gradient": {
+                "type": "linear",
+                "angle": 180,
+                "stops": [
+                  {
+                    "color": "#ffd700",
+                    "pos": 0
+                  },
+                  {
+                    "color": "#ff8c00",
+                    "pos": 100
+                  }
+                ]
+              }
             },
             "id": "result"
           },
           {
-            "type": "Panel",
-            "props": {},
+            "type": "Text",
+            "props": {
+              "value": "对局时长 18:42 | 2026-04-19 14:30"
+            },
             "style": {
               "color": "#8888aa",
-              "fontSize": 14
+              "fontSize": 14,
+              "letterSpacing": "2px"
             }
           }
         ]
@@ -52,11 +90,16 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "rgba(255,255,255,0.05)",
+              "bgColor": "#ffffff0c",
               "cornerRadius": 8,
               "padding": 10,
               "gap": 6,
-              "width": 320
+              "width": 320,
+              "border": {
+                "width": 2,
+                "style": "solid",
+                "color": "#4488ff"
+              }
             },
             "children": [
               {
@@ -73,7 +116,8 @@
                     },
                     "style": {
                       "fontSize": 16,
-                      "bold": true
+                      "bold": true,
+                      "letterSpacing": "1px"
                     },
                     "id": "blue_team"
                   },
@@ -111,7 +155,21 @@
                       "bold": true,
                       "cornerRadius": 12,
                       "width": 24,
-                      "height": 24
+                      "height": 24,
+                      "gradient": {
+                        "type": "linear",
+                        "angle": 135,
+                        "stops": [
+                          {
+                            "color": "#ffd700",
+                            "pos": 0
+                          },
+                          {
+                            "color": "#ff8c00",
+                            "pos": 100
+                          }
+                        ]
+                      }
                     }
                   },
                   {
@@ -165,7 +223,21 @@
                       "color": "#000",
                       "fontSize": 10,
                       "bold": true,
-                      "cornerRadius": 3
+                      "cornerRadius": 3,
+                      "gradient": {
+                        "type": "linear",
+                        "angle": 135,
+                        "stops": [
+                          {
+                            "color": "#ffd700",
+                            "pos": 0
+                          },
+                          {
+                            "color": "#ff8c00",
+                            "pos": 100
+                          }
+                        ]
+                      }
                     }
                   }
                 ]
@@ -191,7 +263,21 @@
                       "bold": true,
                       "cornerRadius": 12,
                       "width": 24,
-                      "height": 24
+                      "height": 24,
+                      "gradient": {
+                        "type": "linear",
+                        "angle": 135,
+                        "stops": [
+                          {
+                            "color": "#c0c0c0",
+                            "pos": 0
+                          },
+                          {
+                            "color": "#808080",
+                            "pos": 100
+                          }
+                        ]
+                      }
                     }
                   },
                   {
@@ -259,7 +345,21 @@
                       "bold": true,
                       "cornerRadius": 12,
                       "width": 24,
-                      "height": 24
+                      "height": 24,
+                      "gradient": {
+                        "type": "linear",
+                        "angle": 135,
+                        "stops": [
+                          {
+                            "color": "#cd7f32",
+                            "pos": 0
+                          },
+                          {
+                            "color": "#8b4513",
+                            "pos": 100
+                          }
+                        ]
+                      }
                     }
                   },
                   {
@@ -313,11 +413,16 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "rgba(255,255,255,0.05)",
+              "bgColor": "#ffffff0c",
               "cornerRadius": 8,
               "padding": 10,
               "gap": 6,
-              "width": 320
+              "width": 320,
+              "border": {
+                "width": 2,
+                "style": "solid",
+                "color": "#ff4444"
+              }
             },
             "children": [
               {
@@ -334,7 +439,8 @@
                     },
                     "style": {
                       "fontSize": 16,
-                      "bold": true
+                      "bold": true,
+                      "letterSpacing": "1px"
                     },
                     "id": "red_team"
                   },
@@ -372,7 +478,21 @@
                       "bold": true,
                       "cornerRadius": 12,
                       "width": 24,
-                      "height": 24
+                      "height": 24,
+                      "gradient": {
+                        "type": "linear",
+                        "angle": 135,
+                        "stops": [
+                          {
+                            "color": "#ffd700",
+                            "pos": 0
+                          },
+                          {
+                            "color": "#ff8c00",
+                            "pos": 100
+                          }
+                        ]
+                      }
                     }
                   },
                   {
@@ -440,7 +560,21 @@
                       "bold": true,
                       "cornerRadius": 12,
                       "width": 24,
-                      "height": 24
+                      "height": 24,
+                      "gradient": {
+                        "type": "linear",
+                        "angle": 135,
+                        "stops": [
+                          {
+                            "color": "#c0c0c0",
+                            "pos": 0
+                          },
+                          {
+                            "color": "#808080",
+                            "pos": 100
+                          }
+                        ]
+                      }
                     }
                   },
                   {
@@ -508,7 +642,21 @@
                       "bold": true,
                       "cornerRadius": 12,
                       "width": 24,
-                      "height": 24
+                      "height": 24,
+                      "gradient": {
+                        "type": "linear",
+                        "angle": 135,
+                        "stops": [
+                          {
+                            "color": "#cd7f32",
+                            "pos": 0
+                          },
+                          {
+                            "color": "#8b4513",
+                            "pos": 100
+                          }
+                        ]
+                      }
                     }
                   },
                   {
@@ -564,7 +712,7 @@
         "props": {},
         "style": {
           "layout": "horizontal",
-          "bgColor": "rgba(255,255,255,0.03)",
+          "bgColor": "#ffffff07",
           "cornerRadius": 6,
           "padding": 10
         },
@@ -574,8 +722,10 @@
             "props": {},
             "children": [
               {
-                "type": "Panel",
-                "props": {},
+                "type": "Text",
+                "props": {
+                  "value": "12/2/8"
+                },
                 "style": {
                   "color": "#ffd700",
                   "fontSize": 22,
@@ -584,8 +734,10 @@
                 "id": "my_kda"
               },
               {
-                "type": "Panel",
-                "props": {},
+                "type": "Text",
+                "props": {
+                  "value": "KDA"
+                },
                 "style": {
                   "color": "#6666aa",
                   "fontSize": 11
@@ -598,8 +750,10 @@
             "props": {},
             "children": [
               {
-                "type": "Panel",
-                "props": {},
+                "type": "Text",
+                "props": {
+                  "value": "28,400"
+                },
                 "style": {
                   "color": "#ffd700",
                   "fontSize": 22,
@@ -608,8 +762,10 @@
                 "id": "my_dmg"
               },
               {
-                "type": "Panel",
-                "props": {},
+                "type": "Text",
+                "props": {
+                  "value": "总伤害"
+                },
                 "style": {
                   "color": "#6666aa",
                   "fontSize": 11
@@ -622,8 +778,10 @@
             "props": {},
             "children": [
               {
-                "type": "Panel",
-                "props": {},
+                "type": "Text",
+                "props": {
+                  "value": "18,200"
+                },
                 "style": {
                   "color": "#ffd700",
                   "fontSize": 22,
@@ -632,8 +790,10 @@
                 "id": "my_gold"
               },
               {
-                "type": "Panel",
-                "props": {},
+                "type": "Text",
+                "props": {
+                  "value": "获取金币"
+                },
                 "style": {
                   "color": "#6666aa",
                   "fontSize": 11
@@ -646,8 +806,10 @@
             "props": {},
             "children": [
               {
-                "type": "Panel",
-                "props": {},
+                "type": "Text",
+                "props": {
+                  "value": "+24"
+                },
                 "style": {
                   "color": "#ffd700",
                   "fontSize": 22,
@@ -656,8 +818,10 @@
                 "id": "my_rank"
               },
               {
-                "type": "Panel",
-                "props": {},
+                "type": "Text",
+                "props": {
+                  "value": "积分变动"
+                },
                 "style": {
                   "color": "#6666aa",
                   "fontSize": 11
@@ -686,7 +850,23 @@
               "bold": true,
               "cornerRadius": 6,
               "width": 140,
-              "height": 40
+              "height": 40,
+              "border": {},
+              "letterSpacing": "2px",
+              "gradient": {
+                "type": "linear",
+                "angle": 135,
+                "stops": [
+                  {
+                    "color": "#ffd700",
+                    "pos": 0
+                  },
+                  {
+                    "color": "#ff8c00",
+                    "pos": 100
+                  }
+                ]
+              }
             },
             "id": "btn_again"
           },
@@ -696,13 +876,19 @@
               "text": "返回大厅"
             },
             "style": {
-              "bgColor": "rgba(255,255,255,0.1)",
+              "bgColor": "#ffffff19",
               "color": "#aaaacc",
               "fontSize": 15,
               "bold": true,
               "cornerRadius": 6,
               "width": 140,
-              "height": 40
+              "height": 40,
+              "border": {
+                "width": 1,
+                "style": "solid",
+                "color": "#ffffff33"
+              },
+              "letterSpacing": "2px"
             },
             "id": "btn_back"
           }

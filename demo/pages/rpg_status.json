@@ -6,29 +6,72 @@
     "props": {},
     "style": {
       "layout": "vertical",
-      "bgColor": "#1a0a0a",
       "color": "#d4a574",
       "padding": 12,
       "gap": 10,
       "width": 600,
-      "height": 500
+      "height": 500,
+      "border": {
+        "width": 3,
+        "style": "solid",
+        "color": "#8b6914"
+      },
+      "gradient": {
+        "type": "linear",
+        "angle": 135,
+        "stops": [
+          {
+            "color": "#2a1515",
+            "pos": 0
+          },
+          {
+            "color": "#1a0a0a",
+            "pos": 50
+          },
+          {
+            "color": "#15101a",
+            "pos": 100
+          }
+        ]
+      }
     },
     "children": [
       {
         "type": "Panel",
         "props": {},
         "style": {
-          "height": 6
+          "height": 6,
+          "gradient": {
+            "type": "linear",
+            "angle": 90,
+            "stops": [
+              {
+                "color": "#c9a034",
+                "pos": 0
+              },
+              {
+                "color": "#8b6914",
+                "pos": 50
+              },
+              {
+                "color": "#c9a034",
+                "pos": 100
+              }
+            ]
+          }
         }
       },
       {
-        "type": "Panel",
-        "props": {},
+        "type": "Text",
+        "props": {
+          "value": "角色状态"
+        },
         "style": {
           "color": "#ffd700",
           "fontSize": 22,
           "bold": true,
-          "padding": 4
+          "padding": 4,
+          "letterSpacing": "8px"
         }
       },
       {
@@ -57,7 +100,12 @@
                   "cornerRadius": 4,
                   "gap": 4,
                   "width": 160,
-                  "height": 160
+                  "height": 160,
+                  "border": {
+                    "width": 2,
+                    "style": "solid",
+                    "color": "#8b6914"
+                  }
                 },
                 "children": [
                   {
@@ -115,7 +163,12 @@
                   "fontSize": 14,
                   "cornerRadius": 4,
                   "padding": 6,
-                  "width": 160
+                  "width": 160,
+                  "border": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#5c4510"
+                  }
                 },
                 "children": [
                   {
@@ -131,7 +184,12 @@
                     "style": {
                       "bgColor": "#0a0505",
                       "cornerRadius": 2,
-                      "height": 14
+                      "height": 14,
+                      "border": {
+                        "width": 1,
+                        "style": "solid",
+                        "color": "#3a2510"
+                      }
                     },
                     "children": [
                       {
@@ -139,7 +197,21 @@
                         "props": {},
                         "style": {
                           "cornerRadius": 1,
-                          "height": 12
+                          "height": 12,
+                          "gradient": {
+                            "type": "linear",
+                            "angle": 180,
+                            "stops": [
+                              {
+                                "color": "#d4a020",
+                                "pos": 0
+                              },
+                              {
+                                "color": "#8b6510",
+                                "pos": 100
+                              }
+                            ]
+                          }
                         }
                       }
                     ]
@@ -160,14 +232,21 @@
                 "type": "Panel",
                 "props": {},
                 "style": {
-                  "bgColor": "rgba(26, 10, 10, 0.8)",
+                  "bgColor": "#1a0a0acc",
                   "cornerRadius": 4,
-                  "padding": 8
+                  "padding": 8,
+                  "border": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#5c4510"
+                  }
                 },
                 "children": [
                   {
-                    "type": "Panel",
-                    "props": {},
+                    "type": "Text",
+                    "props": {
+                      "value": "生命值 / 魔法值"
+                    },
                     "style": {
                       "color": "#c9a034",
                       "fontSize": 13
@@ -207,7 +286,12 @@
                         "style": {
                           "bgColor": "#0a0505",
                           "cornerRadius": 2,
-                          "height": 14
+                          "height": 14,
+                          "border": {
+                            "width": 1,
+                            "style": "solid",
+                            "color": "#3a2510"
+                          }
                         },
                         "children": [
                           {
@@ -215,7 +299,21 @@
                             "props": {},
                             "style": {
                               "cornerRadius": 1,
-                              "height": 12
+                              "height": 12,
+                              "gradient": {
+                                "type": "linear",
+                                "angle": 180,
+                                "stops": [
+                                  {
+                                    "color": "#d42020",
+                                    "pos": 0
+                                  },
+                                  {
+                                    "color": "#8b1010",
+                                    "pos": 100
+                                  }
+                                ]
+                              }
                             }
                           }
                         ]
@@ -256,7 +354,12 @@
                         "style": {
                           "bgColor": "#0a0505",
                           "cornerRadius": 2,
-                          "height": 14
+                          "height": 14,
+                          "border": {
+                            "width": 1,
+                            "style": "solid",
+                            "color": "#3a2510"
+                          }
                         },
                         "children": [
                           {
@@ -264,7 +367,21 @@
                             "props": {},
                             "style": {
                               "cornerRadius": 1,
-                              "height": 12
+                              "height": 12,
+                              "gradient": {
+                                "type": "linear",
+                                "angle": 180,
+                                "stops": [
+                                  {
+                                    "color": "#2040d4",
+                                    "pos": 0
+                                  },
+                                  {
+                                    "color": "#10108b",
+                                    "pos": 100
+                                  }
+                                ]
+                              }
                             }
                           }
                         ]
@@ -277,14 +394,21 @@
                 "type": "Panel",
                 "props": {},
                 "style": {
-                  "bgColor": "rgba(26, 10, 10, 0.8)",
+                  "bgColor": "#1a0a0acc",
                   "cornerRadius": 4,
-                  "padding": 8
+                  "padding": 8,
+                  "border": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#5c4510"
+                  }
                 },
                 "children": [
                   {
-                    "type": "Panel",
-                    "props": {},
+                    "type": "Text",
+                    "props": {
+                      "value": "属性"
+                    },
                     "style": {
                       "color": "#c9a034",
                       "fontSize": 13
@@ -416,14 +540,21 @@
                 "type": "Panel",
                 "props": {},
                 "style": {
-                  "bgColor": "rgba(26, 10, 10, 0.8)",
+                  "bgColor": "#1a0a0acc",
                   "cornerRadius": 4,
-                  "padding": 8
+                  "padding": 8,
+                  "border": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#5c4510"
+                  }
                 },
                 "children": [
                   {
-                    "type": "Panel",
-                    "props": {},
+                    "type": "Text",
+                    "props": {
+                      "value": "装备"
+                    },
                     "style": {
                       "color": "#c9a034",
                       "fontSize": 13
@@ -447,7 +578,12 @@
                           "color": "#a08060",
                           "fontSize": 11,
                           "cornerRadius": 2,
-                          "height": 48
+                          "height": 48,
+                          "border": {
+                            "width": 1,
+                            "style": "solid",
+                            "color": "#5c4510"
+                          }
                         },
                         "children": [
                           {
@@ -470,7 +606,12 @@
                           "color": "#a08060",
                           "fontSize": 11,
                           "cornerRadius": 2,
-                          "height": 48
+                          "height": 48,
+                          "border": {
+                            "width": 1,
+                            "style": "solid",
+                            "color": "#5c4510"
+                          }
                         },
                         "children": [
                           {
@@ -493,7 +634,12 @@
                           "color": "#a08060",
                           "fontSize": 11,
                           "cornerRadius": 2,
-                          "height": 48
+                          "height": 48,
+                          "border": {
+                            "width": 1,
+                            "style": "solid",
+                            "color": "#5c4510"
+                          }
                         },
                         "children": [
                           {
@@ -516,7 +662,12 @@
                           "color": "#a08060",
                           "fontSize": 11,
                           "cornerRadius": 2,
-                          "height": 48
+                          "height": 48,
+                          "border": {
+                            "width": 1,
+                            "style": "solid",
+                            "color": "#5c4510"
+                          }
                         },
                         "children": [
                           {
@@ -539,7 +690,12 @@
                           "color": "#a08060",
                           "fontSize": 11,
                           "cornerRadius": 2,
-                          "height": 48
+                          "height": 48,
+                          "border": {
+                            "width": 1,
+                            "style": "solid",
+                            "color": "#5c4510"
+                          }
                         },
                         "children": [
                           {
@@ -562,7 +718,12 @@
                           "color": "#a08060",
                           "fontSize": 11,
                           "cornerRadius": 2,
-                          "height": 48
+                          "height": 48,
+                          "border": {
+                            "width": 1,
+                            "style": "solid",
+                            "color": "#5c4510"
+                          }
                         },
                         "children": [
                           {
@@ -602,7 +763,26 @@
               "fontSize": 13,
               "cornerRadius": 3,
               "width": 100,
-              "height": 32
+              "height": 32,
+              "border": {
+                "width": 1,
+                "style": "solid",
+                "color": "#8b6914"
+              },
+              "gradient": {
+                "type": "linear",
+                "angle": 180,
+                "stops": [
+                  {
+                    "color": "#5c4510",
+                    "pos": 0
+                  },
+                  {
+                    "color": "#3a2a08",
+                    "pos": 100
+                  }
+                ]
+              }
             },
             "id": "btn_detail"
           },
@@ -616,7 +796,26 @@
               "fontSize": 13,
               "cornerRadius": 3,
               "width": 100,
-              "height": 32
+              "height": 32,
+              "border": {
+                "width": 1,
+                "style": "solid",
+                "color": "#8b6914"
+              },
+              "gradient": {
+                "type": "linear",
+                "angle": 180,
+                "stops": [
+                  {
+                    "color": "#5c4510",
+                    "pos": 0
+                  },
+                  {
+                    "color": "#3a2a08",
+                    "pos": 100
+                  }
+                ]
+              }
             },
             "id": "btn_equip"
           },
@@ -630,7 +829,26 @@
               "fontSize": 13,
               "cornerRadius": 3,
               "width": 100,
-              "height": 32
+              "height": 32,
+              "border": {
+                "width": 1,
+                "style": "solid",
+                "color": "#8b6914"
+              },
+              "gradient": {
+                "type": "linear",
+                "angle": 180,
+                "stops": [
+                  {
+                    "color": "#5c4510",
+                    "pos": 0
+                  },
+                  {
+                    "color": "#3a2a08",
+                    "pos": 100
+                  }
+                ]
+              }
             },
             "id": "btn_close"
           }
@@ -640,7 +858,25 @@
         "type": "Panel",
         "props": {},
         "style": {
-          "height": 6
+          "height": 6,
+          "gradient": {
+            "type": "linear",
+            "angle": 90,
+            "stops": [
+              {
+                "color": "#c9a034",
+                "pos": 0
+              },
+              {
+                "color": "#8b6914",
+                "pos": 50
+              },
+              {
+                "color": "#c9a034",
+                "pos": 100
+              }
+            ]
+          }
         }
       }
     ]

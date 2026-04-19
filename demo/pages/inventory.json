@@ -46,7 +46,8 @@
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
-              "height": 60
+              "height": 60,
+              "border": {}
             },
             "id": "slot_0"
           },
@@ -61,7 +62,8 @@
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
-              "height": 60
+              "height": 60,
+              "border": {}
             },
             "id": "slot_1"
           },
@@ -76,7 +78,8 @@
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
-              "height": 60
+              "height": 60,
+              "border": {}
             },
             "id": "slot_2"
           },
@@ -91,7 +94,8 @@
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
-              "height": 60
+              "height": 60,
+              "border": {}
             },
             "id": "slot_3"
           },
@@ -106,7 +110,8 @@
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
-              "height": 60
+              "height": 60,
+              "border": {}
             },
             "id": "slot_4"
           },
@@ -121,7 +126,8 @@
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
-              "height": 60
+              "height": 60,
+              "border": {}
             },
             "id": "slot_5"
           },
@@ -136,7 +142,8 @@
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
-              "height": 60
+              "height": 60,
+              "border": {}
             },
             "id": "slot_6"
           },
@@ -151,7 +158,8 @@
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
-              "height": 60
+              "height": 60,
+              "border": {}
             },
             "id": "slot_7"
           }
@@ -192,7 +200,8 @@
           "fontSize": 14,
           "cornerRadius": 4,
           "width": 120,
-          "height": 36
+          "height": 36,
+          "border": {}
         },
         "id": "close_btn"
       }

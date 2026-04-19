@@ -66,7 +66,8 @@
               "padding": 12,
               "gap": 6,
               "width": 200,
-              "height": 100
+              "height": 100,
+              "border": {}
             },
             "id": "item_0",
             "children": [
@@ -115,7 +116,8 @@
               "padding": 12,
               "gap": 6,
               "width": 200,
-              "height": 100
+              "height": 100,
+              "border": {}
             },
             "id": "item_1",
             "children": [
@@ -164,7 +166,8 @@
               "padding": 12,
               "gap": 6,
               "width": 200,
-              "height": 100
+              "height": 100,
+              "border": {}
             },
             "id": "item_2",
             "children": [
@@ -213,7 +216,8 @@
               "padding": 12,
               "gap": 6,
               "width": 200,
-              "height": 100
+              "height": 100,
+              "border": {}
             },
             "id": "item_3",
             "children": [
@@ -262,7 +266,8 @@
               "padding": 12,
               "gap": 6,
               "width": 200,
-              "height": 100
+              "height": 100,
+              "border": {}
             },
             "id": "item_4",
             "children": [
@@ -312,7 +317,8 @@
           "fontSize": 14,
           "cornerRadius": 4,
           "width": 120,
-          "height": 36
+          "height": 36,
+          "border": {}
         },
         "id": "close_btn"
       }

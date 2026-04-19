@@ -48,9 +48,35 @@ def settings_demo():
     page.show()
 
 
+def shop_demo():
+    page = DSLPage().load(os.path.join(PAGES_DIR, "shop.json"))
+
+    shop_items = {
+        "item_0": {"name": "生命药水", "price": 50},
+        "item_1": {"name": "魔法卷轴", "price": 80},
+        "item_2": {"name": "火焰剑", "price": 200},
+        "item_3": {"name": "护身符", "price": 150},
+        "item_4": {"name": "经验丹", "price": 120},
+    }
+
+    def on_close():
+        page.unload()
+        sys.exit(0)
+
+    page.on("on_close", on_close)
+    page.show()
+
+
+DEMOS = {
+    "inventory": inventory_demo,
+    "settings": settings_demo,
+    "shop": shop_demo,
+}
+
 if __name__ == "__main__":
-    demo = sys.argv[1] if len(sys.argv) > 1 else "inventory"
-    if demo == "settings":
-        settings_demo()
-    else:
-        inventory_demo()
+    name = sys.argv[1] if len(sys.argv) > 1 else "inventory"
+    demo_fn = DEMOS.get(name)
+    if not demo_fn:
+        print(f"可用 demo: {', '.join(DEMOS.keys())}")
+        sys.exit(1)
+    demo_fn()

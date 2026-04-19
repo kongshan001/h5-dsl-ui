@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>设置</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 500px; height: 400px;
+      background-color: #1a1a2e;
+      font-family: "Microsoft YaHei", sans-serif;
+      display: flex; flex-direction: column;
+      padding: 20px; gap: 12px;
+    }
+
+    .title {
+      color: #FFFFFF;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .row {
+      display: flex; flex-direction: row;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .label {
+      width: 80px;
+      color: #CCCCCC;
+      font-size: 16px;
+    }
+
+    .slider {
+      width: 200px;
+    }
+
+    .input {
+      width: 200px; height: 30px;
+      background-color: #16213e;
+      color: #FFFFFF;
+      border-radius: 4px;
+      border: none;
+      padding: 0 8px;
+      font-size: 14px;
+    }
+
+    .toggle-row {
+      display: flex; flex-direction: row;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .toggle {
+      width: 48px; height: 24px;
+      background-color: #0f3460;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+    }
+    .toggle.active { background-color: #238636; }
+
+    .save-btn {
+      width: 120px; height: 36px;
+      background-color: #0f3460;
+      color: #FFFFFF;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .save-btn:hover { background-color: #1a4a8a; }
+  </style>
+</head>
+<body>
+  <h1 class="title" id="settings_title">设置</h1>
+
+  <div class="row">
+    <span class="label">音量</span>
+    <input type="range" class="slider" id="volume_slider" min="0" max="100" value="80">
+  </div>
+
+  <div class="row">
+    <span class="label">昵称</span>
+    <input type="text" class="input" id="name_input" placeholder="请输入昵称" value="Player1">
+  </div>
+
+  <div class="toggle-row">
+    <span class="label">音效</span>
+    <button class="toggle active" id="sfx_toggle"></button>
+  </div>
+
+  <div class="toggle-row">
+    <span class="label">背景音乐</span>
+    <button class="toggle active" id="bgm_toggle"></button>
+  </div>
+
+  <button class="save-btn" id="save_btn">保存</button>
+</body>
+</html>

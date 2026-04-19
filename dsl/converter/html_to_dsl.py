@@ -40,7 +40,9 @@ def _parse_inline_style(style_str):
 
 def _extract_props(tag, dsl_type):
     props = {}
-    if dsl_type == "Text":
+    if tag.name.lower() == "body":
+        pass
+    elif dsl_type == "Text":
         props["value"] = tag.get_text(strip=True)
     elif dsl_type == "Button":
         props["text"] = tag.get_text(strip=True)
@@ -62,20 +64,84 @@ def _extract_props(tag, dsl_type):
     return props
 
 
+def _parse_css_rules(css_text):
+    """解析 <style> 块中的 CSS 规则，返回 {selector: {prop: val}} 字典"""
+    rules = {}
+    for match in re.finditer(r'([^{]+)\{([^}]+)\}', css_text, re.DOTALL):
+        selectors = match.group(1).strip()
+        props_str = match.group(2).strip()
+        props = {}
+        for part in props_str.split(";"):
+            part = part.strip()
+            if ":" not in part:
+                continue
+            key, val = part.split(":", 1)
+            props[key.strip().lower()] = val.strip()
+        for sel in selectors.split(","):
+            sel = sel.strip()
+            if sel:
+                rules[sel] = props
+    return rules
+
+
+def _compute_style(tag, css_rules):
+    """合并 inline style + CSS class 规则，返回最终 computed style dict"""
+    computed = {}
+
+    # 1. 应用 class 样式（按 class 列表顺序）
+    classes = tag.get("class", [])
+    for cls in classes:
+        selector = "." + cls
+        if selector in css_rules:
+            computed.update(css_rules[selector])
+
+    # 2. 应用标签选择器样式
+    tag_selector = tag.name.lower()
+    if tag_selector in css_rules:
+        computed.update(css_rules[tag_selector])
+
+    # 3. 应用标签+class 组合选择器
+    for cls in classes:
+        combined = tag_selector + "." + cls
+        if combined in css_rules:
+            computed.update(css_rules[combined])
+
+    # 4. inline style 优先级最高，覆盖 class 样式
+    inline = tag.get("style", "")
+    if inline:
+        computed.update(_parse_inline_style(inline))
+
+    return computed
+
+
 def convert_html(html_str, mappings=None):
     soup = BeautifulSoup(html_str, "html.parser")
-    root_tag = soup.find()
+
+    # 提取 <style> 块中的 CSS 规则
+    css_rules = {}
+    for style_tag in soup.find_all("style"):
+        css_rules.update(_parse_css_rules(style_tag.string or ""))
+
+    # 找到根元素：<body> 自身，或第一个元素
+    body = soup.find("body")
+    if body:
+        root_tag = body
+    else:
+        root_tag = soup.find()
+
     if root_tag is None:
         raise ValueError("No HTML element found")
-    return _convert_node(root_tag, mappings or {})
+    return _convert_node(root_tag, mappings or {}, css_rules)
 
 
-def _convert_node(tag, mappings):
+def _convert_node(tag, mappings, css_rules):
     tag_name = tag.name.lower()
 
     # Check custom mappings first
     if tag_name in mappings:
         dsl_type = mappings[tag_name]
+    elif tag_name == "body":
+        dsl_type = "Panel"
     elif tag_name in TAG_MAP:
         dsl_type = TAG_MAP[tag_name]
     elif tag_name.startswith("x-"):
@@ -91,10 +157,9 @@ def _convert_node(tag, mappings):
         "props": _extract_props(tag, dsl_type),
     }
 
-    css_str = tag.get("style", "")
-    if css_str:
-        css_props = _parse_inline_style(css_str)
-        style = map_css_to_style(css_props)
+    computed = _compute_style(tag, css_rules)
+    if computed:
+        style = map_css_to_style(computed)
         if style:
             node["style"] = style
 
@@ -105,7 +170,7 @@ def _convert_node(tag, mappings):
     children = []
     for child in tag.children:
         if hasattr(child, "name") and child.name:
-            children.append(_convert_node(child, mappings))
+            children.append(_convert_node(child, mappings, css_rules))
     if children:
         node["children"] = children
 

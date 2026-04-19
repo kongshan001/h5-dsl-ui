@@ -3,64 +3,180 @@
   "name": "settings_page",
   "root": {
     "type": "Panel",
-    "id": "settings_bg",
-    "props": { "width": 500, "height": 400 },
+    "props": {},
     "style": {
+      "layout": "vertical",
       "bgColor": "#1a1a2e",
       "padding": 20,
-      "layout": "vertical",
       "gap": 12,
-      "align": "left"
+      "width": 500,
+      "height": 400
     },
     "children": [
       {
         "type": "Text",
-        "id": "settings_title",
-        "props": { "value": "设置" },
-        "style": { "fontSize": 24, "color": "#FFFFFF", "bold": true }
+        "props": {
+          "value": "设置"
+        },
+        "style": {
+          "color": "#FFFFFF",
+          "fontSize": 24,
+          "bold": true
+        },
+        "id": "settings_title"
       },
       {
         "type": "Panel",
-        "id": "volume_row",
-        "style": { "layout": "horizontal", "gap": 10 },
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "gap": 10
+        },
         "children": [
           {
             "type": "Text",
-            "props": { "value": "音量" },
-            "style": { "fontSize": 16, "color": "#CCCCCC", "width": 80 }
+            "props": {
+              "value": "音量"
+            },
+            "style": {
+              "color": "#CCCCCC",
+              "fontSize": 16,
+              "width": 80
+            }
           },
           {
             "type": "Slider",
-            "id": "volume_slider",
-            "props": { "min": 0, "max": 100, "value": 80 },
-            "style": { "width": 200 }
+            "props": {
+              "min": 0,
+              "max": 100,
+              "value": 80
+            },
+            "style": {
+              "width": 200
+            },
+            "id": "volume_slider"
           }
         ]
       },
       {
         "type": "Panel",
-        "id": "name_row",
-        "style": { "layout": "horizontal", "gap": 10 },
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "gap": 10
+        },
         "children": [
           {
             "type": "Text",
-            "props": { "value": "昵称" },
-            "style": { "fontSize": 16, "color": "#CCCCCC", "width": 80 }
+            "props": {
+              "value": "昵称"
+            },
+            "style": {
+              "color": "#CCCCCC",
+              "fontSize": 16,
+              "width": 80
+            }
           },
           {
             "type": "Input",
-            "id": "name_input",
-            "props": { "placeholder": "请输入昵称", "value": "Player1" },
-            "style": { "width": 200, "height": 30, "bgColor": "#16213e", "color": "#FFFFFF", "cornerRadius": 4 }
+            "props": {
+              "placeholder": "请输入昵称",
+              "value": "Player1"
+            },
+            "style": {
+              "bgColor": "#16213e",
+              "color": "#FFFFFF",
+              "fontSize": 14,
+              "cornerRadius": 4,
+              "width": 200,
+              "height": 30
+            },
+            "id": "name_input"
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "gap": 10
+        },
+        "children": [
+          {
+            "type": "Text",
+            "props": {
+              "value": "音效"
+            },
+            "style": {
+              "color": "#CCCCCC",
+              "fontSize": 16,
+              "width": 80
+            }
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": ""
+            },
+            "style": {
+              "bgColor": "#0f3460",
+              "cornerRadius": 12,
+              "width": 48,
+              "height": 24
+            },
+            "id": "sfx_toggle"
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "gap": 10
+        },
+        "children": [
+          {
+            "type": "Text",
+            "props": {
+              "value": "背景音乐"
+            },
+            "style": {
+              "color": "#CCCCCC",
+              "fontSize": 16,
+              "width": 80
+            }
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": ""
+            },
+            "style": {
+              "bgColor": "#0f3460",
+              "cornerRadius": 12,
+              "width": 48,
+              "height": 24
+            },
+            "id": "bgm_toggle"
           }
         ]
       },
       {
         "type": "Button",
-        "id": "save_btn",
-        "props": { "text": "保存" },
-        "style": { "width": 120, "height": 36, "bgColor": "#0f3460", "color": "#FFFFFF", "cornerRadius": 4 },
-        "events": { "click": "on_save" }
+        "props": {
+          "text": "保存"
+        },
+        "style": {
+          "bgColor": "#0f3460",
+          "color": "#FFFFFF",
+          "fontSize": 14,
+          "cornerRadius": 4,
+          "width": 120,
+          "height": 36
+        },
+        "id": "save_btn"
       }
     ]
   }

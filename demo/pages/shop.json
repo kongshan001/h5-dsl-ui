@@ -1,0 +1,321 @@
+{
+  "version": 1,
+  "name": "shop_page",
+  "root": {
+    "type": "Panel",
+    "props": {},
+    "style": {
+      "layout": "vertical",
+      "bgColor": "#0d1117",
+      "padding": 20,
+      "gap": 16,
+      "width": 700,
+      "height": 520
+    },
+    "children": [
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal"
+        },
+        "children": [
+          {
+            "type": "Text",
+            "props": {
+              "value": "商店"
+            },
+            "style": {
+              "color": "#58a6ff",
+              "fontSize": 22,
+              "bold": true
+            },
+            "id": "shop_title"
+          },
+          {
+            "type": "Text",
+            "props": {
+              "value": "金币: 1000"
+            },
+            "style": {
+              "color": "#f0c040",
+              "fontSize": 16
+            },
+            "id": "gold_text"
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "grid",
+          "columns": 3,
+          "gap": 12
+        },
+        "children": [
+          {
+            "type": "Button",
+            "props": {
+              "text": "生命药水恢复 50 HP50 金币"
+            },
+            "style": {
+              "layout": "vertical",
+              "bgColor": "#161b22",
+              "cornerRadius": 8,
+              "padding": 12,
+              "gap": 6,
+              "width": 200,
+              "height": 100
+            },
+            "id": "item_0",
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "生命药水"
+                },
+                "style": {
+                  "color": "#FFFFFF",
+                  "fontSize": 16,
+                  "bold": true
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "恢复 50 HP"
+                },
+                "style": {
+                  "color": "#8b949e",
+                  "fontSize": 12
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "50 金币"
+                },
+                "style": {
+                  "color": "#f0c040",
+                  "fontSize": 14
+                }
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "魔法卷轴恢复 30 MP80 金币"
+            },
+            "style": {
+              "layout": "vertical",
+              "bgColor": "#161b22",
+              "cornerRadius": 8,
+              "padding": 12,
+              "gap": 6,
+              "width": 200,
+              "height": 100
+            },
+            "id": "item_1",
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "魔法卷轴"
+                },
+                "style": {
+                  "color": "#FFFFFF",
+                  "fontSize": 16,
+                  "bold": true
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "恢复 30 MP"
+                },
+                "style": {
+                  "color": "#8b949e",
+                  "fontSize": 12
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "80 金币"
+                },
+                "style": {
+                  "color": "#f0c040",
+                  "fontSize": 14
+                }
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "火焰剑攻击 +15，火属性200 金币"
+            },
+            "style": {
+              "layout": "vertical",
+              "bgColor": "#161b22",
+              "cornerRadius": 8,
+              "padding": 12,
+              "gap": 6,
+              "width": 200,
+              "height": 100
+            },
+            "id": "item_2",
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "火焰剑"
+                },
+                "style": {
+                  "color": "#FFFFFF",
+                  "fontSize": 16,
+                  "bold": true
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "攻击 +15，火属性"
+                },
+                "style": {
+                  "color": "#8b949e",
+                  "fontSize": 12
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "200 金币"
+                },
+                "style": {
+                  "color": "#f0c040",
+                  "fontSize": 14
+                }
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "护身符防御 +8，魔抗 +5150 金币"
+            },
+            "style": {
+              "layout": "vertical",
+              "bgColor": "#161b22",
+              "cornerRadius": 8,
+              "padding": 12,
+              "gap": 6,
+              "width": 200,
+              "height": 100
+            },
+            "id": "item_3",
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "护身符"
+                },
+                "style": {
+                  "color": "#FFFFFF",
+                  "fontSize": 16,
+                  "bold": true
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "防御 +8，魔抗 +5"
+                },
+                "style": {
+                  "color": "#8b949e",
+                  "fontSize": 12
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "150 金币"
+                },
+                "style": {
+                  "color": "#f0c040",
+                  "fontSize": 14
+                }
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "经验丹获得 500 经验120 金币"
+            },
+            "style": {
+              "layout": "vertical",
+              "bgColor": "#161b22",
+              "cornerRadius": 8,
+              "padding": 12,
+              "gap": 6,
+              "width": 200,
+              "height": 100
+            },
+            "id": "item_4",
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "经验丹"
+                },
+                "style": {
+                  "color": "#FFFFFF",
+                  "fontSize": 16,
+                  "bold": true
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "获得 500 经验"
+                },
+                "style": {
+                  "color": "#8b949e",
+                  "fontSize": 12
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "120 金币"
+                },
+                "style": {
+                  "color": "#f0c040",
+                  "fontSize": 14
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "props": {
+          "text": "关闭"
+        },
+        "style": {
+          "bgColor": "#21262d",
+          "color": "#8b949e",
+          "fontSize": 14,
+          "cornerRadius": 4,
+          "width": 120,
+          "height": 36
+        },
+        "id": "close_btn"
+      }
+    ]
+  }
+}

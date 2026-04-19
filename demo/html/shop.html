@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>商店</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 700px; height: 520px;
+      background-color: #0d1117;
+      font-family: "Microsoft YaHei", sans-serif;
+      display: flex; flex-direction: column;
+      padding: 20px; gap: 16px;
+    }
+
+    .header {
+      display: flex; flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title {
+      color: #58a6ff;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .gold {
+      color: #f0c040;
+      font-size: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .item {
+      width: 200px; height: 100px;
+      background-color: #161b22;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex; flex-direction: column;
+      gap: 6px;
+      border: none;
+      cursor: pointer;
+    }
+    .item:hover { background-color: #1c2333; }
+
+    .item-name {
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .item-desc {
+      color: #8b949e;
+      font-size: 12px;
+    }
+
+    .item-price {
+      color: #f0c040;
+      font-size: 14px;
+    }
+
+    .item-green  { border-left: 3px solid #238636; }
+    .item-blue   { border-left: 3px solid #1f6feb; }
+    .item-red    { border-left: 3px solid #da3633; }
+    .item-purple { border-left: 3px solid #8b5cf6; }
+    .item-orange { border-left: 3px solid #d29922; }
+
+    .close-btn {
+      width: 120px; height: 36px;
+      background-color: #21262d;
+      color: #8b949e;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .close-btn:hover { background-color: #30363d; color: #FFFFFF; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1 class="title" id="shop_title">商店</h1>
+    <span class="gold" id="gold_text">金币: 1000</span>
+  </div>
+
+  <div class="grid">
+    <button class="item item-green" id="item_0">
+      <span class="item-name">生命药水</span>
+      <span class="item-desc">恢复 50 HP</span>
+      <span class="item-price">50 金币</span>
+    </button>
+    <button class="item item-blue" id="item_1">
+      <span class="item-name">魔法卷轴</span>
+      <span class="item-desc">恢复 30 MP</span>
+      <span class="item-price">80 金币</span>
+    </button>
+    <button class="item item-red" id="item_2">
+      <span class="item-name">火焰剑</span>
+      <span class="item-desc">攻击 +15，火属性</span>
+      <span class="item-price">200 金币</span>
+    </button>
+    <button class="item item-purple" id="item_3">
+      <span class="item-name">护身符</span>
+      <span class="item-desc">防御 +8，魔抗 +5</span>
+      <span class="item-price">150 金币</span>
+    </button>
+    <button class="item item-orange" id="item_4">
+      <span class="item-name">经验丹</span>
+      <span class="item-desc">获得 500 经验</span>
+      <span class="item-price">120 金币</span>
+    </button>
+  </div>
+
+  <button class="close-btn" id="close_btn">关闭</button>
+</body>
+</html>

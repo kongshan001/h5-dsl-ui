@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "name": "inventory_page",
+  "root": {
+    "type": "Panel",
+    "id": "inventory_bg",
+    "props": {
+      "width": 820,
+      "height": 620,
+      "title": "背包"
+    },
+    "style": {
+      "bgColor": "#1a1a2e",
+      "padding": 20,
+      "layout": "vertical",
+      "gap": 12,
+      "align": "center"
+    },
+    "children": [
+      {
+        "type": "Text",
+        "id": "title",
+        "props": { "value": "背包 (0/20)" },
+        "style": { "fontSize": 24, "color": "#FFFFFF", "bold": true }
+      },
+      {
+        "type": "GridView",
+        "id": "item_grid",
+        "props": { "columns": 4, "rows": 5 },
+        "style": { "gap": 8 },
+        "children": [
+          {
+            "type": "Button",
+            "id": "slot_0",
+            "props": { "text": "木剑" },
+            "style": { "width": 120, "height": 60, "bgColor": "#16213e", "color": "#e0e0e0", "cornerRadius": 4 },
+            "events": { "click": "on_slot_click" }
+          },
+          {
+            "type": "Button",
+            "id": "slot_1",
+            "props": { "text": "药水x3" },
+            "style": { "width": 120, "height": 60, "bgColor": "#16213e", "color": "#e0e0e0", "cornerRadius": 4 },
+            "events": { "click": "on_slot_click" }
+          },
+          {
+            "type": "Button",
+            "id": "slot_2",
+            "props": { "text": "" },
+            "style": { "width": 120, "height": 60, "bgColor": "#0f3460", "color": "#555555", "cornerRadius": 4 }
+          },
+          {
+            "type": "Button",
+            "id": "slot_3",
+            "props": { "text": "" },
+            "style": { "width": 120, "height": 60, "bgColor": "#0f3460", "color": "#555555", "cornerRadius": 4 }
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "id": "detail_panel",
+        "props": { "width": 520, "height": 80 },
+        "style": { "bgColor": "#16213e", "padding": 10, "layout": "horizontal", "gap": 12, "cornerRadius": 6 },
+        "children": [
+          {
+            "type": "Text",
+            "id": "detail_text",
+            "props": { "value": "选择一个物品查看详情..." },
+            "style": { "fontSize": 14, "color": "#a0a0a0" }
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "id": "close_btn",
+        "props": { "text": "关闭" },
+        "style": { "width": 120, "height": 36, "bgColor": "#e94560", "color": "#FFFFFF", "fontSize": 14, "cornerRadius": 4 },
+        "events": { "click": "on_close" }
+      }
+    ]
+  }
+}

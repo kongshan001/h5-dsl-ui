@@ -1,0 +1,26 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - heading "商店" [level=1] [ref=e3]
+    - generic [ref=e4]: "金币: 1000"
+  - generic [ref=e5]:
+    - button "生命药水 恢复 50 HP 50 金币" [ref=e6] [cursor=pointer]:
+      - generic [ref=e7]: 生命药水
+      - generic [ref=e8]: 恢复 50 HP
+      - generic [ref=e9]: 50 金币
+    - button "魔法卷轴 恢复 30 MP 80 金币" [ref=e10] [cursor=pointer]:
+      - generic [ref=e11]: 魔法卷轴
+      - generic [ref=e12]: 恢复 30 MP
+      - generic [ref=e13]: 80 金币
+    - button "火焰剑 攻击 +15，火属性 200 金币" [ref=e14] [cursor=pointer]:
+      - generic [ref=e15]: 火焰剑
+      - generic [ref=e16]: 攻击 +15，火属性
+      - generic [ref=e17]: 200 金币
+    - button "护身符 防御 +8，魔抗 +5 150 金币" [ref=e18] [cursor=pointer]:
+      - generic [ref=e19]: 护身符
+      - generic [ref=e20]: 防御 +8，魔抗 +5
+      - generic [ref=e21]: 150 金币
+    - button "经验丹 获得 500 经验 120 金币" [ref=e22] [cursor=pointer]:
+      - generic [ref=e23]: 经验丹
+      - generic [ref=e24]: 获得 500 经验
+      - generic [ref=e25]: 120 金币
+  - button "关闭" [ref=e26] [cursor=pointer]

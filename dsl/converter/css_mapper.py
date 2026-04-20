@@ -16,6 +16,13 @@ CSS_TO_DSL = {
     "border-color": "borderColor",
     "border-width": "borderWidth",
     "letter-spacing": "letterSpacing",
+    "text-align": "textAlign",
+    "justify-content": "justifyContent",
+    "align-items": "alignItems",
+    "border-bottom": "borderBottom",
+    "border-top": "borderTop",
+    "border-left": "borderLeft",
+    "border-right": "borderRight",
 }
 
 
@@ -36,6 +43,14 @@ def _parse_px(value):
     m = re.match(r"^(\d+(?:\.\d+)?)px$", value.strip())
     if m:
         return int(float(m.group(1))) if float(m.group(1)).is_integer() else float(m.group(1))
+    return None
+
+
+def _parse_pct(value):
+    """Parse percentage value like '78%' → 78"""
+    m = re.match(r"^(\d+(?:\.\d+)?)%$", value.strip())
+    if m:
+        return float(m.group(1))
     return None
 
 
@@ -69,6 +84,10 @@ def map_css_to_style(css_props):
             parsed = _parse_px(val)
             if parsed is not None:
                 result[dsl_key] = parsed
+            elif dsl_key == "width":
+                pct = _parse_pct(val)
+                if pct is not None:
+                    result["widthPercent"] = pct
         elif dsl_key == "bold":
             result[dsl_key] = val.strip().lower() in ("bold", "bolder", "700", "800", "900")
         elif dsl_key == "opacity":
@@ -80,17 +99,43 @@ def map_css_to_style(css_props):
             result["border"] = _parse_border(val)
         elif dsl_key in ("bgColor", "color", "borderColor"):
             result[dsl_key] = _parse_color(val)
+        elif dsl_key in ("borderBottom", "borderTop", "borderLeft", "borderRight"):
+            parsed = _parse_border(val)
+            if parsed:
+                result[dsl_key] = parsed
+        elif dsl_key in ("textAlign", "justifyContent", "alignItems"):
+            result[dsl_key] = val.strip()
         else:
             result[dsl_key] = val
 
+    # flex
+    flex_val = css_props.get("flex", "").strip()
+    if flex_val:
+        try:
+            fv = float(flex_val)
+            if fv > 0:
+                result["flex"] = fv
+        except ValueError:
+            if flex_val == "grow":
+                result["flex"] = 1
+
     # 解析 gradient（优先于纯色 bgColor）
+    clip = css_props.get("-webkit-background-clip", "").strip()
+    fill = css_props.get("-webkit-text-fill-color", "").strip()
+    is_text_clip = clip == "text" or fill == "transparent"
     for gkey in ("background", "background-image"):
         if gkey in css_props:
             grad = _parse_gradient(css_props[gkey])
             if grad:
-                result["gradient"] = grad
-                # gradient 存在时移除纯色 bgColor（避免冲突）
-                result.pop("bgColor", None)
+                if is_text_clip:
+                    # background-clip:text → gradient is for text fill, not background
+                    result["gradientText"] = grad
+                    # Remove solid bgColor to avoid conflict
+                    result.pop("bgColor", None)
+                else:
+                    # Normal gradient → used as background
+                    result["gradient"] = grad
+                    result.pop("bgColor", None)
                 break
 
     return result

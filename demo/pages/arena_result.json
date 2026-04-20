@@ -35,7 +35,8 @@
         "type": "Panel",
         "props": {},
         "style": {
-          "padding": 10
+          "padding": 10,
+          "textAlign": "center"
         },
         "children": [
           {
@@ -47,7 +48,7 @@
               "fontSize": 42,
               "bold": true,
               "letterSpacing": "8px",
-              "gradient": {
+              "gradientText": {
                 "type": "linear",
                 "angle": 180,
                 "stops": [
@@ -82,7 +83,8 @@
         "props": {},
         "style": {
           "layout": "horizontal",
-          "gap": 16
+          "gap": 16,
+          "justifyContent": "center"
         },
         "children": [
           {
@@ -106,7 +108,14 @@
                 "type": "Panel",
                 "props": {},
                 "style": {
-                  "layout": "horizontal"
+                  "layout": "horizontal",
+                  "justifyContent": "space-between",
+                  "alignItems": "center",
+                  "borderBottom": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#ffffff19"
+                  }
                 },
                 "children": [
                   {
@@ -140,7 +149,8 @@
                 "style": {
                   "layout": "horizontal",
                   "fontSize": 13,
-                  "gap": 8
+                  "gap": 8,
+                  "alignItems": "center"
                 },
                 "children": [
                   {
@@ -156,6 +166,8 @@
                       "cornerRadius": 12,
                       "width": 24,
                       "height": 24,
+                      "justifyContent": "center",
+                      "alignItems": "center",
                       "gradient": {
                         "type": "linear",
                         "angle": 135,
@@ -200,7 +212,8 @@
                     },
                     "style": {
                       "color": "#aaaacc",
-                      "width": 80
+                      "width": 80,
+                      "textAlign": "center"
                     }
                   },
                   {
@@ -211,7 +224,8 @@
                     "style": {
                       "color": "#ff8844",
                       "bold": true,
-                      "width": 60
+                      "width": 60,
+                      "textAlign": "right"
                     }
                   },
                   {
@@ -248,7 +262,8 @@
                 "style": {
                   "layout": "horizontal",
                   "fontSize": 13,
-                  "gap": 8
+                  "gap": 8,
+                  "alignItems": "center"
                 },
                 "children": [
                   {
@@ -264,6 +279,8 @@
                       "cornerRadius": 12,
                       "width": 24,
                       "height": 24,
+                      "justifyContent": "center",
+                      "alignItems": "center",
                       "gradient": {
                         "type": "linear",
                         "angle": 135,
@@ -308,7 +325,8 @@
                     },
                     "style": {
                       "color": "#aaaacc",
-                      "width": 80
+                      "width": 80,
+                      "textAlign": "center"
                     }
                   },
                   {
@@ -319,7 +337,8 @@
                     "style": {
                       "color": "#ff8844",
                       "bold": true,
-                      "width": 60
+                      "width": 60,
+                      "textAlign": "right"
                     }
                   }
                 ]
@@ -330,7 +349,8 @@
                 "style": {
                   "layout": "horizontal",
                   "fontSize": 13,
-                  "gap": 8
+                  "gap": 8,
+                  "alignItems": "center"
                 },
                 "children": [
                   {
@@ -346,6 +366,8 @@
                       "cornerRadius": 12,
                       "width": 24,
                       "height": 24,
+                      "justifyContent": "center",
+                      "alignItems": "center",
                       "gradient": {
                         "type": "linear",
                         "angle": 135,
@@ -390,7 +412,8 @@
                     },
                     "style": {
                       "color": "#aaaacc",
-                      "width": 80
+                      "width": 80,
+                      "textAlign": "center"
                     }
                   },
                   {
@@ -401,7 +424,8 @@
                     "style": {
                       "color": "#ff8844",
                       "bold": true,
-                      "width": 60
+                      "width": 60,
+                      "textAlign": "right"
                     }
                   }
                 ]
@@ -429,7 +453,14 @@
                 "type": "Panel",
                 "props": {},
                 "style": {
-                  "layout": "horizontal"
+                  "layout": "horizontal",
+                  "justifyContent": "space-between",
+                  "alignItems": "center",
+                  "borderBottom": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#ffffff19"
+                  }
                 },
                 "children": [
                   {
@@ -463,7 +494,8 @@
                 "style": {
                   "layout": "horizontal",
                   "fontSize": 13,
-                  "gap": 8
+                  "gap": 8,
+                  "alignItems": "center"
                 },
                 "children": [
                   {
@@ -479,6 +511,8 @@
                       "cornerRadius": 12,
                       "width": 24,
                       "height": 24,
+                      "justifyContent": "center",
+                      "alignItems": "center",
                       "gradient": {
                         "type": "linear",
                         "angle": 135,
@@ -523,7 +557,8 @@
                     },
                     "style": {
                       "color": "#aaaacc",
-                      "width": 80
+                      "width": 80,
+                      "textAlign": "center"
                     }
                   },
                   {
@@ -534,7 +569,8 @@
                     "style": {
                       "color": "#ff8844",
                       "bold": true,
-                      "width": 60
+                      "width": 60,
+                      "textAlign": "right"
                     }
                   }
                 ]
@@ -545,7 +581,8 @@
                 "style": {
                   "layout": "horizontal",
                   "fontSize": 13,
-                  "gap": 8
+                  "gap": 8,
+                  "alignItems": "center"
                 },
                 "children": [
                   {
@@ -561,6 +598,8 @@
                       "cornerRadius": 12,
                       "width": 24,
                       "height": 24,
+                      "justifyContent": "center",
+                      "alignItems": "center",
                       "gradient": {
                         "type": "linear",
                         "angle": 135,
@@ -605,7 +644,8 @@
                     },
                     "style": {
                       "color": "#aaaacc",
-                      "width": 80
+                      "width": 80,
+                      "textAlign": "center"
                     }
                   },
                   {
@@ -616,7 +656,8 @@
                     "style": {
                       "color": "#ff8844",
                       "bold": true,
-                      "width": 60
+                      "width": 60,
+                      "textAlign": "right"
                     }
                   }
                 ]
@@ -627,7 +668,8 @@
                 "style": {
                   "layout": "horizontal",
                   "fontSize": 13,
-                  "gap": 8
+                  "gap": 8,
+                  "alignItems": "center"
                 },
                 "children": [
                   {
@@ -643,6 +685,8 @@
                       "cornerRadius": 12,
                       "width": 24,
                       "height": 24,
+                      "justifyContent": "center",
+                      "alignItems": "center",
                       "gradient": {
                         "type": "linear",
                         "angle": 135,
@@ -687,7 +731,8 @@
                     },
                     "style": {
                       "color": "#aaaacc",
-                      "width": 80
+                      "width": 80,
+                      "textAlign": "center"
                     }
                   },
                   {
@@ -698,7 +743,8 @@
                     "style": {
                       "color": "#ff8844",
                       "bold": true,
-                      "width": 60
+                      "width": 60,
+                      "textAlign": "right"
                     }
                   }
                 ]
@@ -714,12 +760,16 @@
           "layout": "horizontal",
           "bgColor": "#ffffff07",
           "cornerRadius": 6,
-          "padding": 10
+          "padding": 10,
+          "justifyContent": "space-around"
         },
         "children": [
           {
             "type": "Panel",
             "props": {},
+            "style": {
+              "textAlign": "center"
+            },
             "children": [
               {
                 "type": "Text",
@@ -748,6 +798,9 @@
           {
             "type": "Panel",
             "props": {},
+            "style": {
+              "textAlign": "center"
+            },
             "children": [
               {
                 "type": "Text",
@@ -776,6 +829,9 @@
           {
             "type": "Panel",
             "props": {},
+            "style": {
+              "textAlign": "center"
+            },
             "children": [
               {
                 "type": "Text",
@@ -804,6 +860,9 @@
           {
             "type": "Panel",
             "props": {},
+            "style": {
+              "textAlign": "center"
+            },
             "children": [
               {
                 "type": "Text",
@@ -836,7 +895,8 @@
         "props": {},
         "style": {
           "layout": "horizontal",
-          "gap": 12
+          "gap": 12,
+          "justifyContent": "center"
         },
         "children": [
           {

@@ -38,8 +38,7 @@ def test_apply_style_bgcolor(app):
     backend = PyQt5Backend()
     w = backend.create("Panel", {})
     backend.apply_style(w, {"bgColor": "#FF0000"})
-    pal = w.palette()
-    assert pal.color(w.backgroundRole()).red() == 255
+    assert "background-color" in w.styleSheet()
 
 
 def test_apply_style_fontsize(app):

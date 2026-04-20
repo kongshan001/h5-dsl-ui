@@ -1,0 +1,26 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]: 冒 险 岛
+  - generic [ref=e3]:
+    - generic [ref=e4]: ☁️
+    - generic [ref=e5]: ☁️
+    - generic [ref=e6]: ☁️
+  - generic [ref=e7]: 🐉
+  - generic [ref=e8]:
+    - button "开始冒险" [ref=e9] [cursor=pointer]
+    - button "每日任务" [ref=e10] [cursor=pointer]
+    - button "神秘商店" [ref=e11] [cursor=pointer]
+    - button "图鉴收集" [ref=e12] [cursor=pointer]
+  - generic [ref=e13]:
+    - button "📬 邮件" [ref=e14] [cursor=pointer]:
+      - generic [ref=e15]: 📬
+      - generic [ref=e16]: 邮件
+    - button "👥 好友" [ref=e17] [cursor=pointer]:
+      - generic [ref=e18]: 👥
+      - generic [ref=e19]: 好友
+    - button "🏆 排行" [ref=e20] [cursor=pointer]:
+      - generic [ref=e21]: 🏆
+      - generic [ref=e22]: 排行
+    - button "⚙️ 设置" [ref=e23] [cursor=pointer]:
+      - generic [ref=e24]: ⚙️
+      - generic [ref=e25]: 设置
+  - generic [ref=e26]: v1.2.0

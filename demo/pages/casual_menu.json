@@ -9,6 +9,7 @@
       "gap": 16,
       "width": 480,
       "height": 640,
+      "alignItems": "center",
       "gradient": {
         "type": "linear",
         "angle": 180,
@@ -71,7 +72,8 @@
         "style": {
           "layout": "horizontal",
           "width": 400,
-          "height": 60
+          "height": 60,
+          "justifyContent": "space-around"
         },
         "children": [
           {
@@ -265,7 +267,8 @@
         "props": {},
         "style": {
           "layout": "horizontal",
-          "gap": 20
+          "gap": 20,
+          "justifyContent": "center"
         },
         "children": [
           {
@@ -284,7 +287,9 @@
                 "width": 2,
                 "style": "solid",
                 "color": "#fff"
-              }
+              },
+              "justifyContent": "center",
+              "alignItems": "center"
             },
             "id": "btn_mail",
             "children": [
@@ -323,7 +328,9 @@
                 "width": 2,
                 "style": "solid",
                 "color": "#fff"
-              }
+              },
+              "justifyContent": "center",
+              "alignItems": "center"
             },
             "id": "btn_friend",
             "children": [
@@ -362,7 +369,9 @@
                 "width": 2,
                 "style": "solid",
                 "color": "#fff"
-              }
+              },
+              "justifyContent": "center",
+              "alignItems": "center"
             },
             "id": "btn_rank",
             "children": [
@@ -401,7 +410,9 @@
                 "width": 2,
                 "style": "solid",
                 "color": "#fff"
-              }
+              },
+              "justifyContent": "center",
+              "alignItems": "center"
             },
             "id": "btn_setting",
             "children": [

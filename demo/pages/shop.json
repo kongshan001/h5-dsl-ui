@@ -17,7 +17,9 @@
         "type": "Panel",
         "props": {},
         "style": {
-          "layout": "horizontal"
+          "layout": "horizontal",
+          "justifyContent": "space-between",
+          "alignItems": "center"
         },
         "children": [
           {
@@ -67,7 +69,12 @@
               "gap": 6,
               "width": 200,
               "height": 100,
-              "border": {}
+              "border": {},
+              "borderLeft": {
+                "width": 3,
+                "style": "solid",
+                "color": "#238636"
+              }
             },
             "id": "item_0",
             "children": [
@@ -117,7 +124,12 @@
               "gap": 6,
               "width": 200,
               "height": 100,
-              "border": {}
+              "border": {},
+              "borderLeft": {
+                "width": 3,
+                "style": "solid",
+                "color": "#1f6feb"
+              }
             },
             "id": "item_1",
             "children": [
@@ -167,7 +179,12 @@
               "gap": 6,
               "width": 200,
               "height": 100,
-              "border": {}
+              "border": {},
+              "borderLeft": {
+                "width": 3,
+                "style": "solid",
+                "color": "#da3633"
+              }
             },
             "id": "item_2",
             "children": [
@@ -217,7 +234,12 @@
               "gap": 6,
               "width": 200,
               "height": 100,
-              "border": {}
+              "border": {},
+              "borderLeft": {
+                "width": 3,
+                "style": "solid",
+                "color": "#8b5cf6"
+              }
             },
             "id": "item_3",
             "children": [
@@ -267,7 +289,12 @@
               "gap": 6,
               "width": 200,
               "height": 100,
-              "border": {}
+              "border": {},
+              "borderLeft": {
+                "width": 3,
+                "style": "solid",
+                "color": "#d29922"
+              }
             },
             "id": "item_4",
             "children": [

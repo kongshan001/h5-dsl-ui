@@ -1,0 +1,60 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]: "[ 指挥中心 ]"
+    - generic [ref=e4]: "STATUS: ■ ONLINE | SECTOR: A-7"
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]: // 舰船状态
+      - generic [ref=e9]:
+        - generic [ref=e10]: 舰体完整度
+        - generic [ref=e11]: 87%
+      - generic [ref=e15]:
+        - generic [ref=e16]: 燃料储备
+        - generic [ref=e17]: 38%
+      - generic [ref=e20]:
+        - generic [ref=e21]: 护盾功率
+        - generic [ref=e22]: 720 MW
+      - generic [ref=e23]:
+        - generic [ref=e24]: 武器系统
+        - generic [ref=e25]: 就绪
+      - generic [ref=e26]:
+        - generic [ref=e27]: 引擎推力
+        - generic [ref=e28]: 82%
+      - generic [ref=e29]: // 船员
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e33]: 指挥官
+          - generic [ref=e34]: HP 100%
+        - generic [ref=e35]:
+          - generic [ref=e37]: 工程师
+          - generic [ref=e38]: HP 92%
+        - generic [ref=e39]:
+          - generic [ref=e41]: 医疗官
+          - generic [ref=e42]: HP 61%
+        - generic [ref=e43]:
+          - generic [ref=e45]: 导航员
+          - generic [ref=e46]: HP 24%
+    - generic [ref=e48]: // 区域地图 A-7
+    - generic [ref=e98]:
+      - generic [ref=e99]: // 系统日志
+      - generic [ref=e100]:
+        - generic [ref=e101]: "[14:32:01] 扫描完毕，发现 3 个敌对目标"
+        - generic [ref=e102]: "[14:31:45] 航线校正完成"
+        - generic [ref=e103]: "[14:31:20] 燃料低于 40%，建议补给"
+        - generic [ref=e104]: "[14:30:55] 友方舰船进入通讯范围"
+        - generic [ref=e105]: "[14:30:12] 导航员受伤，效率降低"
+        - generic [ref=e106]: "[14:29:30] 进入 A-7 区域"
+      - generic [ref=e107]: // 任务目标
+      - generic [ref=e108]:
+        - generic [ref=e109]:
+          - generic [ref=e110]: 主线
+          - generic [ref=e111]: 夺取补给站
+        - generic [ref=e112]:
+          - generic [ref=e113]: 支线
+          - generic [ref=e114]: 营救被困船员
+  - generic [ref=e115]:
+    - button "扫描" [ref=e116] [cursor=pointer]
+    - button "移动" [ref=e117] [cursor=pointer]
+    - button "攻击" [ref=e118] [cursor=pointer]
+    - button "通讯" [ref=e119] [cursor=pointer]
+    - button "撤退" [ref=e120] [cursor=pointer]

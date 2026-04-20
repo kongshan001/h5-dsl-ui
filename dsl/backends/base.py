@@ -23,7 +23,16 @@ class UIBackend(ABC):
         """Add child widget to parent layout."""
         ...
 
+    def add_child_with_stretch(self, parent_layout, child, fill_stretch, empty_stretch):
+        """Add child with stretch factors for percentage-width elements."""
+        ...
+
     @abstractmethod
     def bind_event(self, widget, event_type, handler):
         """Bind an event handler to widget."""
         ...
+
+    def add_stretch(self, layout):
+        """Add stretch space to layout for justify-content effects."""
+        if layout is not None:
+            layout.addStretch()

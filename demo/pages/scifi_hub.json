@@ -48,7 +48,14 @@
         "type": "Panel",
         "props": {},
         "style": {
-          "layout": "horizontal"
+          "layout": "horizontal",
+          "justifyContent": "space-between",
+          "alignItems": "center",
+          "borderBottom": {
+            "width": 1,
+            "style": "solid",
+            "color": "#00ffc84c"
+          }
         },
         "children": [
           {
@@ -96,7 +103,8 @@
         "props": {},
         "style": {
           "layout": "horizontal",
-          "gap": 12
+          "gap": 12,
+          "flex": 1.0
         },
         "children": [
           {
@@ -124,7 +132,12 @@
                 "style": {
                   "color": "#4a7a6a",
                   "fontSize": 11,
-                  "letterSpacing": "2px"
+                  "letterSpacing": "2px",
+                  "borderBottom": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#00ffc826"
+                  }
                 }
               },
               {
@@ -136,7 +149,8 @@
                     "props": {},
                     "style": {
                       "layout": "horizontal",
-                      "fontSize": 12
+                      "fontSize": 12,
+                      "justifyContent": "space-between"
                     },
                     "children": [
                       {
@@ -179,6 +193,7 @@
                         "props": {},
                         "style": {
                           "cornerRadius": 0,
+                          "widthPercent": 72.0,
                           "height": 6,
                           "gradient": {
                             "type": "linear",
@@ -209,7 +224,8 @@
                     "props": {},
                     "style": {
                       "layout": "horizontal",
-                      "fontSize": 12
+                      "fontSize": 12,
+                      "justifyContent": "space-between"
                     },
                     "children": [
                       {
@@ -252,6 +268,7 @@
                         "props": {},
                         "style": {
                           "cornerRadius": 0,
+                          "widthPercent": 38.0,
                           "height": 6,
                           "gradient": {
                             "type": "linear",
@@ -278,7 +295,8 @@
                 "props": {},
                 "style": {
                   "layout": "horizontal",
-                  "fontSize": 12
+                  "fontSize": 12,
+                  "justifyContent": "space-between"
                 },
                 "children": [
                   {
@@ -306,7 +324,8 @@
                 "props": {},
                 "style": {
                   "layout": "horizontal",
-                  "fontSize": 12
+                  "fontSize": 12,
+                  "justifyContent": "space-between"
                 },
                 "children": [
                   {
@@ -334,7 +353,8 @@
                 "props": {},
                 "style": {
                   "layout": "horizontal",
-                  "fontSize": 12
+                  "fontSize": 12,
+                  "justifyContent": "space-between"
                 },
                 "children": [
                   {
@@ -365,7 +385,12 @@
                 "style": {
                   "color": "#4a7a6a",
                   "fontSize": 11,
-                  "letterSpacing": "2px"
+                  "letterSpacing": "2px",
+                  "borderBottom": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#00ffc826"
+                  }
                 }
               },
               {
@@ -390,7 +415,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc819"
-                      }
+                      },
+                      "alignItems": "center"
                     },
                     "children": [
                       {
@@ -410,7 +436,8 @@
                           "value": "指挥官"
                         },
                         "style": {
-                          "color": "#00ffc8"
+                          "color": "#00ffc8",
+                          "flex": 1.0
                         }
                       },
                       {
@@ -438,7 +465,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc819"
-                      }
+                      },
+                      "alignItems": "center"
                     },
                     "children": [
                       {
@@ -458,7 +486,8 @@
                           "value": "工程师"
                         },
                         "style": {
-                          "color": "#00ffc8"
+                          "color": "#00ffc8",
+                          "flex": 1.0
                         }
                       },
                       {
@@ -486,7 +515,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc819"
-                      }
+                      },
+                      "alignItems": "center"
                     },
                     "children": [
                       {
@@ -506,7 +536,8 @@
                           "value": "医疗官"
                         },
                         "style": {
-                          "color": "#00ffc8"
+                          "color": "#00ffc8",
+                          "flex": 1.0
                         }
                       },
                       {
@@ -534,7 +565,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc819"
-                      }
+                      },
+                      "alignItems": "center"
                     },
                     "children": [
                       {
@@ -554,7 +586,8 @@
                           "value": "导航员"
                         },
                         "style": {
-                          "color": "#00ffc8"
+                          "color": "#00ffc8",
+                          "flex": 1.0
                         }
                       },
                       {
@@ -585,7 +618,8 @@
                 "width": 1,
                 "style": "solid",
                 "color": "#00ffc833"
-              }
+              },
+              "flex": 1.0
             },
             "children": [
               {
@@ -596,7 +630,12 @@
                 "style": {
                   "color": "#4a7a6a",
                   "fontSize": 11,
-                  "letterSpacing": "2px"
+                  "letterSpacing": "2px",
+                  "borderBottom": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#00ffc826"
+                  }
                 }
               },
               {
@@ -605,7 +644,8 @@
                 "style": {
                   "layout": "grid",
                   "columns": 8,
-                  "gap": 2
+                  "gap": 2,
+                  "flex": 1.0
                 },
                 "children": [
                   {
@@ -1261,7 +1301,12 @@
                 "style": {
                   "color": "#4a7a6a",
                   "fontSize": 11,
-                  "letterSpacing": "2px"
+                  "letterSpacing": "2px",
+                  "borderBottom": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#00ffc826"
+                  }
                 }
               },
               {
@@ -1269,7 +1314,8 @@
                 "props": {},
                 "style": {
                   "layout": "vertical",
-                  "gap": 3
+                  "gap": 3,
+                  "flex": 1.0
                 },
                 "children": [
                   {
@@ -1396,7 +1442,12 @@
                 "style": {
                   "color": "#4a7a6a",
                   "fontSize": 11,
-                  "letterSpacing": "2px"
+                  "letterSpacing": "2px",
+                  "borderBottom": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#00ffc826"
+                  }
                 }
               },
               {
@@ -1408,7 +1459,8 @@
                     "props": {},
                     "style": {
                       "layout": "horizontal",
-                      "fontSize": 12
+                      "fontSize": 12,
+                      "justifyContent": "space-between"
                     },
                     "children": [
                       {
@@ -1436,7 +1488,8 @@
                     "props": {},
                     "style": {
                       "layout": "horizontal",
-                      "fontSize": 12
+                      "fontSize": 12,
+                      "justifyContent": "space-between"
                     },
                     "children": [
                       {
@@ -1470,7 +1523,13 @@
         "props": {},
         "style": {
           "layout": "horizontal",
-          "gap": 8
+          "gap": 8,
+          "justifyContent": "center",
+          "borderTop": {
+            "width": 1,
+            "style": "solid",
+            "color": "#00ffc826"
+          }
         },
         "children": [
           {

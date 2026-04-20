@@ -30,7 +30,8 @@
         "props": {},
         "style": {
           "layout": "horizontal",
-          "gap": 10
+          "gap": 10,
+          "alignItems": "center"
         },
         "children": [
           {
@@ -63,7 +64,8 @@
         "props": {},
         "style": {
           "layout": "horizontal",
-          "gap": 10
+          "gap": 10,
+          "alignItems": "center"
         },
         "children": [
           {
@@ -101,7 +103,8 @@
         "props": {},
         "style": {
           "layout": "horizontal",
-          "gap": 10
+          "gap": 10,
+          "alignItems": "center"
         },
         "children": [
           {
@@ -136,7 +139,8 @@
         "props": {},
         "style": {
           "layout": "horizontal",
-          "gap": 10
+          "gap": 10,
+          "alignItems": "center"
         },
         "children": [
           {

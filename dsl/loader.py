@@ -15,10 +15,11 @@ class DSLPage:
     def load(self, dsl_path):
         from PyQt5.QtWidgets import QApplication
         self._app = QApplication.instance() or QApplication([])
+        self._app.setStyle('Fusion')
         with open(dsl_path, "r", encoding="utf-8") as f:
             data = json.load(f)
         validate_dsl(data)
-        self.root = self._build(data["root"])
+        self.root = self._build(data["root"], {})
         return self
 
     def on(self, event_name, callback):
@@ -38,10 +39,17 @@ class DSLPage:
         self.root.show()
         self._app.exec_()
 
-    def _build(self, node):
+    def _build(self, node, parent_style):
         type_name = node["type"]
         props = node.get("props", {})
-        style = node.get("style", {})
+        style = dict(node.get("style", {}))
+
+        # Inherit color from parent if not explicitly set
+        if "color" not in style and "color" in parent_style:
+            style["color"] = parent_style["color"]
+        # Inherit fontSize from parent if not explicitly set
+        if "fontSize" not in style and "fontSize" in parent_style:
+            style["fontSize"] = parent_style["fontSize"]
 
         widget = self._backend.create(type_name, props)
 
@@ -53,22 +61,53 @@ class DSLPage:
 
         self._backend.apply_style(widget, style)
 
+        if "flex" in style and style["flex"] > 0:
+            widget._flex = style["flex"]
+
         layout = self._backend.create_layout(style)
+        children_data = node.get("children", [])
+        is_grid = type_name == "GridView" or style.get("layout") == "grid"
+
+        # Auto-create vertical layout for containers with children but no explicit layout
+        if layout is None and not is_grid and children_data:
+            layout = self._backend.create_layout({"layout": "vertical"})
+
         if layout is not None:
             widget.setLayout(layout)
 
         children_data = node.get("children", [])
-        if type_name == "GridView":
+        jc = style.get("justifyContent", "")
+
+        if is_grid:
+            if layout is None:
+                from PyQt5.QtWidgets import QGridLayout
+                layout = QGridLayout()
+                widget.setLayout(layout)
             grid_layout = widget.layout()
-            cols = props.get("columns", 1)
+            if "gap" in style:
+                grid_layout.setSpacing(style["gap"])
+            cols = style.get("columns", props.get("columns", 1))
             for idx, child_data in enumerate(children_data):
-                child = self._build(child_data)
+                child = self._build(child_data, style)
                 row, col = divmod(idx, cols)
                 self._backend.add_grid_child(grid_layout, child, row, col)
         else:
-            for child_data in children_data:
-                child = self._build(child_data)
-                self._backend.add_child(layout, child)
+            if jc == "space-between" and children_data:
+                for i, child_data in enumerate(children_data):
+                    child = self._build(child_data, style)
+                    if i > 0:
+                        self._backend.add_stretch(layout)
+                    self._add_child_flex(layout, child)
+            elif jc == "space-around" and children_data:
+                self._backend.add_stretch(layout)
+                for i, child_data in enumerate(children_data):
+                    child = self._build(child_data, style)
+                    self._add_child_flex(layout, child)
+                    self._backend.add_stretch(layout)
+            else:
+                for child_data in children_data:
+                    child = self._build(child_data, style)
+                    self._add_child_flex(layout, child)
 
         for event_type, event_name in node.get("events", {}).items():
             wid = widget._dsl_id
@@ -78,6 +117,16 @@ class DSLPage:
             )
 
         return widget
+
+    def _add_child_flex(self, layout, child):
+        wp = getattr(child, '_width_percent', 0)
+        flex = getattr(child, '_flex', 0)
+        if wp > 0:
+            self._backend.add_child_with_stretch(layout, child, int(wp), 100 - int(wp))
+        elif flex > 0:
+            self._backend.add_child_with_stretch(layout, child, int(flex * 100), 0)
+        else:
+            self._backend.add_child(layout, child)
 
     def _dispatch(self, event_name, widget_id):
         if event_name not in self._events:

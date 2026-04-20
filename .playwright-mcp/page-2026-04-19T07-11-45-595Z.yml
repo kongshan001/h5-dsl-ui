@@ -1,0 +1,15 @@
+- generic [active] [ref=e1]:
+  - heading "设置" [level=1] [ref=e2]
+  - generic [ref=e3]:
+    - generic [ref=e4]: 音量
+    - slider [ref=e5]: "80"
+  - generic [ref=e6]:
+    - generic [ref=e7]: 昵称
+    - textbox "请输入昵称" [ref=e8]: Player1
+  - generic [ref=e9]:
+    - generic [ref=e10]: 音效
+    - button [ref=e11] [cursor=pointer]
+  - generic [ref=e12]:
+    - generic [ref=e13]: 背景音乐
+    - button [ref=e14] [cursor=pointer]
+  - button "保存" [ref=e15] [cursor=pointer]

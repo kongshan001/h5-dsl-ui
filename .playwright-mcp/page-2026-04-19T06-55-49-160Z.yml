@@ -1,0 +1,57 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]: 角色状态
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: ⚔
+        - generic [ref=e7]: 暗影剑士
+        - generic [ref=e8]: 暗影行者 · Lv.42
+      - generic [ref=e9]: 经验 6200 / 10000
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]: 生命值 / 魔法值
+        - generic [ref=e16]:
+          - generic [ref=e17]: HP
+          - generic [ref=e18]: 780 / 1000
+        - generic [ref=e22]:
+          - generic [ref=e23]: MP
+          - generic [ref=e24]: 225 / 500
+      - generic [ref=e27]:
+        - generic [ref=e28]: 属性
+        - generic [ref=e29]:
+          - generic [ref=e30]: 攻击力
+          - generic [ref=e31]: "286"
+        - generic [ref=e32]:
+          - generic [ref=e33]: 防御力
+          - generic [ref=e34]: "142"
+        - generic [ref=e35]:
+          - generic [ref=e36]: 暴击率
+          - generic [ref=e37]: 18.5%
+        - generic [ref=e38]:
+          - generic [ref=e39]: 速度
+          - generic [ref=e40]: "127"
+      - generic [ref=e41]:
+        - generic [ref=e42]: 装备
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - generic [ref=e45]: 🗡
+            - text: 暗影之刃
+          - generic [ref=e46]:
+            - generic [ref=e47]: 🛡
+            - text: 龙鳞盾
+          - generic [ref=e48]:
+            - generic [ref=e49]: 📦
+            - text: 空
+          - generic [ref=e50]:
+            - generic [ref=e51]: 👢
+            - text: 疾风靴
+          - generic [ref=e52]:
+            - generic [ref=e53]: 📦
+            - text: 空
+          - generic [ref=e54]:
+            - generic [ref=e55]: 💍
+            - text: 灵魂指环
+  - generic [ref=e56]:
+    - button "详细属性" [ref=e57] [cursor=pointer]
+    - button "装备管理" [ref=e58] [cursor=pointer]
+    - button "关闭" [ref=e59] [cursor=pointer]

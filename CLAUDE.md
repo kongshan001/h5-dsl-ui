@@ -29,9 +29,18 @@ python3 -m pytest tests/ -k "converter" -v
 # 安装依赖
 pip3 install -r requirements.txt
 
-# 运行 demo
-python3 demo/run.py inventory
-python3 demo/run.py settings
+# 运行 demo（7 个页面）
+python3 demo/run.py inventory    # 背包
+python3 demo/run.py settings     # 设置
+python3 demo/run.py arena        # 对局结果
+python3 demo/run.py casual       # 休闲菜单
+python3 demo/run.py rpg          # RPG 角色
+python3 demo/run.py scifi        # 科幻主题
+python3 demo/run.py shop         # 商店
+
+# 截图对比
+# HTML 原图: demo/html_screenshots/
+# PyQt5 渲染: demo/screenshots_pyqt5/
 ```
 
 ## 架构
@@ -41,25 +50,53 @@ python3 demo/run.py settings
 **核心模块：**
 - `dsl/schema.py` — `validate_node()` / `validate_dsl()` 在加载前校验 DSL 结构
 - `dsl/loader.py` — `DSLPage` 是主类。`load(path)` 解析 JSON、校验、通过后端递归构建控件树。`on(event, callback)` 注册事件回调。`get(id)` 按 id 查找控件做动态更新
-- `dsl/backends/base.py` — `UIBackend` 抽象基类，5 个抽象方法：`create`、`apply_style`、`create_layout`、`add_child`、`bind_event`。对接引擎时只需实现此接口，调用引擎 Python UI API
-- `dsl/backends/pyqt5.py` — PyQt5 验证后端。额外提供 `add_grid_child()` 用于 GridView 单元格放置
-- `dsl/converter/html_to_dsl.py` — `convert_html(html, mappings)` 返回 DSL 节点树。`convert_html_to_dsl_file()` 写入磁盘。使用 BeautifulSoup 解析 HTML
-- `dsl/converter/css_mapper.py` — `map_css_to_style(css_props)` 将 CSS 键值对翻译为 DSL 样式字典。仅支持定义好的 CSS 子集
+- `dsl/backends/base.py` — `UIBackend` 抽象基类，抽象方法：`create`、`apply_style`、`create_layout`、`add_child`、`bind_event`、`add_child_with_stretch`。对接引擎时只需实现此接口
+- `dsl/backends/pyqt5.py` — PyQt5 验证后端。`GradientLabel` 子类用 QPainter 实现渐变文字（CSS `background-clip:text` 等价）
+- `dsl/converter/html_to_dsl.py` — `convert_html(html, mappings)` 返回 DSL 节点树。使用 BeautifulSoup 解析 HTML
+- `dsl/converter/css_mapper.py` — `map_css_to_style(css_props)` 将 CSS 键值对翻译为 DSL 样式字典
 
-**事件系统：** 事件在 DSL 中声明（`"events": {"click": "on_slot_click"}`），在 Python 中注册（`page.on("on_slot_click", handler)`）。`_dispatch` 通过 `inspect.signature` 自动检测回调是否接收 `widget_id` 参数。
+## PyQt5 渲染关键细节
 
-**GridView 布局：** 子控件通过 `divmod(idx, columns)` 放入网格单元格，在 loader 的 `_build()` 中特殊处理。
+这些是调试 PyQt5 高保真渲染时积累的经验，修改后端代码时必须注意：
 
-**自定义控件：** 未知 `type` 值会透传到 `backend.create()` 作为通用控件。转换器通过 `mappings` 字典映射 `<x-*>` 标签和自定义 CSS 类。
+- **必须用 Fusion 样式** — `loader.py` 中 `app.setStyle('Fusion')`。macOS 默认 `macintosh` 样式会忽略 QPushButton/QWidget 的 QSS（渐变、背景色、边框全部不渲染）
+- **QLabel 最小高度** — QLabel 在 QBoxLayout 中没有明确 height 时会被压缩到 0px，文字完全不可见。`apply_style` 中对 is_label 且无 height 的控件设 `setMinimumHeight(fontMetrics().height() + 2)`
+- **WA_StyledBackground** — QWidget 必须设 `setAttribute(Qt.WA_StyledBackground, True)` 才能渲染 QSS 背景和边框
+- **子组件透明** — 没有 bgColor/gradient 的子组件必须加 `background-color: transparent;` + `setAutoFillBackground(False)`，否则子组件会用调色板背景色覆盖父级渐变
+- **渐变文字 vs 渐变背景** — CSS `background-clip:text` + `-webkit-text-fill-color:transparent` 转为 DSL `gradientText`（GradientLabel 自定义绘制），普通 CSS `background: linear-gradient(...)` 转为 DSL `gradient`（QSS 背景）
+
+## CSS → DSL 映射要点
+
+`css_mapper.py` 支持的 CSS 特性（不在这列表里的 CSS 属性会被忽略）：
+
+- 布局：`display:flex/grid`、`flex-direction`、`justify-content`、`align-items`、`flex`、`gap`
+- 盒模型：`width`、`height`、`padding`、`border-radius`、`border`/`border-bottom`/`border-top`/`border-left`/`border-right`
+- 文字：`color`、`font-size`、`font-weight`、`letter-spacing`、`text-align`
+- 背景：`background-color`、`background`（linear-gradient 解析）、`-webkit-background-clip`、`-webkit-text-fill-color`
+- 百分比宽度：CSS `width: 78%` → DSL `widthPercent: 78`（用于进度条，PyQt5 中用 stretch 因子实现）
+
+**不支持的关键 CSS 特性**：后代选择器（`.parent .child`）、复合选择器（`.a.b`）、`box-shadow`、`min-width`/`max-width`、`position:absolute`
+
+## 事件系统
+
+事件在 DSL 中声明（`"events": {"click": "on_slot_click"}`），在 Python 中注册（`page.on("on_slot_click", handler)`）。`_dispatch` 通过 `inspect.signature` 自动检测回调是否接收 `widget_id` 参数。
+
+## 布局系统
+
+- **Flex 布局**：`layout: "vertical"/"horizontal"`，`justifyContent`（center/space-between/space-around 用 stretch 实现），`alignItems`（center/start/end 通过 `addWidget(widget, stretch, alignment)` 实现）
+- **Grid 布局**：通过 style 中 `layout: "grid"` 检测（不限 GridView 类型），`columns` 指定列数，`divmod(idx, columns)` 放置
+- **百分比宽度**：`widthPercent` 通过 `add_child_with_stretch(layout, child, fill, empty)` 实现
+- **flex: 1**：通过 stretch 因子让控件填满剩余空间
+- **自动布局**：有 children 但没有显式 layout 的容器，自动创建 vertical layout
 
 ## 设计文档
 
-- 设计规格：`docs/superpowers/specs/2026-04-19-h5-dsl-ui-design.md` — 完整 DSL schema、控件映射、事件系统
-- 实施计划：`docs/superpowers/plans/2026-04-19-h5-dsl-ui-implementation.md` — 逐步实现任务（全部已完成）
+- 设计规格：`docs/superpowers/specs/2026-04-19-h5-dsl-ui-design.md`
+- 实施计划：`docs/superpowers/plans/2026-04-19-h5-dsl-ui-implementation.md`（全部已完成）
 
 ## 约定
 
 - Python 3.9+，不强要求类型注解，保持函数签名清晰
 - DSL JSON 样式键使用 camelCase（`bgColor`、`fontSize`、`cornerRadius`），与 CSS 命名习惯一致
 - 测试使用 `tmp_path` fixture 创建临时 DSL 文件，使用 `scope="module"` 的 QApplication fixture
-- TDD：先写测试，验证红灯，实现，验证绿灯
+- 7 个 demo 页面在 `demo/html/`（HTML 源文件）和 `demo/pages/`（DSL JSON）

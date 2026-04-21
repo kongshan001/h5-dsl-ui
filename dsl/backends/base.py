@@ -32,7 +32,7 @@ class UIBackend(ABC):
         """Bind an event handler to widget."""
         ...
 
-    def add_stretch(self, layout):
+    def add_stretch(self, layout, factor=1):
         """Add stretch space to layout for justify-content effects."""
         if layout is not None:
-            layout.addStretch()
+            layout.addStretch(factor)

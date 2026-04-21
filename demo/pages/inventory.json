@@ -7,11 +7,13 @@
     "style": {
       "layout": "vertical",
       "bgColor": "#1a1a2e",
+      "fontFamily": "\"Microsoft YaHei\", sans-serif",
       "padding": 20,
       "gap": 12,
       "width": 820,
       "height": 620,
-      "alignItems": "center"
+      "alignItems": "center",
+      "boxSizing": "border-box"
     },
     "children": [
       {
@@ -22,7 +24,8 @@
         "style": {
           "color": "#FFFFFF",
           "fontSize": 24,
-          "bold": true
+          "bold": true,
+          "boxSizing": "border-box"
         },
         "id": "title"
       },
@@ -32,7 +35,8 @@
         "style": {
           "layout": "grid",
           "columns": 4,
-          "gap": 8
+          "gap": 8,
+          "boxSizing": "border-box"
         },
         "id": "item_grid",
         "children": [
@@ -48,7 +52,8 @@
               "cornerRadius": 4,
               "width": 120,
               "height": 60,
-              "border": {}
+              "border": {},
+              "boxSizing": "border-box"
             },
             "id": "slot_0"
           },
@@ -64,7 +69,8 @@
               "cornerRadius": 4,
               "width": 120,
               "height": 60,
-              "border": {}
+              "border": {},
+              "boxSizing": "border-box"
             },
             "id": "slot_1"
           },
@@ -74,13 +80,14 @@
               "text": ""
             },
             "style": {
-              "bgColor": "#16213e",
-              "color": "#e0e0e0",
+              "bgColor": "#0f3460",
+              "color": "#555555",
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
               "height": 60,
-              "border": {}
+              "border": {},
+              "boxSizing": "border-box"
             },
             "id": "slot_2"
           },
@@ -90,13 +97,14 @@
               "text": ""
             },
             "style": {
-              "bgColor": "#16213e",
-              "color": "#e0e0e0",
+              "bgColor": "#0f3460",
+              "color": "#555555",
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
               "height": 60,
-              "border": {}
+              "border": {},
+              "boxSizing": "border-box"
             },
             "id": "slot_3"
           },
@@ -106,13 +114,14 @@
               "text": ""
             },
             "style": {
-              "bgColor": "#16213e",
-              "color": "#e0e0e0",
+              "bgColor": "#0f3460",
+              "color": "#555555",
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
               "height": 60,
-              "border": {}
+              "border": {},
+              "boxSizing": "border-box"
             },
             "id": "slot_4"
           },
@@ -122,13 +131,14 @@
               "text": ""
             },
             "style": {
-              "bgColor": "#16213e",
-              "color": "#e0e0e0",
+              "bgColor": "#0f3460",
+              "color": "#555555",
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
               "height": 60,
-              "border": {}
+              "border": {},
+              "boxSizing": "border-box"
             },
             "id": "slot_5"
           },
@@ -138,13 +148,14 @@
               "text": ""
             },
             "style": {
-              "bgColor": "#16213e",
-              "color": "#e0e0e0",
+              "bgColor": "#0f3460",
+              "color": "#555555",
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
               "height": 60,
-              "border": {}
+              "border": {},
+              "boxSizing": "border-box"
             },
             "id": "slot_6"
           },
@@ -154,13 +165,14 @@
               "text": ""
             },
             "style": {
-              "bgColor": "#16213e",
-              "color": "#e0e0e0",
+              "bgColor": "#0f3460",
+              "color": "#555555",
               "fontSize": 14,
               "cornerRadius": 4,
               "width": 120,
               "height": 60,
-              "border": {}
+              "border": {},
+              "boxSizing": "border-box"
             },
             "id": "slot_7"
           }
@@ -178,13 +190,17 @@
           "padding": 10,
           "gap": 12,
           "width": 520,
-          "height": 80
+          "height": 80,
+          "boxSizing": "border-box"
         },
         "children": [
           {
             "type": "Text",
             "props": {
               "value": "选择一个物品查看详情..."
+            },
+            "style": {
+              "boxSizing": "border-box"
             },
             "id": "detail_text"
           }
@@ -202,7 +218,8 @@
           "cornerRadius": 4,
           "width": 120,
           "height": 36,
-          "border": {}
+          "border": {},
+          "boxSizing": "border-box"
         },
         "id": "close_btn"
       }

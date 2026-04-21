@@ -7,10 +7,12 @@
     "style": {
       "layout": "vertical",
       "bgColor": "#0d1117",
+      "fontFamily": "\"Microsoft YaHei\", sans-serif",
       "padding": 20,
       "gap": 16,
       "width": 700,
-      "height": 520
+      "height": 520,
+      "boxSizing": "border-box"
     },
     "children": [
       {
@@ -19,7 +21,8 @@
         "style": {
           "layout": "horizontal",
           "justifyContent": "space-between",
-          "alignItems": "center"
+          "alignItems": "center",
+          "boxSizing": "border-box"
         },
         "children": [
           {
@@ -30,7 +33,8 @@
             "style": {
               "color": "#58a6ff",
               "fontSize": 22,
-              "bold": true
+              "bold": true,
+              "boxSizing": "border-box"
             },
             "id": "shop_title"
           },
@@ -41,7 +45,8 @@
             },
             "style": {
               "color": "#f0c040",
-              "fontSize": 16
+              "fontSize": 16,
+              "boxSizing": "border-box"
             },
             "id": "gold_text"
           }
@@ -53,13 +58,14 @@
         "style": {
           "layout": "grid",
           "columns": 3,
-          "gap": 12
+          "gap": 12,
+          "boxSizing": "border-box"
         },
         "children": [
           {
             "type": "Button",
             "props": {
-              "text": "生命药水恢复 50 HP50 金币"
+              "text": ""
             },
             "style": {
               "layout": "vertical",
@@ -70,6 +76,7 @@
               "width": 200,
               "height": 100,
               "border": {},
+              "boxSizing": "border-box",
               "borderLeft": {
                 "width": 3,
                 "style": "solid",
@@ -86,7 +93,8 @@
                 "style": {
                   "color": "#FFFFFF",
                   "fontSize": 16,
-                  "bold": true
+                  "bold": true,
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -96,7 +104,8 @@
                 },
                 "style": {
                   "color": "#8b949e",
-                  "fontSize": 12
+                  "fontSize": 12,
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -106,7 +115,8 @@
                 },
                 "style": {
                   "color": "#f0c040",
-                  "fontSize": 14
+                  "fontSize": 14,
+                  "boxSizing": "border-box"
                 }
               }
             ]
@@ -114,7 +124,7 @@
           {
             "type": "Button",
             "props": {
-              "text": "魔法卷轴恢复 30 MP80 金币"
+              "text": ""
             },
             "style": {
               "layout": "vertical",
@@ -125,6 +135,7 @@
               "width": 200,
               "height": 100,
               "border": {},
+              "boxSizing": "border-box",
               "borderLeft": {
                 "width": 3,
                 "style": "solid",
@@ -141,7 +152,8 @@
                 "style": {
                   "color": "#FFFFFF",
                   "fontSize": 16,
-                  "bold": true
+                  "bold": true,
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -151,7 +163,8 @@
                 },
                 "style": {
                   "color": "#8b949e",
-                  "fontSize": 12
+                  "fontSize": 12,
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -161,7 +174,8 @@
                 },
                 "style": {
                   "color": "#f0c040",
-                  "fontSize": 14
+                  "fontSize": 14,
+                  "boxSizing": "border-box"
                 }
               }
             ]
@@ -169,7 +183,7 @@
           {
             "type": "Button",
             "props": {
-              "text": "火焰剑攻击 +15，火属性200 金币"
+              "text": ""
             },
             "style": {
               "layout": "vertical",
@@ -180,6 +194,7 @@
               "width": 200,
               "height": 100,
               "border": {},
+              "boxSizing": "border-box",
               "borderLeft": {
                 "width": 3,
                 "style": "solid",
@@ -196,7 +211,8 @@
                 "style": {
                   "color": "#FFFFFF",
                   "fontSize": 16,
-                  "bold": true
+                  "bold": true,
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -206,7 +222,8 @@
                 },
                 "style": {
                   "color": "#8b949e",
-                  "fontSize": 12
+                  "fontSize": 12,
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -216,7 +233,8 @@
                 },
                 "style": {
                   "color": "#f0c040",
-                  "fontSize": 14
+                  "fontSize": 14,
+                  "boxSizing": "border-box"
                 }
               }
             ]
@@ -224,7 +242,7 @@
           {
             "type": "Button",
             "props": {
-              "text": "护身符防御 +8，魔抗 +5150 金币"
+              "text": ""
             },
             "style": {
               "layout": "vertical",
@@ -235,6 +253,7 @@
               "width": 200,
               "height": 100,
               "border": {},
+              "boxSizing": "border-box",
               "borderLeft": {
                 "width": 3,
                 "style": "solid",
@@ -251,7 +270,8 @@
                 "style": {
                   "color": "#FFFFFF",
                   "fontSize": 16,
-                  "bold": true
+                  "bold": true,
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -261,7 +281,8 @@
                 },
                 "style": {
                   "color": "#8b949e",
-                  "fontSize": 12
+                  "fontSize": 12,
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -271,7 +292,8 @@
                 },
                 "style": {
                   "color": "#f0c040",
-                  "fontSize": 14
+                  "fontSize": 14,
+                  "boxSizing": "border-box"
                 }
               }
             ]
@@ -279,7 +301,7 @@
           {
             "type": "Button",
             "props": {
-              "text": "经验丹获得 500 经验120 金币"
+              "text": ""
             },
             "style": {
               "layout": "vertical",
@@ -290,6 +312,7 @@
               "width": 200,
               "height": 100,
               "border": {},
+              "boxSizing": "border-box",
               "borderLeft": {
                 "width": 3,
                 "style": "solid",
@@ -306,7 +329,8 @@
                 "style": {
                   "color": "#FFFFFF",
                   "fontSize": 16,
-                  "bold": true
+                  "bold": true,
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -316,7 +340,8 @@
                 },
                 "style": {
                   "color": "#8b949e",
-                  "fontSize": 12
+                  "fontSize": 12,
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -326,7 +351,8 @@
                 },
                 "style": {
                   "color": "#f0c040",
-                  "fontSize": 14
+                  "fontSize": 14,
+                  "boxSizing": "border-box"
                 }
               }
             ]
@@ -345,7 +371,8 @@
           "cornerRadius": 4,
           "width": 120,
           "height": 36,
-          "border": {}
+          "border": {},
+          "boxSizing": "border-box"
         },
         "id": "close_btn"
       }

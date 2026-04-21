@@ -7,10 +7,12 @@
     "style": {
       "layout": "vertical",
       "bgColor": "#1a1a2e",
+      "fontFamily": "\"Microsoft YaHei\", sans-serif",
       "padding": 20,
       "gap": 12,
       "width": 500,
-      "height": 400
+      "height": 400,
+      "boxSizing": "border-box"
     },
     "children": [
       {
@@ -21,7 +23,8 @@
         "style": {
           "color": "#FFFFFF",
           "fontSize": 24,
-          "bold": true
+          "bold": true,
+          "boxSizing": "border-box"
         },
         "id": "settings_title"
       },
@@ -31,7 +34,8 @@
         "style": {
           "layout": "horizontal",
           "gap": 10,
-          "alignItems": "center"
+          "alignItems": "center",
+          "boxSizing": "border-box"
         },
         "children": [
           {
@@ -42,7 +46,8 @@
             "style": {
               "color": "#CCCCCC",
               "fontSize": 16,
-              "width": 80
+              "width": 80,
+              "boxSizing": "border-box"
             }
           },
           {
@@ -53,7 +58,8 @@
               "value": 80
             },
             "style": {
-              "width": 200
+              "width": 200,
+              "boxSizing": "border-box"
             },
             "id": "volume_slider"
           }
@@ -65,7 +71,8 @@
         "style": {
           "layout": "horizontal",
           "gap": 10,
-          "alignItems": "center"
+          "alignItems": "center",
+          "boxSizing": "border-box"
         },
         "children": [
           {
@@ -76,7 +83,8 @@
             "style": {
               "color": "#CCCCCC",
               "fontSize": 16,
-              "width": 80
+              "width": 80,
+              "boxSizing": "border-box"
             }
           },
           {
@@ -92,7 +100,8 @@
               "cornerRadius": 4,
               "width": 200,
               "height": 30,
-              "border": {}
+              "border": {},
+              "boxSizing": "border-box"
             },
             "id": "name_input"
           }
@@ -104,7 +113,8 @@
         "style": {
           "layout": "horizontal",
           "gap": 10,
-          "alignItems": "center"
+          "alignItems": "center",
+          "boxSizing": "border-box"
         },
         "children": [
           {
@@ -115,7 +125,8 @@
             "style": {
               "color": "#CCCCCC",
               "fontSize": 16,
-              "width": 80
+              "width": 80,
+              "boxSizing": "border-box"
             }
           },
           {
@@ -124,11 +135,12 @@
               "text": ""
             },
             "style": {
-              "bgColor": "#0f3460",
+              "bgColor": "#238636",
               "cornerRadius": 12,
               "width": 48,
               "height": 24,
-              "border": {}
+              "border": {},
+              "boxSizing": "border-box"
             },
             "id": "sfx_toggle"
           }
@@ -140,7 +152,8 @@
         "style": {
           "layout": "horizontal",
           "gap": 10,
-          "alignItems": "center"
+          "alignItems": "center",
+          "boxSizing": "border-box"
         },
         "children": [
           {
@@ -151,7 +164,8 @@
             "style": {
               "color": "#CCCCCC",
               "fontSize": 16,
-              "width": 80
+              "width": 80,
+              "boxSizing": "border-box"
             }
           },
           {
@@ -160,11 +174,12 @@
               "text": ""
             },
             "style": {
-              "bgColor": "#0f3460",
+              "bgColor": "#238636",
               "cornerRadius": 12,
               "width": 48,
               "height": 24,
-              "border": {}
+              "border": {},
+              "boxSizing": "border-box"
             },
             "id": "bgm_toggle"
           }
@@ -182,7 +197,8 @@
           "cornerRadius": 4,
           "width": 120,
           "height": 36,
-          "border": {}
+          "border": {},
+          "boxSizing": "border-box"
         },
         "id": "save_btn"
       }

@@ -6,10 +6,16 @@
     "props": {},
     "style": {
       "layout": "vertical",
+      "fontFamily": "\"Microsoft YaHei\", sans-serif",
+      "paddingTop": 30,
+      "paddingBottom": 30,
+      "paddingLeft": 40,
+      "paddingRight": 40,
       "gap": 16,
       "width": 480,
       "height": 640,
       "alignItems": "center",
+      "boxSizing": "border-box",
       "gradient": {
         "type": "linear",
         "angle": 180,
@@ -44,12 +50,17 @@
           "fontSize": 36,
           "bold": true,
           "cornerRadius": 20,
+          "paddingTop": 12,
+          "paddingBottom": 12,
+          "paddingLeft": 24,
+          "paddingRight": 24,
           "border": {
             "width": 3,
             "style": "solid",
             "color": "#fff"
           },
-          "letterSpacing": "6px",
+          "letterSpacing": 6,
+          "boxSizing": "border-box",
           "gradient": {
             "type": "linear",
             "angle": 180,
@@ -73,7 +84,8 @@
           "layout": "horizontal",
           "width": 400,
           "height": 60,
-          "justifyContent": "space-around"
+          "justifyContent": "space-around",
+          "boxSizing": "border-box"
         },
         "children": [
           {
@@ -82,7 +94,8 @@
               "value": "☁️"
             },
             "style": {
-              "fontSize": 28
+              "fontSize": 28,
+              "boxSizing": "border-box"
             }
           },
           {
@@ -91,7 +104,8 @@
               "value": "☁️"
             },
             "style": {
-              "fontSize": 28
+              "fontSize": 28,
+              "boxSizing": "border-box"
             }
           },
           {
@@ -100,7 +114,8 @@
               "value": "☁️"
             },
             "style": {
-              "fontSize": 28
+              "fontSize": 28,
+              "boxSizing": "border-box"
             }
           }
         ]
@@ -112,7 +127,8 @@
         },
         "style": {
           "fontSize": 72,
-          "padding": 8
+          "padding": 8,
+          "boxSizing": "border-box"
         }
       },
       {
@@ -121,7 +137,8 @@
         "style": {
           "layout": "vertical",
           "gap": 12,
-          "width": 280
+          "width": 280,
+          "boxSizing": "border-box"
         },
         "children": [
           {
@@ -140,7 +157,8 @@
                 "style": "solid",
                 "color": "#fff"
               },
-              "letterSpacing": "2px",
+              "letterSpacing": 2,
+              "boxSizing": "border-box",
               "gradient": {
                 "type": "linear",
                 "angle": 180,
@@ -174,7 +192,8 @@
                 "style": "solid",
                 "color": "#fff"
               },
-              "letterSpacing": "2px",
+              "letterSpacing": 2,
+              "boxSizing": "border-box",
               "gradient": {
                 "type": "linear",
                 "angle": 180,
@@ -208,7 +227,8 @@
                 "style": "solid",
                 "color": "#fff"
               },
-              "letterSpacing": "2px",
+              "letterSpacing": 2,
+              "boxSizing": "border-box",
               "gradient": {
                 "type": "linear",
                 "angle": 180,
@@ -242,7 +262,8 @@
                 "style": "solid",
                 "color": "#fff"
               },
-              "letterSpacing": "2px",
+              "letterSpacing": 2,
+              "boxSizing": "border-box",
               "gradient": {
                 "type": "linear",
                 "angle": 180,
@@ -268,13 +289,15 @@
         "style": {
           "layout": "horizontal",
           "gap": 20,
-          "justifyContent": "center"
+          "justifyContent": "center",
+          "boxSizing": "border-box",
+          "paddingTop": 8
         },
         "children": [
           {
             "type": "Button",
             "props": {
-              "text": "📬邮件"
+              "text": ""
             },
             "style": {
               "layout": "vertical",
@@ -289,7 +312,8 @@
                 "color": "#fff"
               },
               "justifyContent": "center",
-              "alignItems": "center"
+              "alignItems": "center",
+              "boxSizing": "border-box"
             },
             "id": "btn_mail",
             "children": [
@@ -297,6 +321,9 @@
                 "type": "Text",
                 "props": {
                   "value": "📬"
+                },
+                "style": {
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -307,7 +334,8 @@
                 "style": {
                   "color": "#5d4037",
                   "fontSize": 9,
-                  "bold": true
+                  "bold": true,
+                  "boxSizing": "border-box"
                 }
               }
             ]
@@ -315,7 +343,7 @@
           {
             "type": "Button",
             "props": {
-              "text": "👥好友"
+              "text": ""
             },
             "style": {
               "layout": "vertical",
@@ -330,7 +358,8 @@
                 "color": "#fff"
               },
               "justifyContent": "center",
-              "alignItems": "center"
+              "alignItems": "center",
+              "boxSizing": "border-box"
             },
             "id": "btn_friend",
             "children": [
@@ -338,6 +367,9 @@
                 "type": "Text",
                 "props": {
                   "value": "👥"
+                },
+                "style": {
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -348,7 +380,8 @@
                 "style": {
                   "color": "#5d4037",
                   "fontSize": 9,
-                  "bold": true
+                  "bold": true,
+                  "boxSizing": "border-box"
                 }
               }
             ]
@@ -356,7 +389,7 @@
           {
             "type": "Button",
             "props": {
-              "text": "🏆排行"
+              "text": ""
             },
             "style": {
               "layout": "vertical",
@@ -371,7 +404,8 @@
                 "color": "#fff"
               },
               "justifyContent": "center",
-              "alignItems": "center"
+              "alignItems": "center",
+              "boxSizing": "border-box"
             },
             "id": "btn_rank",
             "children": [
@@ -379,6 +413,9 @@
                 "type": "Text",
                 "props": {
                   "value": "🏆"
+                },
+                "style": {
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -389,7 +426,8 @@
                 "style": {
                   "color": "#5d4037",
                   "fontSize": 9,
-                  "bold": true
+                  "bold": true,
+                  "boxSizing": "border-box"
                 }
               }
             ]
@@ -397,7 +435,7 @@
           {
             "type": "Button",
             "props": {
-              "text": "⚙️设置"
+              "text": ""
             },
             "style": {
               "layout": "vertical",
@@ -412,7 +450,8 @@
                 "color": "#fff"
               },
               "justifyContent": "center",
-              "alignItems": "center"
+              "alignItems": "center",
+              "boxSizing": "border-box"
             },
             "id": "btn_setting",
             "children": [
@@ -420,6 +459,9 @@
                 "type": "Text",
                 "props": {
                   "value": "⚙️"
+                },
+                "style": {
+                  "boxSizing": "border-box"
                 }
               },
               {
@@ -430,7 +472,8 @@
                 "style": {
                   "color": "#5d4037",
                   "fontSize": 9,
-                  "bold": true
+                  "bold": true,
+                  "boxSizing": "border-box"
                 }
               }
             ]
@@ -444,7 +487,8 @@
         },
         "style": {
           "color": "#ffffffb2",
-          "fontSize": 11
+          "fontSize": 11,
+          "boxSizing": "border-box"
         }
       }
     ]

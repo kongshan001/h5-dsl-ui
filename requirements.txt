@@ -2,3 +2,4 @@ PyQt5>=5.15
 beautifulsoup4>=4.12
 cssutils>=2.9
 pytest>=7.0
+Pillow>=10.0

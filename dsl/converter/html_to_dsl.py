@@ -38,14 +38,40 @@ def _parse_inline_style(style_str):
     return props
 
 
+def _has_element_children(tag):
+    """判断元素是否有子元素节点（非纯文本）"""
+    for child in tag.children:
+        if hasattr(child, "name") and child.name:
+            return True
+    return False
+
+
+def _direct_text(tag):
+    """获取元素的直接文本节点内容（不包括子元素的文本）"""
+    texts = []
+    for child in tag.children:
+        if not (hasattr(child, "name") and child.name):
+            t = str(child).strip()
+            if t:
+                texts.append(t)
+    return " ".join(texts) if texts else ""
+
+
 def _extract_props(tag, dsl_type):
     props = {}
     if tag.name.lower() == "body":
         pass
     elif dsl_type == "Text":
-        props["value"] = tag.get_text(strip=True)
+        if _has_element_children(tag):
+            # 混合内容：只用直接文本，子元素会作为 children 独立处理
+            props["value"] = _direct_text(tag)
+        else:
+            props["value"] = tag.get_text(strip=True)
     elif dsl_type == "Button":
-        props["text"] = tag.get_text(strip=True)
+        if _has_element_children(tag):
+            props["text"] = ""
+        else:
+            props["text"] = tag.get_text(strip=True)
     elif dsl_type == "Image":
         props["src"] = tag.get("src", "")
     elif dsl_type == "Input":
@@ -84,29 +110,113 @@ def _parse_css_rules(css_text):
     return rules
 
 
+def _compute_specificity(selector):
+    """计算 CSS 选择器特异性 (ids, classes, tags)。"""
+    ids = classes = tags = 0
+    # Split into parts by descendant combinator (space)
+    for part in selector.split():
+        # Parse each part: may contain tag, .class, #id combined
+        tokens = re.split(r'([.#])', part)
+        for i, token in enumerate(tokens):
+            if token == '#':
+                ids += 1
+            elif token == '.':
+                classes += 1
+            elif token and i == 0:
+                # First token with no prefix is a tag name
+                if token != '*':
+                    tags += 1
+            elif token and i > 0 and tokens[i - 1] not in ('.', '#'):
+                # Standalone token (shouldn't happen in well-formed selectors)
+                pass
+    return (ids, classes, tags)
+
+
+def _parse_selector_part(part):
+    """Parse a single selector part like 'tag.class1.class2#id' into components."""
+    result = {"tag": None, "classes": [], "id": None}
+    tokens = re.split(r'([.#])', part)
+    for i, token in enumerate(tokens):
+        if not token:
+            continue
+        if token == '#' and i + 1 < len(tokens):
+            result["id"] = tokens[i + 1]
+        elif token == '.':
+            if i + 1 < len(tokens) and tokens[i + 1]:
+                result["classes"].append(tokens[i + 1])
+        elif i == 0 or tokens[i - 1] not in ('.', '#'):
+            if token != '*':
+                result["tag"] = token
+    return result
+
+
+def _matches_part(tag, part_info):
+    """Check if a tag matches a parsed selector part."""
+    if part_info["tag"] and tag.name.lower() != part_info["tag"]:
+        return False
+    if part_info["id"] and tag.get("id") != part_info["id"]:
+        return False
+    tag_classes = tag.get("class", [])
+    if isinstance(tag_classes, str):
+        tag_classes = [tag_classes]
+    for cls in part_info["classes"]:
+        if cls not in tag_classes:
+            return False
+    return True
+
+
+def _matches_selector(tag, selector):
+    """Check if a BeautifulSoup tag matches a CSS selector string."""
+    selector = selector.strip()
+    if selector == '*':
+        return True
+
+    parts = selector.split()
+    if len(parts) == 1:
+        # Simple selector: .class, tag, tag.class, .c1.c2, #id
+        return _matches_part(tag, _parse_selector_part(parts[0]))
+
+    # Descendant selector: match rightmost, then walk ancestors for the rest
+    if not _matches_part(tag, _parse_selector_part(parts[-1])):
+        return False
+
+    ancestors = []
+    parent = tag.parent
+    while parent and hasattr(parent, 'name') and parent.name:
+        ancestors.append(parent)
+        parent = parent.parent
+
+    remaining = parts[:-1]
+    ancestor_idx = 0
+    for sel_part in remaining:
+        matched = False
+        while ancestor_idx < len(ancestors):
+            if _matches_part(ancestors[ancestor_idx], _parse_selector_part(sel_part)):
+                matched = True
+                ancestor_idx += 1
+                break
+            ancestor_idx += 1
+        if not matched:
+            return False
+    return True
+
+
 def _compute_style(tag, css_rules):
-    """合并 inline style + CSS class 规则，返回最终 computed style dict"""
+    """合并所有匹配的 CSS 规则，按特异性排序，返回 computed style dict"""
+    matched = []
+    for selector, props in css_rules.items():
+        if _matches_selector(tag, selector):
+            specificity = _compute_specificity(selector)
+            matched.append((specificity, props))
+
+    # 按特异性升序排列，高特异性的后应用会覆盖
+    matched.sort(key=lambda x: x[0])
+
     computed = {}
+    for _, props in matched:
+        computed.update(props)
 
-    # 1. 应用 class 样式（按 class 列表顺序）
-    classes = tag.get("class", [])
-    for cls in classes:
-        selector = "." + cls
-        if selector in css_rules:
-            computed.update(css_rules[selector])
-
-    # 2. 应用标签选择器样式
-    tag_selector = tag.name.lower()
-    if tag_selector in css_rules:
-        computed.update(css_rules[tag_selector])
-
-    # 3. 应用标签+class 组合选择器
-    for cls in classes:
-        combined = tag_selector + "." + cls
-        if combined in css_rules:
-            computed.update(css_rules[combined])
-
-    # 4. inline style 优先级最高，覆盖 class 样式
+    # inline style 优先级最高
     inline = tag.get("style", "")
     if inline:
         computed.update(_parse_inline_style(inline))
@@ -178,9 +288,18 @@ def _convert_node(tag, mappings, css_rules):
         node["id"] = tag_id
 
     children = []
+    has_elements = _has_element_children(tag)
     for child in tag.children:
         if hasattr(child, "name") and child.name:
             children.append(_convert_node(child, mappings, css_rules))
+        elif has_elements:
+            # NavigableString: 混合内容中的直接文本（子元素的兄弟文本）
+            text = str(child).strip()
+            if text:
+                children.append({
+                    "type": "Text",
+                    "props": {"value": text},
+                })
     if children:
         node["children"] = children
 

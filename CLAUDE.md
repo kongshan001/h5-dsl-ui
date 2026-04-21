@@ -38,6 +38,18 @@ python3 demo/run.py rpg          # RPG 角色
 python3 demo/run.py scifi        # 科幻主题
 python3 demo/run.py shop         # 商店
 
+# 重新生成 DSL JSON
+python3 demo/convert.py
+
+# 重新生成 PyQt5 截图
+python3 demo/capture_screenshots.py
+
+# 生成视觉对比报告
+python3 demo/visual_report.py
+
+# 运行视觉回归测试
+python3 -m pytest tests/test_visual.py -v
+
 # 截图对比
 # HTML 原图: demo/html_screenshots/
 # PyQt5 渲染: demo/screenshots_pyqt5/
@@ -65,17 +77,27 @@ python3 demo/run.py shop         # 商店
 - **子组件透明** — 没有 bgColor/gradient 的子组件必须加 `background-color: transparent;` + `setAutoFillBackground(False)`，否则子组件会用调色板背景色覆盖父级渐变
 - **渐变文字 vs 渐变背景** — CSS `background-clip:text` + `-webkit-text-fill-color:transparent` 转为 DSL `gradientText`（GradientLabel 自定义绘制），普通 CSS `background: linear-gradient(...)` 转为 DSL `gradient`（QSS 背景）
 
+## CSS 选择器支持
+
+`html_to_dsl.py` 的 `_compute_style()` 使用特异性排序的级联引擎：
+- 类选择器 `.class`、标签选择器 `tag`、标签+类 `tag.class`
+- 多类选择器 `.class1.class2`（tag 必须同时匹配所有 class）
+- 后代选择器 `.parent .child`（沿祖先链匹配）
+- 通用选择器 `*`（特异性最低）
+- 内联 `style=""` 属性优先级最高
+
 ## CSS → DSL 映射要点
 
 `css_mapper.py` 支持的 CSS 特性（不在这列表里的 CSS 属性会被忽略）：
 
 - 布局：`display:flex/grid`、`flex-direction`、`justify-content`、`align-items`、`flex`、`gap`
-- 盒模型：`width`、`height`、`padding`、`border-radius`、`border`/`border-bottom`/`border-top`/`border-left`/`border-right`
-- 文字：`color`、`font-size`、`font-weight`、`letter-spacing`、`text-align`
+- 盒模型：`width`、`height`、`min-width`/`max-width`、`min-height`/`max-height`、`padding`、`border-radius`、`border`/`border-bottom`/`border-top`/`border-left`/`border-right`、`box-sizing`
+- 文字：`color`、`font-size`、`font-weight`、`font-family`、`letter-spacing`、`line-height`、`text-align`
 - 背景：`background-color`、`background`（linear-gradient 解析）、`-webkit-background-clip`、`-webkit-text-fill-color`
+- 效果：`box-shadow`（通过 QGraphicsDropShadowEffect 实现）、`opacity`
 - 百分比宽度：CSS `width: 78%` → DSL `widthPercent: 78`（用于进度条，PyQt5 中用 stretch 因子实现）
 
-**不支持的关键 CSS 特性**：后代选择器（`.parent .child`）、复合选择器（`.a.b`）、`box-shadow`、`min-width`/`max-width`、`position:absolute`
+**仍不支持的关键 CSS 特性**：`position:absolute`、`transform`、`transition`、伪类（`:hover`）、后代选择器中的子选择器（`>`）、`overflow`
 
 ## 事件系统
 

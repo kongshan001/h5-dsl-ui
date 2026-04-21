@@ -6,7 +6,9 @@
     "props": {},
     "style": {
       "layout": "vertical",
+      "bgColor": "#0a0e14",
       "color": "#00ffc8",
+      "fontFamily": "\"Consolas\", \"Courier New\", monospace",
       "padding": 16,
       "gap": 12,
       "width": 900,
@@ -16,32 +18,7 @@
         "style": "solid",
         "color": "#00ffc8"
       },
-      "gradient": {
-        "type": "linear",
-        "angle": 180,
-        "stops": [
-          {
-            "color": "rgba(0",
-            "pos": 0
-          },
-          {
-            "color": "255",
-            "pos": 25
-          },
-          {
-            "color": "200",
-            "pos": 50
-          },
-          {
-            "color": "0.03) 1px",
-            "pos": 75
-          },
-          {
-            "color": "transparent 1px",
-            "pos": 100
-          }
-        ]
-      }
+      "boxSizing": "border-box"
     },
     "children": [
       {
@@ -51,11 +28,13 @@
           "layout": "horizontal",
           "justifyContent": "space-between",
           "alignItems": "center",
+          "boxSizing": "border-box",
           "borderBottom": {
             "width": 1,
             "style": "solid",
             "color": "#00ffc84c"
-          }
+          },
+          "paddingBottom": 8
         },
         "children": [
           {
@@ -67,30 +46,51 @@
               "color": "#00ffc8",
               "fontSize": 20,
               "bold": true,
-              "letterSpacing": "4px"
+              "letterSpacing": 4,
+              "boxSizing": "border-box"
             },
             "id": "title"
           },
           {
             "type": "Text",
             "props": {
-              "value": "STATUS:■ ONLINE| SECTOR:A-7"
+              "value": "STATUS: | SECTOR:"
             },
             "style": {
               "color": "#4a7a6a",
-              "fontSize": 12
+              "fontSize": 12,
+              "boxSizing": "border-box"
             },
             "children": [
               {
                 "type": "Text",
                 "props": {
+                  "value": "STATUS:"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
                   "value": "■ ONLINE"
+                },
+                "style": {
+                  "color": "#00ff88",
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "| SECTOR:"
                 }
               },
               {
                 "type": "Text",
                 "props": {
                   "value": "A-7"
+                },
+                "style": {
+                  "boxSizing": "border-box"
                 },
                 "id": "sector"
               }
@@ -104,6 +104,7 @@
         "style": {
           "layout": "horizontal",
           "gap": 12,
+          "boxSizing": "border-box",
           "flex": 1.0
         },
         "children": [
@@ -112,7 +113,7 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "#0a141ee5",
+              "bgColor": "#0a141ee6",
               "cornerRadius": 2,
               "padding": 10,
               "gap": 8,
@@ -121,7 +122,8 @@
                 "width": 1,
                 "style": "solid",
                 "color": "#00ffc833"
-              }
+              },
+              "boxSizing": "border-box"
             },
             "children": [
               {
@@ -132,17 +134,22 @@
                 "style": {
                   "color": "#4a7a6a",
                   "fontSize": 11,
-                  "letterSpacing": "2px",
+                  "letterSpacing": 2,
+                  "boxSizing": "border-box",
                   "borderBottom": {
                     "width": 1,
                     "style": "solid",
                     "color": "#00ffc826"
-                  }
+                  },
+                  "paddingBottom": 4
                 }
               },
               {
                 "type": "Panel",
                 "props": {},
+                "style": {
+                  "boxSizing": "border-box"
+                },
                 "children": [
                   {
                     "type": "Panel",
@@ -150,7 +157,8 @@
                     "style": {
                       "layout": "horizontal",
                       "fontSize": 12,
-                      "justifyContent": "space-between"
+                      "justifyContent": "space-between",
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
@@ -159,7 +167,8 @@
                           "value": "舰体完整度"
                         },
                         "style": {
-                          "color": "#4a7a6a"
+                          "color": "#4a7a6a",
+                          "boxSizing": "border-box"
                         }
                       },
                       {
@@ -168,7 +177,8 @@
                           "value": "87%"
                         },
                         "style": {
-                          "color": "#00ffc8"
+                          "color": "#00ff88",
+                          "boxSizing": "border-box"
                         },
                         "id": "hull"
                       }
@@ -185,7 +195,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc826"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
@@ -195,6 +206,7 @@
                           "cornerRadius": 0,
                           "widthPercent": 72.0,
                           "height": 6,
+                          "boxSizing": "border-box",
                           "gradient": {
                             "type": "linear",
                             "angle": 90,
@@ -218,6 +230,9 @@
               {
                 "type": "Panel",
                 "props": {},
+                "style": {
+                  "boxSizing": "border-box"
+                },
                 "children": [
                   {
                     "type": "Panel",
@@ -225,7 +240,8 @@
                     "style": {
                       "layout": "horizontal",
                       "fontSize": 12,
-                      "justifyContent": "space-between"
+                      "justifyContent": "space-between",
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
@@ -234,7 +250,8 @@
                           "value": "燃料储备"
                         },
                         "style": {
-                          "color": "#4a7a6a"
+                          "color": "#4a7a6a",
+                          "boxSizing": "border-box"
                         }
                       },
                       {
@@ -243,7 +260,8 @@
                           "value": "38%"
                         },
                         "style": {
-                          "color": "#00ffc8"
+                          "color": "#ff6040",
+                          "boxSizing": "border-box"
                         },
                         "id": "fuel"
                       }
@@ -260,7 +278,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc826"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
@@ -270,6 +289,7 @@
                           "cornerRadius": 0,
                           "widthPercent": 38.0,
                           "height": 6,
+                          "boxSizing": "border-box",
                           "gradient": {
                             "type": "linear",
                             "angle": 90,
@@ -296,7 +316,8 @@
                 "style": {
                   "layout": "horizontal",
                   "fontSize": 12,
-                  "justifyContent": "space-between"
+                  "justifyContent": "space-between",
+                  "boxSizing": "border-box"
                 },
                 "children": [
                   {
@@ -305,7 +326,8 @@
                       "value": "护盾功率"
                     },
                     "style": {
-                      "color": "#4a7a6a"
+                      "color": "#4a7a6a",
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -314,7 +336,8 @@
                       "value": "720 MW"
                     },
                     "style": {
-                      "color": "#00ffc8"
+                      "color": "#00ffc8",
+                      "boxSizing": "border-box"
                     }
                   }
                 ]
@@ -325,7 +348,8 @@
                 "style": {
                   "layout": "horizontal",
                   "fontSize": 12,
-                  "justifyContent": "space-between"
+                  "justifyContent": "space-between",
+                  "boxSizing": "border-box"
                 },
                 "children": [
                   {
@@ -334,7 +358,8 @@
                       "value": "武器系统"
                     },
                     "style": {
-                      "color": "#4a7a6a"
+                      "color": "#4a7a6a",
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -343,7 +368,8 @@
                       "value": "就绪"
                     },
                     "style": {
-                      "color": "#00ffc8"
+                      "color": "#00ff88",
+                      "boxSizing": "border-box"
                     }
                   }
                 ]
@@ -354,7 +380,8 @@
                 "style": {
                   "layout": "horizontal",
                   "fontSize": 12,
-                  "justifyContent": "space-between"
+                  "justifyContent": "space-between",
+                  "boxSizing": "border-box"
                 },
                 "children": [
                   {
@@ -363,7 +390,8 @@
                       "value": "引擎推力"
                     },
                     "style": {
-                      "color": "#4a7a6a"
+                      "color": "#4a7a6a",
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -372,7 +400,8 @@
                       "value": "82%"
                     },
                     "style": {
-                      "color": "#00ffc8"
+                      "color": "#00ffc8",
+                      "boxSizing": "border-box"
                     }
                   }
                 ]
@@ -385,12 +414,14 @@
                 "style": {
                   "color": "#4a7a6a",
                   "fontSize": 11,
-                  "letterSpacing": "2px",
+                  "letterSpacing": 2,
+                  "boxSizing": "border-box",
                   "borderBottom": {
                     "width": 1,
                     "style": "solid",
                     "color": "#00ffc826"
-                  }
+                  },
+                  "paddingBottom": 4
                 }
               },
               {
@@ -398,7 +429,8 @@
                 "props": {},
                 "style": {
                   "layout": "vertical",
-                  "gap": 6
+                  "gap": 6,
+                  "boxSizing": "border-box"
                 },
                 "children": [
                   {
@@ -414,9 +446,10 @@
                       "border": {
                         "width": 1,
                         "style": "solid",
-                        "color": "#00ffc819"
+                        "color": "#00ffc81a"
                       },
-                      "alignItems": "center"
+                      "alignItems": "center",
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
@@ -425,9 +458,11 @@
                           "value": ""
                         },
                         "style": {
+                          "bgColor": "#00ff88",
                           "cornerRadius": 3,
                           "width": 6,
-                          "height": 6
+                          "height": 6,
+                          "boxSizing": "border-box"
                         }
                       },
                       {
@@ -437,6 +472,7 @@
                         },
                         "style": {
                           "color": "#00ffc8",
+                          "boxSizing": "border-box",
                           "flex": 1.0
                         }
                       },
@@ -446,7 +482,8 @@
                           "value": "HP 100%"
                         },
                         "style": {
-                          "color": "#4a7a6a"
+                          "color": "#4a7a6a",
+                          "boxSizing": "border-box"
                         }
                       }
                     ]
@@ -464,9 +501,10 @@
                       "border": {
                         "width": 1,
                         "style": "solid",
-                        "color": "#00ffc819"
+                        "color": "#00ffc81a"
                       },
-                      "alignItems": "center"
+                      "alignItems": "center",
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
@@ -475,9 +513,11 @@
                           "value": ""
                         },
                         "style": {
+                          "bgColor": "#00ff88",
                           "cornerRadius": 3,
                           "width": 6,
-                          "height": 6
+                          "height": 6,
+                          "boxSizing": "border-box"
                         }
                       },
                       {
@@ -487,6 +527,7 @@
                         },
                         "style": {
                           "color": "#00ffc8",
+                          "boxSizing": "border-box",
                           "flex": 1.0
                         }
                       },
@@ -496,7 +537,8 @@
                           "value": "HP 92%"
                         },
                         "style": {
-                          "color": "#4a7a6a"
+                          "color": "#4a7a6a",
+                          "boxSizing": "border-box"
                         }
                       }
                     ]
@@ -514,9 +556,10 @@
                       "border": {
                         "width": 1,
                         "style": "solid",
-                        "color": "#00ffc819"
+                        "color": "#00ffc81a"
                       },
-                      "alignItems": "center"
+                      "alignItems": "center",
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
@@ -525,9 +568,11 @@
                           "value": ""
                         },
                         "style": {
+                          "bgColor": "#ffaa00",
                           "cornerRadius": 3,
                           "width": 6,
-                          "height": 6
+                          "height": 6,
+                          "boxSizing": "border-box"
                         }
                       },
                       {
@@ -537,6 +582,7 @@
                         },
                         "style": {
                           "color": "#00ffc8",
+                          "boxSizing": "border-box",
                           "flex": 1.0
                         }
                       },
@@ -546,7 +592,8 @@
                           "value": "HP 61%"
                         },
                         "style": {
-                          "color": "#4a7a6a"
+                          "color": "#4a7a6a",
+                          "boxSizing": "border-box"
                         }
                       }
                     ]
@@ -564,9 +611,10 @@
                       "border": {
                         "width": 1,
                         "style": "solid",
-                        "color": "#00ffc819"
+                        "color": "#00ffc81a"
                       },
-                      "alignItems": "center"
+                      "alignItems": "center",
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
@@ -575,9 +623,11 @@
                           "value": ""
                         },
                         "style": {
+                          "bgColor": "#ff2040",
                           "cornerRadius": 3,
                           "width": 6,
-                          "height": 6
+                          "height": 6,
+                          "boxSizing": "border-box"
                         }
                       },
                       {
@@ -587,6 +637,7 @@
                         },
                         "style": {
                           "color": "#00ffc8",
+                          "boxSizing": "border-box",
                           "flex": 1.0
                         }
                       },
@@ -596,7 +647,8 @@
                           "value": "HP 24%"
                         },
                         "style": {
-                          "color": "#4a7a6a"
+                          "color": "#4a7a6a",
+                          "boxSizing": "border-box"
                         }
                       }
                     ]
@@ -610,7 +662,7 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "#0a141ee5",
+              "bgColor": "#0a141ee6",
               "cornerRadius": 2,
               "padding": 10,
               "gap": 8,
@@ -619,6 +671,7 @@
                 "style": "solid",
                 "color": "#00ffc833"
               },
+              "boxSizing": "border-box",
               "flex": 1.0
             },
             "children": [
@@ -630,12 +683,14 @@
                 "style": {
                   "color": "#4a7a6a",
                   "fontSize": 11,
-                  "letterSpacing": "2px",
+                  "letterSpacing": 2,
+                  "boxSizing": "border-box",
                   "borderBottom": {
                     "width": 1,
                     "style": "solid",
                     "color": "#00ffc826"
-                  }
+                  },
+                  "paddingBottom": 4
                 }
               },
               {
@@ -645,6 +700,7 @@
                   "layout": "grid",
                   "columns": 8,
                   "gap": 2,
+                  "boxSizing": "border-box",
                   "flex": 1.0
                 },
                 "children": [
@@ -658,7 +714,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -671,7 +728,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -684,7 +742,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -697,7 +756,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -710,7 +770,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -723,7 +784,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -736,7 +798,23 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#ff2040",
+                      "cornerRadius": 1,
+                      "border": {
+                        "width": 1,
+                        "style": "solid",
+                        "color": "#00ffc814"
+                      },
+                      "borderColor": "#ff2040",
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -749,7 +827,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -762,7 +841,23 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0066ff",
+                      "cornerRadius": 1,
+                      "border": {
+                        "width": 1,
+                        "style": "solid",
+                        "color": "#00ffc814"
+                      },
+                      "borderColor": "#0066ff",
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -775,7 +870,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -788,7 +884,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -801,7 +898,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -814,7 +912,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -827,7 +926,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -840,7 +940,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -853,7 +954,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -866,7 +968,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -879,7 +982,23 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#00ffc8",
+                      "cornerRadius": 1,
+                      "border": {
+                        "width": 1,
+                        "style": "solid",
+                        "color": "#00ffc814"
+                      },
+                      "borderColor": "#00ffc8",
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -892,7 +1011,23 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#ff2040",
+                      "cornerRadius": 1,
+                      "border": {
+                        "width": 1,
+                        "style": "solid",
+                        "color": "#00ffc814"
+                      },
+                      "borderColor": "#ff2040",
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -905,7 +1040,23 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#ff2040",
+                      "cornerRadius": 1,
+                      "border": {
+                        "width": 1,
+                        "style": "solid",
+                        "color": "#00ffc814"
+                      },
+                      "borderColor": "#ff2040",
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -918,7 +1069,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -931,7 +1083,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -944,7 +1097,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -957,7 +1111,23 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0066ff",
+                      "cornerRadius": 1,
+                      "border": {
+                        "width": 1,
+                        "style": "solid",
+                        "color": "#00ffc814"
+                      },
+                      "borderColor": "#0066ff",
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -970,7 +1140,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -983,7 +1154,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -996,7 +1168,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -1009,7 +1182,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -1022,7 +1196,23 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#ffaa00",
+                      "cornerRadius": 1,
+                      "border": {
+                        "width": 1,
+                        "style": "solid",
+                        "color": "#00ffc814"
+                      },
+                      "borderColor": "#ffaa00",
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -1035,7 +1225,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -1048,7 +1239,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -1061,7 +1253,23 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#ff2040",
+                      "cornerRadius": 1,
+                      "border": {
+                        "width": 1,
+                        "style": "solid",
+                        "color": "#00ffc814"
+                      },
+                      "borderColor": "#ff2040",
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -1074,7 +1282,23 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
+                    }
+                  },
+                  {
+                    "type": "Panel",
+                    "props": {},
+                    "style": {
+                      "bgColor": "#0066ff",
+                      "cornerRadius": 1,
+                      "border": {
+                        "width": 1,
+                        "style": "solid",
+                        "color": "#00ffc814"
+                      },
+                      "borderColor": "#0066ff",
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -1087,7 +1311,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -1100,7 +1325,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -1113,7 +1339,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -1126,7 +1353,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -1139,7 +1367,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   },
                   {
@@ -1152,124 +1381,8 @@
                         "width": 1,
                         "style": "solid",
                         "color": "#00ffc814"
-                      }
-                    }
-                  },
-                  {
-                    "type": "Panel",
-                    "props": {},
-                    "style": {
-                      "bgColor": "#0a1520",
-                      "cornerRadius": 1,
-                      "border": {
-                        "width": 1,
-                        "style": "solid",
-                        "color": "#00ffc814"
-                      }
-                    }
-                  },
-                  {
-                    "type": "Panel",
-                    "props": {},
-                    "style": {
-                      "bgColor": "#0a1520",
-                      "cornerRadius": 1,
-                      "border": {
-                        "width": 1,
-                        "style": "solid",
-                        "color": "#00ffc814"
-                      }
-                    }
-                  },
-                  {
-                    "type": "Panel",
-                    "props": {},
-                    "style": {
-                      "bgColor": "#0a1520",
-                      "cornerRadius": 1,
-                      "border": {
-                        "width": 1,
-                        "style": "solid",
-                        "color": "#00ffc814"
-                      }
-                    }
-                  },
-                  {
-                    "type": "Panel",
-                    "props": {},
-                    "style": {
-                      "bgColor": "#0a1520",
-                      "cornerRadius": 1,
-                      "border": {
-                        "width": 1,
-                        "style": "solid",
-                        "color": "#00ffc814"
-                      }
-                    }
-                  },
-                  {
-                    "type": "Panel",
-                    "props": {},
-                    "style": {
-                      "bgColor": "#0a1520",
-                      "cornerRadius": 1,
-                      "border": {
-                        "width": 1,
-                        "style": "solid",
-                        "color": "#00ffc814"
-                      }
-                    }
-                  },
-                  {
-                    "type": "Panel",
-                    "props": {},
-                    "style": {
-                      "bgColor": "#0a1520",
-                      "cornerRadius": 1,
-                      "border": {
-                        "width": 1,
-                        "style": "solid",
-                        "color": "#00ffc814"
-                      }
-                    }
-                  },
-                  {
-                    "type": "Panel",
-                    "props": {},
-                    "style": {
-                      "bgColor": "#0a1520",
-                      "cornerRadius": 1,
-                      "border": {
-                        "width": 1,
-                        "style": "solid",
-                        "color": "#00ffc814"
-                      }
-                    }
-                  },
-                  {
-                    "type": "Panel",
-                    "props": {},
-                    "style": {
-                      "bgColor": "#0a1520",
-                      "cornerRadius": 1,
-                      "border": {
-                        "width": 1,
-                        "style": "solid",
-                        "color": "#00ffc814"
-                      }
-                    }
-                  },
-                  {
-                    "type": "Panel",
-                    "props": {},
-                    "style": {
-                      "bgColor": "#0a1520",
-                      "cornerRadius": 1,
-                      "border": {
-                        "width": 1,
-                        "style": "solid",
-                        "color": "#00ffc814"
-                      }
+                      },
+                      "boxSizing": "border-box"
                     }
                   }
                 ]
@@ -1281,7 +1394,7 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "#0a141ee5",
+              "bgColor": "#0a141ee6",
               "cornerRadius": 2,
               "padding": 10,
               "gap": 8,
@@ -1290,7 +1403,8 @@
                 "width": 1,
                 "style": "solid",
                 "color": "#00ffc833"
-              }
+              },
+              "boxSizing": "border-box"
             },
             "children": [
               {
@@ -1301,12 +1415,14 @@
                 "style": {
                   "color": "#4a7a6a",
                   "fontSize": 11,
-                  "letterSpacing": "2px",
+                  "letterSpacing": 2,
+                  "boxSizing": "border-box",
                   "borderBottom": {
                     "width": 1,
                     "style": "solid",
                     "color": "#00ffc826"
-                  }
+                  },
+                  "paddingBottom": 4
                 }
               },
               {
@@ -1315,6 +1431,7 @@
                 "style": {
                   "layout": "vertical",
                   "gap": 3,
+                  "boxSizing": "border-box",
                   "flex": 1.0
                 },
                 "children": [
@@ -1323,19 +1440,28 @@
                     "props": {},
                     "style": {
                       "color": "#3a6a5a",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
                         "type": "Text",
                         "props": {
                           "value": "[14:32:01]"
+                        },
+                        "style": {
+                          "color": "#2a4a3a",
+                          "boxSizing": "border-box"
                         }
                       },
                       {
                         "type": "Text",
                         "props": {
                           "value": "扫描完毕，发现 3 个敌对目标"
+                        },
+                        "style": {
+                          "color": "#00aaff",
+                          "boxSizing": "border-box"
                         }
                       }
                     ]
@@ -1345,13 +1471,24 @@
                     "props": {},
                     "style": {
                       "color": "#3a6a5a",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
                         "type": "Text",
                         "props": {
                           "value": "[14:31:45]"
+                        },
+                        "style": {
+                          "color": "#2a4a3a",
+                          "boxSizing": "border-box"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "航线校正完成"
                         }
                       }
                     ]
@@ -1361,19 +1498,28 @@
                     "props": {},
                     "style": {
                       "color": "#3a6a5a",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
                         "type": "Text",
                         "props": {
                           "value": "[14:31:20]"
+                        },
+                        "style": {
+                          "color": "#2a4a3a",
+                          "boxSizing": "border-box"
                         }
                       },
                       {
                         "type": "Text",
                         "props": {
                           "value": "燃料低于 40%，建议补给"
+                        },
+                        "style": {
+                          "color": "#ffaa00",
+                          "boxSizing": "border-box"
                         }
                       }
                     ]
@@ -1383,13 +1529,24 @@
                     "props": {},
                     "style": {
                       "color": "#3a6a5a",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
                         "type": "Text",
                         "props": {
                           "value": "[14:30:55]"
+                        },
+                        "style": {
+                          "color": "#2a4a3a",
+                          "boxSizing": "border-box"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "友方舰船进入通讯范围"
                         }
                       }
                     ]
@@ -1399,19 +1556,28 @@
                     "props": {},
                     "style": {
                       "color": "#3a6a5a",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
                         "type": "Text",
                         "props": {
                           "value": "[14:30:12]"
+                        },
+                        "style": {
+                          "color": "#2a4a3a",
+                          "boxSizing": "border-box"
                         }
                       },
                       {
                         "type": "Text",
                         "props": {
                           "value": "导航员受伤，效率降低"
+                        },
+                        "style": {
+                          "color": "#ff2040",
+                          "boxSizing": "border-box"
                         }
                       }
                     ]
@@ -1421,13 +1587,24 @@
                     "props": {},
                     "style": {
                       "color": "#3a6a5a",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
                         "type": "Text",
                         "props": {
                           "value": "[14:29:30]"
+                        },
+                        "style": {
+                          "color": "#2a4a3a",
+                          "boxSizing": "border-box"
+                        }
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "value": "进入 A-7 区域"
                         }
                       }
                     ]
@@ -1442,17 +1619,22 @@
                 "style": {
                   "color": "#4a7a6a",
                   "fontSize": 11,
-                  "letterSpacing": "2px",
+                  "letterSpacing": 2,
+                  "boxSizing": "border-box",
                   "borderBottom": {
                     "width": 1,
                     "style": "solid",
                     "color": "#00ffc826"
-                  }
+                  },
+                  "paddingBottom": 4
                 }
               },
               {
                 "type": "Panel",
                 "props": {},
+                "style": {
+                  "boxSizing": "border-box"
+                },
                 "children": [
                   {
                     "type": "Panel",
@@ -1460,7 +1642,8 @@
                     "style": {
                       "layout": "horizontal",
                       "fontSize": 12,
-                      "justifyContent": "space-between"
+                      "justifyContent": "space-between",
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
@@ -1469,7 +1652,8 @@
                           "value": "主线"
                         },
                         "style": {
-                          "color": "#4a7a6a"
+                          "color": "#4a7a6a",
+                          "boxSizing": "border-box"
                         }
                       },
                       {
@@ -1478,7 +1662,8 @@
                           "value": "夺取补给站"
                         },
                         "style": {
-                          "color": "#00ffc8"
+                          "color": "#00ffc8",
+                          "boxSizing": "border-box"
                         }
                       }
                     ]
@@ -1489,7 +1674,8 @@
                     "style": {
                       "layout": "horizontal",
                       "fontSize": 12,
-                      "justifyContent": "space-between"
+                      "justifyContent": "space-between",
+                      "boxSizing": "border-box"
                     },
                     "children": [
                       {
@@ -1498,7 +1684,8 @@
                           "value": "支线"
                         },
                         "style": {
-                          "color": "#4a7a6a"
+                          "color": "#4a7a6a",
+                          "boxSizing": "border-box"
                         }
                       },
                       {
@@ -1507,7 +1694,8 @@
                           "value": "营救被困船员"
                         },
                         "style": {
-                          "color": "#00ffc8"
+                          "color": "#00ffc8",
+                          "boxSizing": "border-box"
                         }
                       }
                     ]
@@ -1525,11 +1713,13 @@
           "layout": "horizontal",
           "gap": 8,
           "justifyContent": "center",
+          "boxSizing": "border-box",
           "borderTop": {
             "width": 1,
             "style": "solid",
             "color": "#00ffc826"
-          }
+          },
+          "paddingTop": 4
         },
         "children": [
           {
@@ -1541,6 +1731,7 @@
               "bgColor": "#00ffc814",
               "color": "#00ffc8",
               "fontSize": 12,
+              "fontFamily": "\"Consolas\", monospace",
               "cornerRadius": 2,
               "width": 120,
               "height": 34,
@@ -1549,7 +1740,8 @@
                 "style": "solid",
                 "color": "#00ffc84c"
               },
-              "letterSpacing": "1px"
+              "letterSpacing": 1,
+              "boxSizing": "border-box"
             },
             "id": "btn_scan"
           },
@@ -1562,6 +1754,7 @@
               "bgColor": "#00ffc814",
               "color": "#00ffc8",
               "fontSize": 12,
+              "fontFamily": "\"Consolas\", monospace",
               "cornerRadius": 2,
               "width": 120,
               "height": 34,
@@ -1570,7 +1763,8 @@
                 "style": "solid",
                 "color": "#00ffc84c"
               },
-              "letterSpacing": "1px"
+              "letterSpacing": 1,
+              "boxSizing": "border-box"
             },
             "id": "btn_move"
           },
@@ -1583,6 +1777,7 @@
               "bgColor": "#00ffc814",
               "color": "#00ffc8",
               "fontSize": 12,
+              "fontFamily": "\"Consolas\", monospace",
               "cornerRadius": 2,
               "width": 120,
               "height": 34,
@@ -1591,7 +1786,8 @@
                 "style": "solid",
                 "color": "#00ffc84c"
               },
-              "letterSpacing": "1px"
+              "letterSpacing": 1,
+              "boxSizing": "border-box"
             },
             "id": "btn_attack"
           },
@@ -1604,6 +1800,7 @@
               "bgColor": "#00ffc814",
               "color": "#00ffc8",
               "fontSize": 12,
+              "fontFamily": "\"Consolas\", monospace",
               "cornerRadius": 2,
               "width": 120,
               "height": 34,
@@ -1612,7 +1809,8 @@
                 "style": "solid",
                 "color": "#00ffc84c"
               },
-              "letterSpacing": "1px"
+              "letterSpacing": 1,
+              "boxSizing": "border-box"
             },
             "id": "btn_comm"
           },
@@ -1623,8 +1821,9 @@
             },
             "style": {
               "bgColor": "#00ffc814",
-              "color": "#00ffc8",
+              "color": "#ff4060",
               "fontSize": 12,
+              "fontFamily": "\"Consolas\", monospace",
               "cornerRadius": 2,
               "width": 120,
               "height": 34,
@@ -1633,7 +1832,9 @@
                 "style": "solid",
                 "color": "#00ffc84c"
               },
-              "letterSpacing": "1px"
+              "borderColor": "#ff204066",
+              "letterSpacing": 1,
+              "boxSizing": "border-box"
             },
             "id": "btn_retreat"
           }

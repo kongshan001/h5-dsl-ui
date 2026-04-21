@@ -50,6 +50,15 @@ class DSLPage:
         # Inherit fontSize from parent if not explicitly set
         if "fontSize" not in style and "fontSize" in parent_style:
             style["fontSize"] = parent_style["fontSize"]
+        # Inherit textAlign from parent
+        if "textAlign" not in style and "textAlign" in parent_style:
+            style["textAlign"] = parent_style["textAlign"]
+        # Inherit fontFamily from parent
+        if "fontFamily" not in style and "fontFamily" in parent_style:
+            style["fontFamily"] = parent_style["fontFamily"]
+        # Inherit bold from parent
+        if "bold" not in style and "bold" in parent_style:
+            style["bold"] = parent_style["bold"]
 
         widget = self._backend.create(type_name, props)
 
@@ -68,9 +77,25 @@ class DSLPage:
         children_data = node.get("children", [])
         is_grid = type_name == "GridView" or style.get("layout") == "grid"
 
-        # Auto-create vertical layout for containers with children but no explicit layout
+        # Leaf widget types without children should never have layouts
+        # (Text with gradient uses custom paintEvent; Input/Slider are single controls)
+        # Button is excluded because it can have children (icon + label pattern)
+        is_leaf_no_children = (
+            type_name in ("Text", "Input", "Slider")
+            or (type_name == "Button" and not children_data)
+        )
+        if is_leaf_no_children:
+            layout = None
+
+        # Auto-create layout for containers with children but no explicit layout
+        # Use horizontal if any child has widthPercent (progress bars), else vertical
         if layout is None and not is_grid and children_data:
-            layout = self._backend.create_layout({"layout": "vertical"})
+            has_width_pct = any(
+                c.get("style", {}).get("widthPercent") is not None
+                for c in children_data
+            )
+            auto_dir = "horizontal" if has_width_pct else "vertical"
+            layout = self._backend.create_layout({"layout": auto_dir})
 
         if layout is not None:
             widget.setLayout(layout)
@@ -84,8 +109,8 @@ class DSLPage:
                 layout = QGridLayout()
                 widget.setLayout(layout)
             grid_layout = widget.layout()
-            if "gap" in style:
-                grid_layout.setSpacing(style["gap"])
+            grid_layout.setContentsMargins(0, 0, 0, 0)
+            grid_layout.setSpacing(style.get("gap", 0))
             cols = style.get("columns", props.get("columns", 1))
             for idx, child_data in enumerate(children_data):
                 child = self._build(child_data, style)
@@ -99,11 +124,14 @@ class DSLPage:
                         self._backend.add_stretch(layout)
                     self._add_child_flex(layout, child)
             elif jc == "space-around" and children_data:
-                self._backend.add_stretch(layout)
+                self._backend.add_stretch(layout, factor=1)
                 for i, child_data in enumerate(children_data):
                     child = self._build(child_data, style)
                     self._add_child_flex(layout, child)
-                    self._backend.add_stretch(layout)
+                    if i < len(children_data) - 1:
+                        self._backend.add_stretch(layout, factor=2)
+                    else:
+                        self._backend.add_stretch(layout, factor=1)
             else:
                 for child_data in children_data:
                     child = self._build(child_data, style)

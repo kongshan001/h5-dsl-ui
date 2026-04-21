@@ -111,17 +111,55 @@ Loader 的 `_dispatch` 通过 inspect 自动判断回调是否接收 `widget_id`
 | CSS | DSL style |
 |-----|-----------|
 | width/height | width/height |
+| min-width/max-width | minWidth/maxWidth |
+| min-height/max-height | minHeight/maxHeight |
+| width: N% | widthPercent: N |
 | background-color | bgColor |
+| background: linear-gradient(...) | gradient |
+| -webkit-background-clip: text | gradientText |
+| -webkit-text-fill-color: transparent | (配合 gradientText) |
 | color | color |
 | font-size | fontSize |
 | font-weight: bold | bold: true |
+| font-family | fontFamily |
+| letter-spacing | letterSpacing |
+| line-height | lineHeight |
+| text-align | textAlign |
 | padding | padding |
 | margin | margin |
 | gap | gap |
 | display: flex + flex-direction | layout |
 | display: grid + grid-template-columns | layout + columns |
+| justify-content | justifyContent (center/space-between/space-around) |
+| align-items | alignItems (center/start/end) |
+| flex: N | flex: N |
 | opacity | opacity |
 | border-radius | cornerRadius |
+| border | border (width/style/color) |
+| border-bottom/top/left/right | borderBottom/Top/Left/Right |
+| box-shadow | boxShadow (offsetX/offsetY/blurRadius/color) |
+| box-sizing | boxSizing |
+
+### CSS 选择器支持
+
+`html_to_dsl.py` 使用特异性排序的级联引擎：
+- 类选择器 `.class`、标签选择器 `tag`、标签+类 `tag.class`
+- 多类选择器 `.class1.class2`
+- 后代选择器 `.parent .child`
+- 通用选择器 `*`
+- 内联 `style=""` 优先级最高
+
+### 渲染一致性特性（PyQt5 后端）
+
+| 特性 | 实现方式 |
+|------|----------|
+| 渐变文字 (background-clip:text) | GradientLabel 自定义 QPainter |
+| 渐变背景 + 圆角 | GradientLabel set_bg_gradient_clipped |
+| 半透明背景 bgColor | StyledPanel/StyledButton 自定义 QPainter alpha compositing |
+| 半透明文字颜色 | GradientLabel set_alpha_text_color + QPainter |
+| CSS 渐变方向计算 | _css_gradient_endpoints() 匹配 CSS linear-gradient 规范 |
+| 8位hex颜色 (#RRGGBBAA) | 自动转换为 rgba() 修正 QSS 字节序 |
+| 视觉对比测试 | pixel-level diff, 94.7% 平均相似度 |
 
 ### 自定义控件映射配置
 
@@ -187,18 +225,33 @@ h5-ui-for-game/
 │   ├── loader.py              # DSLPage 加载器核心
 │   ├── backends/
 │   │   ├── base.py            # UIBackend 抽象基类
-│   │   └── pyqt5.py           # PyQt5 后端（demo 验证）
+│   │   └── pyqt5.py           # PyQt5 后端（含 StyledPanel/StyledButton/GradientLabel）
 │   ├── converter/
-│   │   ├── html_to_dsl.py     # HTML → DSL 转换器
+│   │   ├── html_to_dsl.py     # HTML → DSL 转换器（含 CSS 选择器级联引擎）
 │   │   └── css_mapper.py      # CSS 属性映射表
 │   └── mappings.json          # 自定义控件映射配置
 ├── demo/
-│   ├── pages/                 # DSL JSON 页面文件
-│   │   └── inventory.json
+│   ├── html/                  # HTML/CSS 游戏UI源文件（7个页面）
+│   ├── pages/                 # DSL JSON 页面文件（7个）
+│   ├── html_screenshots/      # HTML 浏览器截图
+│   ├── screenshots_pyqt5/     # PyQt5 渲染截图
+│   ├── capture_screenshots.py # 批量截图工具
+│   ├── visual_report.py       # 视觉对比报告生成
+│   ├── convert.py             # HTML → DSL JSON 批量转换
 │   └── run.py                 # Demo 入口
 ├── tests/
 │   ├── test_schema.py
 │   ├── test_loader.py
-│   └── test_converter.py
-└── docs/
+│   ├── test_backends.py
+│   ├── test_converter.py
+│   ├── test_css_mapper.py
+│   ├── test_e2e.py
+│   ├── test_visual.py         # 视觉回归测试（7页 x 85%阈值）
+│   └── screenshot_utils.py    # 截图+对比工具
+├── docs/
+│   └── superpowers/
+│       ├── specs/             # 设计规格
+│       └── plans/             # 实施计划
+├── CHANGELOG.md               # 版本变更记录
+└── CLAUDE.md                  # 项目说明与架构文档
 ```

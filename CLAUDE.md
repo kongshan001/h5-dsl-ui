@@ -122,3 +122,15 @@ python3 -m pytest tests/test_visual.py -v
 - DSL JSON 样式键使用 camelCase（`bgColor`、`fontSize`、`cornerRadius`），与 CSS 命名习惯一致
 - 测试使用 `tmp_path` fixture 创建临时 DSL 文件，使用 `scope="module"` 的 QApplication fixture
 - 7 个 demo 页面在 `demo/html/`（HTML 源文件）和 `demo/pages/`（DSL JSON）
+
+## 迭代规范
+
+每次迭代（Phase）完成后必须：
+
+1. **提交远程仓库** — `git add` + `commit` + `push`
+2. **更新 CHANGELOG.md** — 追加带日期的版本条目
+3. **维护文档** — 更新 `docs/superpowers/plans` 和 `docs/superpowers/specs`
+4. **复盘总结** — 追加到 `docs/retrospectives/YYYY-MM-DD-phase-N.md`，包含：
+   - **效果**：分数变化、改善/回归的页面
+   - **原因分析**：为什么有效或无效、回归根因
+   - **方向反思**：是否应该调整方向？是否进入收益递减？有没有更好的策略？

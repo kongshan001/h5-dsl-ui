@@ -29,7 +29,7 @@ python3 -m pytest tests/ -k "converter" -v
 # 安装依赖
 pip3 install -r requirements.txt
 
-# 运行 demo（7 个页面）
+# 运行 demo（11 个页面）
 python3 demo/run.py inventory    # 背包
 python3 demo/run.py settings     # 设置
 python3 demo/run.py arena        # 对局结果
@@ -37,6 +37,10 @@ python3 demo/run.py casual       # 休闲菜单
 python3 demo/run.py rpg          # RPG 角色
 python3 demo/run.py scifi        # 科幻主题
 python3 demo/run.py shop         # 商店
+python3 demo/run.py dungeon      # 副本选择
+python3 demo/run.py guild        # 公会
+python3 demo/run.py gacha        # 召唤/抽卡
+python3 demo/run.py battle       # 战斗
 
 # 重新生成 DSL JSON
 python3 demo/convert.py
@@ -121,7 +125,7 @@ python3 -m pytest tests/test_visual.py -v
 - Python 3.9+，不强要求类型注解，保持函数签名清晰
 - DSL JSON 样式键使用 camelCase（`bgColor`、`fontSize`、`cornerRadius`），与 CSS 命名习惯一致
 - 测试使用 `tmp_path` fixture 创建临时 DSL 文件，使用 `scope="module"` 的 QApplication fixture
-- 7 个 demo 页面在 `demo/html/`（HTML 源文件）和 `demo/pages/`（DSL JSON）
+- 11 个 demo 页面在 `demo/html/`（HTML 源文件）和 `demo/pages/`（DSL JSON）
 
 ## 迭代规范
 

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>召唤</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 600px; height: 500px;
+      background-color: #1a0f0a;
+      background-image: linear-gradient(180deg, #1a1030 0%, #1a0f0a 40%, #0f0a05 100%);
+      font-family: "SimHei", "Microsoft YaHei", serif;
+      display: flex; flex-direction: column;
+      padding: 12px; gap: 8px;
+      color: #e8d5b5;
+      border: 3px solid #8b6914;
+    }
+
+    .frame-top {
+      height: 6px;
+      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
+    }
+
+    .header {
+      display: flex; flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-left {
+      display: flex; flex-direction: row;
+      align-items: center; gap: 8px;
+    }
+    .back-btn {
+      width: 32px; height: 32px;
+      background: linear-gradient(180deg, #5c4510, #3a2a08);
+      border: 1px solid #8b6914;
+      border-radius: 4px;
+      color: #ffd700;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .page-title {
+      font-size: 20px; font-weight: bold;
+      color: #ffd700;
+      letter-spacing: 4px;
+    }
+    .btn-record {
+      height: 28px;
+      background-color: #2a1a10;
+      border: 1px solid #5c4510;
+      border-radius: 4px;
+      color: #c9a034;
+      font-size: 12px;
+      padding: 0 12px;
+      cursor: pointer;
+    }
+
+    .summon-area {
+      flex: 1;
+      display: flex; flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+    }
+    .summon-circle {
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #3a2050 0%, #1a1030 40%, #0a0520 70%, #1a0f0a 100%);
+      border: 3px solid #c9a034;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 20px #c9a03440, 0 0 40px #c9a03420, inset 0 0 20px #c9a03430;
+    }
+    .summon-icon {
+      font-size: 48px;
+    }
+    .summon-glow {
+      position: absolute;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      border: 1px solid #c9a03430;
+    }
+
+    .pool-tabs {
+      display: flex; flex-direction: row;
+      gap: 4px;
+    }
+    .pool-tab {
+      flex: 1;
+      height: 32px;
+      background-color: #2a1a10;
+      border: 1px solid #5c4510;
+      border-radius: 4px;
+      color: #a89070;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pool-tab.active {
+      background: linear-gradient(180deg, #5c4510, #3a2a08);
+      border-color: #c9a034;
+      color: #ffd700;
+    }
+    .pool-tab .hot {
+      font-size: 10px;
+      color: #cc3030;
+    }
+
+    .rate-info {
+      display: flex; flex-direction: row;
+      justify-content: center;
+      gap: 16px;
+      font-size: 12px;
+      color: #a89070;
+    }
+    .rate-ssr { color: #ffa500; }
+    .rate-sr { color: #c850ff; }
+    .rate-r { color: #4a8aff; }
+
+    .gacha-buttons {
+      display: flex; flex-direction: row;
+      gap: 12px;
+      justify-content: center;
+    }
+    .btn-gacha {
+      width: 180px; height: 48px;
+      border-radius: 8px;
+      font-size: 16px; font-weight: bold;
+      cursor: pointer;
+      border: 2px solid;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+    }
+    .btn-single {
+      background: linear-gradient(180deg, #5c4510, #3a2a08);
+      border-color: #8b6914;
+      color: #ffd700;
+    }
+    .btn-ten {
+      background: linear-gradient(180deg, #8b2020, #6a1515);
+      border-color: #cc3030;
+      color: #ffd700;
+    }
+    .gacha-cost {
+      font-size: 11px;
+      font-weight: normal;
+      color: #a89070;
+    }
+
+    .result-label {
+      font-size: 13px;
+      color: #c9a034;
+      text-align: center;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+    }
+    .result-card {
+      height: 50px;
+      background-color: #2a1a10;
+      border: 2px solid #8a7a60;
+      border-radius: 6px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-size: 12px;
+    }
+    .result-card.rarity-r {
+      border-color: #4a8aff;
+    }
+    .result-card.rarity-sr {
+      border-color: #c850ff;
+    }
+    .result-card.rarity-ssr {
+      border-color: #ffa500;
+      box-shadow: 0 0 6px #ffa50060;
+    }
+    .result-icon { font-size: 18px; }
+    .result-rarity { font-size: 10px; }
+
+    .frame-bottom {
+      height: 6px;
+      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
+    }
+  </style>
+</head>
+<body>
+  <div class="frame-top"></div>
+
+  <div class="header">
+    <div class="header-left">
+      <button class="back-btn">◀</button>
+      <span class="page-title">召唤</span>
+    </div>
+    <button class="btn-record">抽卡记录</button>
+  </div>
+
+  <div class="summon-area">
+    <div class="summon-glow"></div>
+    <div class="summon-circle">
+      <span class="summon-icon">🔮</span>
+    </div>
+  </div>
+
+  <div class="pool-tabs">
+    <button class="pool-tab active">限定池 <span class="hot">HOT</span></button>
+    <button class="pool-tab">常驻池</button>
+    <button class="pool-tab">友情池</button>
+  </div>
+
+  <div class="rate-info">
+    <span>SSR <span class="rate-ssr">3%</span></span>
+    <span>SR <span class="rate-sr">15%</span></span>
+    <span>R <span class="rate-r">82%</span></span>
+  </div>
+
+  <div class="gacha-buttons">
+    <button class="btn-gacha btn-single">
+      单抽×1
+      <span class="gacha-cost">200 钻石</span>
+    </button>
+    <button class="btn-gacha btn-ten">
+      十连抽×10
+      <span class="gacha-cost">1800 钻石</span>
+    </button>
+  </div>
+
+  <div class="result-label">— 上次十连结果 —</div>
+  <div class="result-grid">
+    <div class="result-card"><span class="result-icon">⚔</span><span class="result-rarity">R</span></div>
+    <div class="result-card rarity-r"><span class="result-icon">🗡</span><span class="result-rarity">R</span></div>
+    <div class="result-card rarity-sr"><span class="result-icon">🛡</span><span class="result-rarity">SR</span></div>
+    <div class="result-card"><span class="result-icon">💍</span><span class="result-rarity">R</span></div>
+    <div class="result-card rarity-ssr"><span class="result-icon">⚡</span><span class="result-rarity">SSR</span></div>
+    <div class="result-card"><span class="result-icon">🗡</span><span class="result-rarity">R</span></div>
+    <div class="result-card rarity-r"><span class="result-icon">👢</span><span class="result-rarity">R</span></div>
+    <div class="result-card rarity-sr"><span class="result-icon">🗡</span><span class="result-rarity">SR</span></div>
+    <div class="result-card"><span class="result-icon">🛡</span><span class="result-rarity">R</span></div>
+    <div class="result-card rarity-r"><span class="result-icon">⚔</span><span class="result-rarity">R</span></div>
+  </div>
+
+  <div class="frame-bottom"></div>
+</body>
+</html>

@@ -95,6 +95,10 @@ DEMOS = {
     "scifi": scifi_hub_demo,
     "casual": casual_menu_demo,
     "arena": arena_result_demo,
+    "dungeon": lambda: DSLPage().load(os.path.join(PAGES_DIR, "dungeon.json")).show(),
+    "guild": lambda: DSLPage().load(os.path.join(PAGES_DIR, "guild.json")).show(),
+    "gacha": lambda: DSLPage().load(os.path.join(PAGES_DIR, "gacha.json")).show(),
+    "battle": lambda: DSLPage().load(os.path.join(PAGES_DIR, "battle.json")).show(),
 }
 
 if __name__ == "__main__":

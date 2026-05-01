@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>公会</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 600px; height: 500px;
+      background-color: #1a0f0a;
+      background-image: linear-gradient(180deg, #2a1a10 0%, #1a0f0a 40%, #0f0a05 100%);
+      font-family: "SimHei", "Microsoft YaHei", serif;
+      display: flex; flex-direction: column;
+      padding: 12px; gap: 8px;
+      color: #e8d5b5;
+      border: 3px solid #8b6914;
+    }
+
+    .frame-top {
+      height: 6px;
+      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
+    }
+
+    .header {
+      display: flex; flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .guild-info {
+      display: flex; flex-direction: row;
+      align-items: center; gap: 8px;
+    }
+    .guild-name {
+      font-size: 20px; font-weight: bold;
+      color: #ffd700;
+    }
+    .guild-level {
+      font-size: 12px;
+      color: #c9a034;
+      background-color: #2a1a10;
+      border: 1px solid #5c4510;
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .btn-exit {
+      width: 80px; height: 28px;
+      background-color: #3a1a10;
+      border: 1px solid #8b2020;
+      border-radius: 4px;
+      color: #cc5050;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .tab-bar {
+      display: flex; flex-direction: row;
+      border-bottom: 2px solid #5c4510;
+    }
+    .tab {
+      flex: 1;
+      height: 32px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: #a89070;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .tab.active {
+      color: #ffd700;
+      border-bottom-color: #c9a034;
+    }
+
+    .notice-box {
+      background-color: #2a1a10;
+      border: 1px solid #5c4510;
+      border-radius: 6px;
+      padding: 8px;
+      font-size: 12px;
+      color: #a89070;
+    }
+    .notice-title {
+      font-size: 13px; color: #c9a034;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #3a2a18;
+      margin-bottom: 4px;
+    }
+
+    .member-list {
+      flex: 1;
+      display: flex; flex-direction: column;
+      background-color: #1a0f0a;
+      border: 1px solid #3a2510;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .member-header {
+      display: flex; flex-direction: row;
+      justify-content: space-between;
+      padding: 6px 10px;
+      font-size: 12px; color: #a89070;
+      background-color: #2a1a10;
+      border-bottom: 1px solid #5c4510;
+    }
+    .member-row {
+      display: flex; flex-direction: row;
+      align-items: center;
+      padding: 8px 10px;
+      border-bottom: 1px solid #2a1a10;
+    }
+    .member-role {
+      font-size: 14px;
+      width: 24px;
+    }
+    .member-name {
+      font-size: 14px;
+      color: #e8d5b5;
+      flex: 1;
+    }
+    .member-level {
+      font-size: 12px;
+      color: #c9a034;
+      width: 60px;
+      text-align: center;
+    }
+    .member-status {
+      font-size: 12px;
+      width: 48px;
+      text-align: center;
+    }
+    .online { color: #40c040; }
+    .offline { color: #5c4510; }
+
+    .chat-area {
+      background-color: #1a0f0a;
+      border: 1px solid #3a2510;
+      border-radius: 6px;
+      padding: 6px;
+      display: flex; flex-direction: column;
+      gap: 4px;
+      max-height: 100px;
+    }
+    .chat-msg {
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      max-width: 80%;
+    }
+    .chat-left {
+      background-color: #2a1a10;
+      align-self: flex-start;
+      border-bottom-left-radius: 2px;
+    }
+    .chat-right {
+      background-color: #1a3a18;
+      align-self: flex-end;
+      border-bottom-right-radius: 2px;
+    }
+    .chat-system {
+      background-color: transparent;
+      align-self: center;
+      color: #a89070;
+      font-size: 11px;
+    }
+
+    .input-bar {
+      display: flex; flex-direction: row;
+      gap: 6px;
+    }
+    .chat-input {
+      flex: 1;
+      height: 32px;
+      background-color: #2a1a10;
+      border: 1px solid #5c4510;
+      border-radius: 4px;
+      color: #e8d5b5;
+      padding: 0 10px;
+      font-size: 13px;
+    }
+    .btn-send {
+      width: 64px; height: 32px;
+      background: linear-gradient(180deg, #5c4510, #3a2a08);
+      border: 1px solid #8b6914;
+      border-radius: 4px;
+      color: #ffd700;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .frame-bottom {
+      height: 6px;
+      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
+    }
+  </style>
+</head>
+<body>
+  <div class="frame-top"></div>
+
+  <div class="header">
+    <div class="guild-info">
+      <span class="guild-name">龙吟阁</span>
+      <span class="guild-level">Lv.15</span>
+      <span style="font-size:12px;color:#a89070">成员 28/30</span>
+    </div>
+    <button class="btn-exit">退出公会</button>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab active">成员</button>
+    <button class="tab">动态</button>
+    <button class="tab">公会战</button>
+    <button class="tab">设置</button>
+  </div>
+
+  <div class="notice-box">
+    <div class="notice-title">📢 公会公告</div>
+    公会战将于今晚8点开始，请各位准时参加！贡献达标可领取稀有装备奖励。
+  </div>
+
+  <div class="member-list">
+    <div class="member-header">
+      <span style="width:24px"></span>
+      <span style="flex:1">名称</span>
+      <span style="width:60px;text-align:center">等级</span>
+      <span style="width:48px;text-align:center">状态</span>
+    </div>
+    <div class="member-row">
+      <span class="member-role">👑</span>
+      <span class="member-name">龙战天下</span>
+      <span class="member-level">Lv.60</span>
+      <span class="member-status online">在线</span>
+    </div>
+    <div class="member-row">
+      <span class="member-role">⚔</span>
+      <span class="member-name">暗影猎手</span>
+      <span class="member-level">Lv.58</span>
+      <span class="member-status online">在线</span>
+    </div>
+    <div class="member-row">
+      <span class="member-role">⚔</span>
+      <span class="member-name">星辰破晓</span>
+      <span class="member-level">Lv.55</span>
+      <span class="member-status offline">离线</span>
+    </div>
+    <div class="member-row">
+      <span class="member-role">☆</span>
+      <span class="member-name">剑心无痕</span>
+      <span class="member-level">Lv.45</span>
+      <span class="member-status online">在线</span>
+    </div>
+    <div class="member-row">
+      <span class="member-role">☆</span>
+      <span class="member-name">流云飞雪</span>
+      <span class="member-level">Lv.42</span>
+      <span class="member-status offline">离线</span>
+    </div>
+    <div class="member-row">
+      <span class="member-role">☆</span>
+      <span class="member-name">月影清风</span>
+      <span class="member-level">Lv.38</span>
+      <span class="member-status online">在线</span>
+    </div>
+  </div>
+
+  <div class="chat-area">
+    <div class="chat-msg chat-left">龙战天下：今晚公会战都准备好了吗？</div>
+    <div class="chat-msg chat-right">没问题，我的队伍已经准备好了！</div>
+    <div class="chat-msg chat-system">系统：公会战将于 20:00 开始</div>
+  </div>
+
+  <div class="input-bar">
+    <input class="chat-input" placeholder="输入消息..." />
+    <button class="btn-send">发送</button>
+  </div>
+
+  <div class="frame-bottom"></div>
+</body>
+</html>

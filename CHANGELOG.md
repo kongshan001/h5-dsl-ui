@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.6.0] - 2026-04-26
+
+### Phase 13: Complex RPG Game UI Pages (4 new pages)
+
+4 new turn-based RPG mobile game UI pages to validate DSL system under real game scenarios:
+
+- **dungeon.html**: Chapter/stage grid with star ratings, chapter tabs, sweep/enter buttons. Tests: grid layout, repeated card patterns, conditional CSS classes (cleared/current/locked).
+- **guild.html**: Member list with role icons, chat bubbles (left/right/system), tab bar, notice box. Tests: dense list layout, flex alignment variants, chat bubble styling.
+- **gacha.html**: Summon circle with radial-gradient, pool tabs, rarity-bordered result grid (N/R/SR/SSR), single/10x buttons. Tests: gradient overlays, rarity border system, border-radius:50%.
+- **battle.html**: Turn counter, enemy/ally rows with HP/MP bars, speed/action order bar, 2x3 skill grid with states (usable/on-cd/no-mp), battle log. Tests: composite layout (vertical+horizontal+grid), widthPercent HP/MP bars, nested flex, box-shadow glow.
+
+**Visual similarity scores**:
+- dungeon: 94.4%, guild: 94.0%, battle: 93.7%, gacha: 91.0% (lower due to unsupported radial-gradient and position:absolute)
+- All 11 pages pass visual regression tests (60% threshold)
+- 46 tests pass total (35 unit + 11 visual)
+
 ## [0.5.0] - 2026-04-22
 
 ### Phase 12: Alpha Compositing & Text Color Fix

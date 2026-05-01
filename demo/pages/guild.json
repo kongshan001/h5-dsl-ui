@@ -1,0 +1,976 @@
+{
+  "version": 1,
+  "name": "guild_page",
+  "root": {
+    "type": "Panel",
+    "props": {},
+    "style": {
+      "layout": "vertical",
+      "color": "#e8d5b5",
+      "fontFamily": "\"SimHei\", \"Microsoft YaHei\", serif",
+      "padding": 12,
+      "gap": 8,
+      "width": 600,
+      "height": 500,
+      "border": {
+        "width": 3,
+        "style": "solid",
+        "color": "#8b6914"
+      },
+      "boxSizing": "border-box",
+      "gradient": {
+        "type": "linear",
+        "angle": 180,
+        "stops": [
+          {
+            "color": "#2a1a10",
+            "pos": 0
+          },
+          {
+            "color": "#1a0f0a",
+            "pos": 40
+          },
+          {
+            "color": "#0f0a05",
+            "pos": 100
+          }
+        ]
+      }
+    },
+    "children": [
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "height": 6,
+          "boxSizing": "border-box",
+          "gradient": {
+            "type": "linear",
+            "angle": 90,
+            "stops": [
+              {
+                "color": "#00000000",
+                "pos": 0
+              },
+              {
+                "color": "#c9a034",
+                "pos": 25
+              },
+              {
+                "color": "#8b6914",
+                "pos": 50
+              },
+              {
+                "color": "#c9a034",
+                "pos": 75
+              },
+              {
+                "color": "#00000000",
+                "pos": 100
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "justifyContent": "space-between",
+          "alignItems": "center",
+          "boxSizing": "border-box"
+        },
+        "children": [
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "horizontal",
+              "gap": 8,
+              "alignItems": "center",
+              "boxSizing": "border-box"
+            },
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "龙吟阁"
+                },
+                "style": {
+                  "color": "#ffd700",
+                  "fontSize": 20,
+                  "bold": true,
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "Lv.15"
+                },
+                "style": {
+                  "bgColor": "#2a1a10",
+                  "color": "#c9a034",
+                  "fontSize": 12,
+                  "cornerRadius": 4,
+                  "paddingTop": 2,
+                  "paddingBottom": 2,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "border": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#5c4510"
+                  },
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "成员 28/30"
+                },
+                "style": {
+                  "color": "#a89070",
+                  "fontSize": 12,
+                  "boxSizing": "border-box"
+                }
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "退出公会"
+            },
+            "style": {
+              "bgColor": "#3a1a10",
+              "color": "#cc5050",
+              "fontSize": 12,
+              "cornerRadius": 4,
+              "width": 80,
+              "height": 28,
+              "border": {
+                "width": 1,
+                "style": "solid",
+                "color": "#8b2020"
+              },
+              "boxSizing": "border-box"
+            }
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "boxSizing": "border-box",
+          "borderBottom": {
+            "width": 2,
+            "style": "solid",
+            "color": "#5c4510"
+          }
+        },
+        "children": [
+          {
+            "type": "Button",
+            "props": {
+              "text": "成员"
+            },
+            "style": {
+              "layout": "horizontal",
+              "bgColor": "transparent",
+              "color": "#ffd700",
+              "fontSize": 14,
+              "height": 32,
+              "border": {},
+              "justifyContent": "center",
+              "alignItems": "center",
+              "boxSizing": "border-box",
+              "borderBottom": {
+                "width": 2,
+                "style": "solid"
+              },
+              "flex": 1.0
+            }
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "动态"
+            },
+            "style": {
+              "layout": "horizontal",
+              "bgColor": "transparent",
+              "color": "#a89070",
+              "fontSize": 14,
+              "height": 32,
+              "border": {},
+              "justifyContent": "center",
+              "alignItems": "center",
+              "boxSizing": "border-box",
+              "borderBottom": {
+                "width": 2,
+                "style": "solid"
+              },
+              "flex": 1.0
+            }
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "公会战"
+            },
+            "style": {
+              "layout": "horizontal",
+              "bgColor": "transparent",
+              "color": "#a89070",
+              "fontSize": 14,
+              "height": 32,
+              "border": {},
+              "justifyContent": "center",
+              "alignItems": "center",
+              "boxSizing": "border-box",
+              "borderBottom": {
+                "width": 2,
+                "style": "solid"
+              },
+              "flex": 1.0
+            }
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "设置"
+            },
+            "style": {
+              "layout": "horizontal",
+              "bgColor": "transparent",
+              "color": "#a89070",
+              "fontSize": 14,
+              "height": 32,
+              "border": {},
+              "justifyContent": "center",
+              "alignItems": "center",
+              "boxSizing": "border-box",
+              "borderBottom": {
+                "width": 2,
+                "style": "solid"
+              },
+              "flex": 1.0
+            }
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "bgColor": "#2a1a10",
+          "color": "#a89070",
+          "fontSize": 12,
+          "cornerRadius": 6,
+          "padding": 8,
+          "border": {
+            "width": 1,
+            "style": "solid",
+            "color": "#5c4510"
+          },
+          "boxSizing": "border-box"
+        },
+        "children": [
+          {
+            "type": "Text",
+            "props": {
+              "value": "📢 公会公告"
+            },
+            "style": {
+              "color": "#c9a034",
+              "fontSize": 13,
+              "boxSizing": "border-box",
+              "borderBottom": {
+                "width": 1,
+                "style": "solid",
+                "color": "#3a2a18"
+              },
+              "paddingBottom": 4
+            }
+          },
+          {
+            "type": "Text",
+            "props": {
+              "value": "公会战将于今晚8点开始，请各位准时参加！贡献达标可领取稀有装备奖励。"
+            }
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "vertical",
+          "bgColor": "#1a0f0a",
+          "cornerRadius": 6,
+          "border": {
+            "width": 1,
+            "style": "solid",
+            "color": "#3a2510"
+          },
+          "boxSizing": "border-box",
+          "flex": 1.0
+        },
+        "children": [
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "horizontal",
+              "bgColor": "#2a1a10",
+              "color": "#a89070",
+              "fontSize": 12,
+              "paddingTop": 6,
+              "paddingBottom": 6,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "justifyContent": "space-between",
+              "boxSizing": "border-box",
+              "borderBottom": {
+                "width": 1,
+                "style": "solid",
+                "color": "#5c4510"
+              }
+            },
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": ""
+                },
+                "style": {
+                  "width": 24,
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "名称"
+                },
+                "style": {
+                  "boxSizing": "border-box",
+                  "flex": 1.0
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "等级"
+                },
+                "style": {
+                  "width": 60,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "状态"
+                },
+                "style": {
+                  "width": 48,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              }
+            ]
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "horizontal",
+              "paddingTop": 8,
+              "paddingBottom": 8,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "alignItems": "center",
+              "boxSizing": "border-box",
+              "borderBottom": {
+                "width": 1,
+                "style": "solid",
+                "color": "#2a1a10"
+              }
+            },
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "👑"
+                },
+                "style": {
+                  "fontSize": 14,
+                  "width": 24,
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "龙战天下"
+                },
+                "style": {
+                  "color": "#e8d5b5",
+                  "fontSize": 14,
+                  "boxSizing": "border-box",
+                  "flex": 1.0
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "Lv.60"
+                },
+                "style": {
+                  "color": "#c9a034",
+                  "fontSize": 12,
+                  "width": 60,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "在线"
+                },
+                "style": {
+                  "color": "#40c040",
+                  "fontSize": 12,
+                  "width": 48,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              }
+            ]
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "horizontal",
+              "paddingTop": 8,
+              "paddingBottom": 8,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "alignItems": "center",
+              "boxSizing": "border-box",
+              "borderBottom": {
+                "width": 1,
+                "style": "solid",
+                "color": "#2a1a10"
+              }
+            },
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "⚔"
+                },
+                "style": {
+                  "fontSize": 14,
+                  "width": 24,
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "暗影猎手"
+                },
+                "style": {
+                  "color": "#e8d5b5",
+                  "fontSize": 14,
+                  "boxSizing": "border-box",
+                  "flex": 1.0
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "Lv.58"
+                },
+                "style": {
+                  "color": "#c9a034",
+                  "fontSize": 12,
+                  "width": 60,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "在线"
+                },
+                "style": {
+                  "color": "#40c040",
+                  "fontSize": 12,
+                  "width": 48,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              }
+            ]
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "horizontal",
+              "paddingTop": 8,
+              "paddingBottom": 8,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "alignItems": "center",
+              "boxSizing": "border-box",
+              "borderBottom": {
+                "width": 1,
+                "style": "solid",
+                "color": "#2a1a10"
+              }
+            },
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "⚔"
+                },
+                "style": {
+                  "fontSize": 14,
+                  "width": 24,
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "星辰破晓"
+                },
+                "style": {
+                  "color": "#e8d5b5",
+                  "fontSize": 14,
+                  "boxSizing": "border-box",
+                  "flex": 1.0
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "Lv.55"
+                },
+                "style": {
+                  "color": "#c9a034",
+                  "fontSize": 12,
+                  "width": 60,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "离线"
+                },
+                "style": {
+                  "color": "#5c4510",
+                  "fontSize": 12,
+                  "width": 48,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              }
+            ]
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "horizontal",
+              "paddingTop": 8,
+              "paddingBottom": 8,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "alignItems": "center",
+              "boxSizing": "border-box",
+              "borderBottom": {
+                "width": 1,
+                "style": "solid",
+                "color": "#2a1a10"
+              }
+            },
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "☆"
+                },
+                "style": {
+                  "fontSize": 14,
+                  "width": 24,
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "剑心无痕"
+                },
+                "style": {
+                  "color": "#e8d5b5",
+                  "fontSize": 14,
+                  "boxSizing": "border-box",
+                  "flex": 1.0
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "Lv.45"
+                },
+                "style": {
+                  "color": "#c9a034",
+                  "fontSize": 12,
+                  "width": 60,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "在线"
+                },
+                "style": {
+                  "color": "#40c040",
+                  "fontSize": 12,
+                  "width": 48,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              }
+            ]
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "horizontal",
+              "paddingTop": 8,
+              "paddingBottom": 8,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "alignItems": "center",
+              "boxSizing": "border-box",
+              "borderBottom": {
+                "width": 1,
+                "style": "solid",
+                "color": "#2a1a10"
+              }
+            },
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "☆"
+                },
+                "style": {
+                  "fontSize": 14,
+                  "width": 24,
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "流云飞雪"
+                },
+                "style": {
+                  "color": "#e8d5b5",
+                  "fontSize": 14,
+                  "boxSizing": "border-box",
+                  "flex": 1.0
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "Lv.42"
+                },
+                "style": {
+                  "color": "#c9a034",
+                  "fontSize": 12,
+                  "width": 60,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "离线"
+                },
+                "style": {
+                  "color": "#5c4510",
+                  "fontSize": 12,
+                  "width": 48,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              }
+            ]
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "layout": "horizontal",
+              "paddingTop": 8,
+              "paddingBottom": 8,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "alignItems": "center",
+              "boxSizing": "border-box",
+              "borderBottom": {
+                "width": 1,
+                "style": "solid",
+                "color": "#2a1a10"
+              }
+            },
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "value": "☆"
+                },
+                "style": {
+                  "fontSize": 14,
+                  "width": 24,
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "月影清风"
+                },
+                "style": {
+                  "color": "#e8d5b5",
+                  "fontSize": 14,
+                  "boxSizing": "border-box",
+                  "flex": 1.0
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "Lv.38"
+                },
+                "style": {
+                  "color": "#c9a034",
+                  "fontSize": 12,
+                  "width": 60,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "在线"
+                },
+                "style": {
+                  "color": "#40c040",
+                  "fontSize": 12,
+                  "width": 48,
+                  "textAlign": "center",
+                  "boxSizing": "border-box"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "vertical",
+          "bgColor": "#1a0f0a",
+          "cornerRadius": 6,
+          "padding": 6,
+          "gap": 4,
+          "maxHeight": 100,
+          "border": {
+            "width": 1,
+            "style": "solid",
+            "color": "#3a2510"
+          },
+          "boxSizing": "border-box"
+        },
+        "children": [
+          {
+            "type": "Text",
+            "props": {
+              "value": "龙战天下：今晚公会战都准备好了吗？"
+            },
+            "style": {
+              "bgColor": "#2a1a10",
+              "fontSize": 12,
+              "cornerRadius": 6,
+              "paddingTop": 3,
+              "paddingBottom": 3,
+              "paddingLeft": 8,
+              "paddingRight": 8,
+              "boxSizing": "border-box"
+            }
+          },
+          {
+            "type": "Text",
+            "props": {
+              "value": "没问题，我的队伍已经准备好了！"
+            },
+            "style": {
+              "bgColor": "#1a3a18",
+              "fontSize": 12,
+              "cornerRadius": 6,
+              "paddingTop": 3,
+              "paddingBottom": 3,
+              "paddingLeft": 8,
+              "paddingRight": 8,
+              "boxSizing": "border-box"
+            }
+          },
+          {
+            "type": "Text",
+            "props": {
+              "value": "系统：公会战将于 20:00 开始"
+            },
+            "style": {
+              "bgColor": "transparent",
+              "color": "#a89070",
+              "fontSize": 11,
+              "cornerRadius": 6,
+              "paddingTop": 3,
+              "paddingBottom": 3,
+              "paddingLeft": 8,
+              "paddingRight": 8,
+              "boxSizing": "border-box"
+            }
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "gap": 6,
+          "boxSizing": "border-box"
+        },
+        "children": [
+          {
+            "type": "Input",
+            "props": {
+              "placeholder": "输入消息...",
+              "value": ""
+            },
+            "style": {
+              "bgColor": "#2a1a10",
+              "color": "#e8d5b5",
+              "fontSize": 13,
+              "cornerRadius": 4,
+              "height": 32,
+              "border": {
+                "width": 1,
+                "style": "solid",
+                "color": "#5c4510"
+              },
+              "boxSizing": "border-box",
+              "flex": 1.0
+            }
+          },
+          {
+            "type": "Button",
+            "props": {
+              "text": "发送"
+            },
+            "style": {
+              "color": "#ffd700",
+              "fontSize": 13,
+              "cornerRadius": 4,
+              "width": 64,
+              "height": 32,
+              "border": {
+                "width": 1,
+                "style": "solid",
+                "color": "#8b6914"
+              },
+              "boxSizing": "border-box",
+              "gradient": {
+                "type": "linear",
+                "angle": 180,
+                "stops": [
+                  {
+                    "color": "#5c4510",
+                    "pos": 0
+                  },
+                  {
+                    "color": "#3a2a08",
+                    "pos": 100
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "height": 6,
+          "boxSizing": "border-box",
+          "gradient": {
+            "type": "linear",
+            "angle": 90,
+            "stops": [
+              {
+                "color": "#00000000",
+                "pos": 0
+              },
+              {
+                "color": "#c9a034",
+                "pos": 25
+              },
+              {
+                "color": "#8b6914",
+                "pos": 50
+              },
+              {
+                "color": "#c9a034",
+                "pos": 75
+              },
+              {
+                "color": "#00000000",
+                "pos": 100
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

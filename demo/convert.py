@@ -24,6 +24,10 @@ def convert_all():
         "scifi_hub.html": "scifi_hub_page",
         "casual_menu.html": "casual_menu_page",
         "arena_result.html": "arena_result_page",
+        "dungeon.html": "dungeon_page",
+        "guild.html": "guild_page",
+        "gacha.html": "gacha_page",
+        "battle.html": "battle_page",
     }
 
     for html_file, page_name in pages.items():

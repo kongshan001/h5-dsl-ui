@@ -18,6 +18,10 @@ PAGES = {
     "scifi_hub.json": (900, 560),
     "casual_menu.json": (480, 640),
     "arena_result.json": (720, 480),
+    "dungeon.json": (600, 500),
+    "guild.json": (600, 500),
+    "gacha.json": (600, 500),
+    "battle.json": (600, 500),
 }
 
 

@@ -7,7 +7,7 @@ from tests.screenshot_utils import capture_pyqt5_screenshot, compare_screenshots
 PAGES_DIR = os.path.join(os.path.dirname(__file__), "..", "demo", "pages")
 HTML_SCREENSHOTS = os.path.join(os.path.dirname(__file__), "..", "demo", "html_screenshots")
 
-PAGES = ["inventory", "settings", "shop", "rpg_status", "scifi_hub", "casual_menu", "arena_result"]
+PAGES = ["inventory", "settings", "shop", "rpg_status", "scifi_hub", "casual_menu", "arena_result", "dungeon", "guild", "gacha", "battle"]
 
 PAGE_SIZES = {
     "inventory": (820, 620),
@@ -17,6 +17,10 @@ PAGE_SIZES = {
     "scifi_hub": (900, 560),
     "casual_menu": (480, 640),
     "arena_result": (720, 480),
+    "dungeon": (600, 500),
+    "guild": (600, 500),
+    "gacha": (600, 500),
+    "battle": (600, 500),
 }
 
 

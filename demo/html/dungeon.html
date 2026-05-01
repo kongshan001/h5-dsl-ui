@@ -7,74 +7,66 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       width: 600px; height: 500px;
-      background-color: #1a0f0a;
-      background-image: linear-gradient(180deg, #2a1a10 0%, #1a0f0a 40%, #0f0a05 100%);
-      font-family: "SimHei", "Microsoft YaHei", serif;
+      background-color: #0d0d1a;
+      background-image: linear-gradient(160deg, #1a1a3e 0%, #0d0d1a 40%, #0a1628 100%);
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
       display: flex; flex-direction: column;
       padding: 12px; gap: 10px;
-      color: #e8d5b5;
-      border: 3px solid #8b6914;
-    }
-
-    .frame-top {
-      height: 6px;
-      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
+      color: #e0e0f0;
+      border: 2px solid #7b61ff40;
     }
 
     .header {
       display: flex; flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 6px;
-      border-bottom: 2px solid #5c4510;
     }
     .header-left {
       display: flex; flex-direction: row;
-      align-items: center; gap: 8px;
+      align-items: center; gap: 10px;
     }
     .back-btn {
       width: 32px; height: 32px;
-      background: linear-gradient(180deg, #5c4510, #3a2a08);
-      border: 1px solid #8b6914;
-      border-radius: 4px;
-      color: #ffd700;
-      font-size: 16px;
+      background: rgba(123, 97, 255, 0.15);
+      border: 1px solid #7b61ff60;
+      border-radius: 8px;
+      color: #7b61ff;
+      font-size: 14px;
       cursor: pointer;
       display: flex; align-items: center; justify-content: center;
     }
     .page-title {
       font-size: 20px; font-weight: bold;
-      color: #ffd700;
-      letter-spacing: 4px;
+      background: linear-gradient(90deg, #00d4ff, #7b61ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .chapter-name {
-      font-size: 14px;
-      color: #c9a034;
-      background-color: #2a1a10;
-      border: 1px solid #5c4510;
-      border-radius: 4px;
-      padding: 4px 12px;
+    .chapter-badge {
+      font-size: 12px;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid #00d4ff40;
+      border-radius: 20px;
+      padding: 4px 14px;
+      color: #00d4ff;
     }
 
-    .chapter-progress {
+    .progress-row {
       display: flex; flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: 4px 0;
+      font-size: 12px;
+      color: #8888aa;
     }
-    .progress-label {
-      font-size: 12px; color: #a89070;
-    }
-    .progress-bar-track {
-      width: 200px; height: 8px;
-      background-color: #0a0505;
-      border: 1px solid #3a2510;
-      border-radius: 4px;
-    }
-    .progress-bar-fill {
-      width: 65%; height: 6px;
-      background: linear-gradient(90deg, #c9a034, #ffd700);
+    .progress-track {
+      width: 200px; height: 6px;
+      background-color: #1a1a3e;
       border-radius: 3px;
+      border: 1px solid #2a2a4e;
+    }
+    .progress-fill {
+      width: 65%; height: 4px;
+      background: linear-gradient(90deg, #7b61ff, #00d4ff);
+      border-radius: 2px;
     }
 
     .stage-grid {
@@ -85,10 +77,10 @@
     }
 
     .stage-card {
-      background-color: #2a1a10;
-      border: 2px solid #5c4510;
-      border-radius: 8px;
-      padding: 8px;
+      background: rgba(26, 26, 62, 0.6);
+      border: 1px solid #2a2a4e;
+      border-radius: 12px;
+      padding: 10px 6px;
       display: flex; flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -96,137 +88,119 @@
       cursor: pointer;
     }
     .stage-card.cleared {
-      border-color: #8b6914;
+      border-color: #7b61ff60;
     }
     .stage-card.current {
-      border-color: #ffd700;
-      box-shadow: 0 0 8px #c9a03480;
+      border-color: #00d4ff;
+      box-shadow: 0 0 12px #00d4ff30, inset 0 0 12px #00d4ff10;
     }
     .stage-card.locked {
-      opacity: 0.4;
-      cursor: default;
+      opacity: 0.3;
     }
     .stage-num {
       font-size: 16px; font-weight: bold;
-      color: #c9a034;
+      color: #7b61ff;
     }
-    .stage-card.locked .stage-num {
-      color: #5c4510;
+    .stage-card.current .stage-num {
+      color: #00d4ff;
     }
     .stage-stars {
-      font-size: 14px;
-      color: #c9a034;
+      font-size: 13px;
+      color: #ffd700;
     }
-    .stage-stars .empty { color: #4a3a28; }
-    .stage-lock {
-      font-size: 20px;
-      color: #5c4510;
-    }
-    .stage-reward {
-      font-size: 10px;
-      color: #a89070;
-    }
+    .stage-stars .empty { color: #2a2a4e; }
+    .stage-lock { font-size: 18px; color: #3a3a5e; }
+    .stage-name { font-size: 10px; color: #8888aa; }
 
     .chapter-tabs {
       display: flex; flex-direction: row;
       gap: 4px;
     }
     .chapter-tab {
-      flex: 1;
-      height: 32px;
-      background-color: #2a1a10;
-      border: 1px solid #5c4510;
-      border-radius: 4px;
-      color: #a89070;
-      font-size: 13px;
+      flex: 1; height: 34px;
+      background: rgba(26, 26, 62, 0.4);
+      border: 1px solid #2a2a4e;
+      border-radius: 10px;
+      color: #6a6a8e;
+      font-size: 12px;
       cursor: pointer;
       display: flex; align-items: center; justify-content: center;
     }
     .chapter-tab.active {
-      background: linear-gradient(180deg, #5c4510, #3a2a08);
-      border-color: #c9a034;
-      color: #ffd700;
+      background: rgba(123, 97, 255, 0.15);
+      border-color: #7b61ff;
+      color: #7b61ff;
     }
 
     .action-bar {
       display: flex; flex-direction: row;
-      gap: 8px;
-      justify-content: center;
-      padding-top: 4px;
+      gap: 8px; justify-content: center;
     }
     .btn {
       width: 160px; height: 40px;
-      border-radius: 6px;
+      border-radius: 10px;
       font-size: 14px; font-weight: bold;
       cursor: pointer;
       border: 1px solid;
     }
     .btn-sweep {
-      background: linear-gradient(180deg, #4a3a28, #3a2a18);
-      border-color: #8b6914;
-      color: #ffd700;
+      background: rgba(123, 97, 255, 0.12);
+      border-color: #7b61ff60;
+      color: #7b61ff;
     }
     .btn-enter {
-      background: linear-gradient(180deg, #8b2020, #6a1515);
-      border-color: #cc3030;
-      color: #ffd700;
-    }
-
-    .frame-bottom {
-      height: 6px;
-      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
+      background: linear-gradient(135deg, #7b61ff, #00d4ff);
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 0 16px #7b61ff40;
     }
   </style>
 </head>
 <body>
-  <div class="frame-top"></div>
-
   <div class="header">
     <div class="header-left">
       <button class="back-btn">◀</button>
       <span class="page-title">副本选择</span>
     </div>
-    <span class="chapter-name">第三章 · 暗影森林</span>
+    <span class="chapter-badge">第三章 · 暗影森林</span>
   </div>
 
-  <div class="chapter-progress">
-    <span class="progress-label">通关进度 5/8</span>
-    <div class="progress-bar-track">
-      <div class="progress-bar-fill"></div>
-    </div>
-    <span class="progress-label">星数 12/24</span>
+  <div class="progress-row">
+    <span>通关 5/8</span>
+    <div class="progress-track"><div class="progress-fill"></div></div>
+    <span>★ 12/24</span>
   </div>
 
   <div class="stage-grid">
     <div class="stage-card cleared">
       <span class="stage-num">3-1</span>
       <span class="stage-stars">★★★</span>
-      <span class="stage-reward">暗影狼</span>
+      <span class="stage-name">暗影狼</span>
     </div>
     <div class="stage-card cleared">
       <span class="stage-num">3-2</span>
       <span class="stage-stars">★★<span class="empty">★</span></span>
-      <span class="stage-reward">毒蘑菇</span>
+      <span class="stage-name">毒蘑菇</span>
     </div>
     <div class="stage-card cleared">
       <span class="stage-num">3-3</span>
       <span class="stage-stars">★★★</span>
-      <span class="stage-reward">树精卫</span>
+      <span class="stage-name">树精卫</span>
     </div>
     <div class="stage-card cleared">
       <span class="stage-num">3-4</span>
       <span class="stage-stars">★<span class="empty">★★</span></span>
-      <span class="stage-reward">幽灵蛛</span>
+      <span class="stage-name">幽灵蛛</span>
     </div>
     <div class="stage-card cleared">
       <span class="stage-num">3-5</span>
       <span class="stage-stars">★★★</span>
-      <span class="stage-reward">暗影狼王</span>
+      <span class="stage-name">暗影狼王</span>
     </div>
     <div class="stage-card current">
       <span class="stage-num">3-6</span>
       <span class="stage-stars"><span class="empty">★★★</span></span>
-      <span class="stage-reward">腐化树人</span>
+      <span class="stage-name">腐化树人</span>
     </div>
     <div class="stage-card locked">
       <span class="stage-lock">🔒</span>
@@ -239,17 +213,15 @@
   </div>
 
   <div class="chapter-tabs">
-    <button class="chapter-tab">第一章 · 新手村</button>
-    <button class="chapter-tab">第二章 · 幽暗矿洞</button>
-    <button class="chapter-tab active">第三章 · 暗影森林</button>
-    <button class="chapter-tab">第四章 · 熔岩地窟</button>
+    <button class="chapter-tab">新手村</button>
+    <button class="chapter-tab">幽暗矿洞</button>
+    <button class="chapter-tab active">暗影森林</button>
+    <button class="chapter-tab">熔岩地窟</button>
   </div>
 
   <div class="action-bar">
-    <button class="btn btn-sweep">扫荡10次</button>
+    <button class="btn btn-sweep">扫荡 10 次</button>
     <button class="btn btn-enter">进入战斗</button>
   </div>
-
-  <div class="frame-bottom"></div>
 </body>
 </html>

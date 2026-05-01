@@ -7,18 +7,13 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       width: 600px; height: 500px;
-      background-color: #1a0f0a;
-      background-image: linear-gradient(180deg, #2a1a10 0%, #1a0f0a 40%, #0f0a05 100%);
-      font-family: "SimHei", "Microsoft YaHei", serif;
+      background-color: #0d0d1a;
+      background-image: linear-gradient(160deg, #1a1a3e 0%, #0d0d1a 40%, #0a1628 100%);
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
       display: flex; flex-direction: column;
       padding: 12px; gap: 8px;
-      color: #e8d5b5;
-      border: 3px solid #8b6914;
-    }
-
-    .frame-top {
-      height: 6px;
-      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
+      color: #e0e0f0;
+      border: 2px solid #7b61ff40;
     }
 
     .header {
@@ -32,135 +27,126 @@
     }
     .guild-name {
       font-size: 20px; font-weight: bold;
-      color: #ffd700;
+      background: linear-gradient(90deg, #00d4ff, #7b61ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .guild-level {
-      font-size: 12px;
-      color: #c9a034;
-      background-color: #2a1a10;
-      border: 1px solid #5c4510;
-      border-radius: 4px;
-      padding: 2px 8px;
+      font-size: 11px;
+      background: rgba(123, 97, 255, 0.12);
+      border: 1px solid #7b61ff40;
+      border-radius: 20px;
+      padding: 2px 10px;
+      color: #7b61ff;
+    }
+    .guild-count {
+      font-size: 11px; color: #6a6a8e;
     }
     .btn-exit {
-      width: 80px; height: 28px;
-      background-color: #3a1a10;
-      border: 1px solid #8b2020;
-      border-radius: 4px;
-      color: #cc5050;
+      height: 28px;
+      background: rgba(255, 107, 157, 0.1);
+      border: 1px solid #ff6b9d40;
+      border-radius: 8px;
+      color: #ff6b9d;
       font-size: 12px;
+      padding: 0 14px;
       cursor: pointer;
     }
 
     .tab-bar {
       display: flex; flex-direction: row;
-      border-bottom: 2px solid #5c4510;
+      gap: 2px;
+      border-bottom: 1px solid #2a2a4e;
     }
     .tab {
-      flex: 1;
-      height: 32px;
-      background-color: transparent;
+      flex: 1; height: 32px;
+      background: transparent;
       border: none;
       border-bottom: 2px solid transparent;
-      color: #a89070;
-      font-size: 14px;
+      color: #6a6a8e;
+      font-size: 13px;
       cursor: pointer;
       display: flex; align-items: center; justify-content: center;
     }
     .tab.active {
-      color: #ffd700;
-      border-bottom-color: #c9a034;
+      color: #00d4ff;
+      border-bottom-color: #00d4ff;
     }
 
     .notice-box {
-      background-color: #2a1a10;
-      border: 1px solid #5c4510;
-      border-radius: 6px;
-      padding: 8px;
+      background: rgba(0, 212, 255, 0.06);
+      border: 1px solid #00d4ff20;
+      border-radius: 10px;
+      padding: 8px 12px;
       font-size: 12px;
-      color: #a89070;
+      color: #8888aa;
     }
     .notice-title {
-      font-size: 13px; color: #c9a034;
-      padding-bottom: 4px;
-      border-bottom: 1px solid #3a2a18;
+      font-size: 12px; color: #00d4ff;
       margin-bottom: 4px;
     }
 
     .member-list {
       flex: 1;
       display: flex; flex-direction: column;
-      background-color: #1a0f0a;
-      border: 1px solid #3a2510;
-      border-radius: 6px;
+      background: rgba(26, 26, 62, 0.3);
+      border: 1px solid #2a2a4e;
+      border-radius: 10px;
       overflow: hidden;
     }
     .member-header {
       display: flex; flex-direction: row;
-      justify-content: space-between;
-      padding: 6px 10px;
-      font-size: 12px; color: #a89070;
-      background-color: #2a1a10;
-      border-bottom: 1px solid #5c4510;
+      padding: 6px 12px;
+      font-size: 11px; color: #6a6a8e;
+      background: rgba(26, 26, 62, 0.5);
+      border-bottom: 1px solid #2a2a4e;
     }
     .member-row {
       display: flex; flex-direction: row;
       align-items: center;
-      padding: 8px 10px;
-      border-bottom: 1px solid #2a1a10;
+      padding: 7px 12px;
+      border-bottom: 1px solid #1a1a3e;
     }
-    .member-role {
-      font-size: 14px;
-      width: 24px;
-    }
-    .member-name {
-      font-size: 14px;
-      color: #e8d5b5;
-      flex: 1;
-    }
-    .member-level {
-      font-size: 12px;
-      color: #c9a034;
-      width: 60px;
-      text-align: center;
-    }
-    .member-status {
-      font-size: 12px;
-      width: 48px;
-      text-align: center;
-    }
-    .online { color: #40c040; }
-    .offline { color: #5c4510; }
+    .member-role { font-size: 14px; width: 28px; }
+    .member-name { font-size: 13px; color: #e0e0f0; flex: 1; }
+    .member-level { font-size: 11px; color: #7b61ff; width: 55px; text-align: center; }
+    .member-status { font-size: 11px; width: 44px; text-align: center; }
+    .online { color: #00e89d; }
+    .offline { color: #3a3a5e; }
 
     .chat-area {
-      background-color: #1a0f0a;
-      border: 1px solid #3a2510;
-      border-radius: 6px;
-      padding: 6px;
       display: flex; flex-direction: column;
       gap: 4px;
-      max-height: 100px;
+      background: rgba(26, 26, 62, 0.3);
+      border: 1px solid #2a2a4e;
+      border-radius: 10px;
+      padding: 8px;
+      max-height: 90px;
     }
     .chat-msg {
       font-size: 12px;
-      padding: 3px 8px;
-      border-radius: 6px;
-      max-width: 80%;
+      padding: 4px 10px;
+      border-radius: 10px;
+      max-width: 75%;
     }
     .chat-left {
-      background-color: #2a1a10;
+      background: rgba(123, 97, 255, 0.1);
+      border: 1px solid #7b61ff20;
       align-self: flex-start;
-      border-bottom-left-radius: 2px;
+      border-bottom-left-radius: 3px;
+      color: #c0c0e0;
     }
     .chat-right {
-      background-color: #1a3a18;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid #00d4ff20;
       align-self: flex-end;
-      border-bottom-right-radius: 2px;
+      border-bottom-right-radius: 3px;
+      color: #c0e8f0;
     }
     .chat-system {
-      background-color: transparent;
+      background: transparent;
       align-self: center;
-      color: #a89070;
+      color: #6a6a8e;
       font-size: 11px;
     }
 
@@ -169,39 +155,35 @@
       gap: 6px;
     }
     .chat-input {
-      flex: 1;
-      height: 32px;
-      background-color: #2a1a10;
-      border: 1px solid #5c4510;
-      border-radius: 4px;
-      color: #e8d5b5;
-      padding: 0 10px;
+      flex: 1; height: 34px;
+      background: rgba(26, 26, 62, 0.5);
+      border: 1px solid #2a2a4e;
+      border-radius: 10px;
+      color: #e0e0f0;
+      padding: 0 12px;
       font-size: 13px;
     }
     .btn-send {
-      width: 64px; height: 32px;
-      background: linear-gradient(180deg, #5c4510, #3a2a08);
-      border: 1px solid #8b6914;
-      border-radius: 4px;
-      color: #ffd700;
+      width: 64px; height: 34px;
+      background: linear-gradient(135deg, #7b61ff, #00d4ff);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
       font-size: 13px;
       cursor: pointer;
     }
 
-    .frame-bottom {
-      height: 6px;
-      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
-    }
+    .col-name { flex: 1; }
+    .col-level { width: 55px; text-align: center; }
+    .col-status { width: 44px; text-align: center; }
   </style>
 </head>
 <body>
-  <div class="frame-top"></div>
-
   <div class="header">
     <div class="guild-info">
       <span class="guild-name">龙吟阁</span>
       <span class="guild-level">Lv.15</span>
-      <span style="font-size:12px;color:#a89070">成员 28/30</span>
+      <span class="guild-count">成员 28/30</span>
     </div>
     <button class="btn-exit">退出公会</button>
   </div>
@@ -220,10 +202,10 @@
 
   <div class="member-list">
     <div class="member-header">
-      <span style="width:24px"></span>
-      <span style="flex:1">名称</span>
-      <span style="width:60px;text-align:center">等级</span>
-      <span style="width:48px;text-align:center">状态</span>
+      <span style="width:28px"></span>
+      <span class="col-name">名称</span>
+      <span class="col-level">等级</span>
+      <span class="col-status">状态</span>
     </div>
     <div class="member-row">
       <span class="member-role">👑</span>
@@ -273,7 +255,5 @@
     <input class="chat-input" placeholder="输入消息..." />
     <button class="btn-send">发送</button>
   </div>
-
-  <div class="frame-bottom"></div>
 </body>
 </html>

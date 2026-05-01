@@ -7,18 +7,13 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       width: 600px; height: 500px;
-      background-color: #1a0f0a;
-      background-image: linear-gradient(180deg, #1a1030 0%, #1a0f0a 40%, #0f0a05 100%);
-      font-family: "SimHei", "Microsoft YaHei", serif;
+      background-color: #0d0d1a;
+      background-image: linear-gradient(160deg, #2a1a3e 0%, #0d0d1a 35%, #0a1628 100%);
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
       display: flex; flex-direction: column;
       padding: 12px; gap: 8px;
-      color: #e8d5b5;
-      border: 3px solid #8b6914;
-    }
-
-    .frame-top {
-      height: 6px;
-      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
+      color: #e0e0f0;
+      border: 2px solid #7b61ff40;
     }
 
     .header {
@@ -28,31 +23,32 @@
     }
     .header-left {
       display: flex; flex-direction: row;
-      align-items: center; gap: 8px;
+      align-items: center; gap: 10px;
     }
     .back-btn {
       width: 32px; height: 32px;
-      background: linear-gradient(180deg, #5c4510, #3a2a08);
-      border: 1px solid #8b6914;
-      border-radius: 4px;
-      color: #ffd700;
-      font-size: 16px;
+      background: rgba(123, 97, 255, 0.15);
+      border: 1px solid #7b61ff60;
+      border-radius: 8px;
+      color: #7b61ff;
+      font-size: 14px;
       cursor: pointer;
       display: flex; align-items: center; justify-content: center;
     }
     .page-title {
       font-size: 20px; font-weight: bold;
-      color: #ffd700;
-      letter-spacing: 4px;
+      background: linear-gradient(90deg, #00d4ff, #7b61ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .btn-record {
       height: 28px;
-      background-color: #2a1a10;
-      border: 1px solid #5c4510;
-      border-radius: 4px;
-      color: #c9a034;
+      background: rgba(123, 97, 255, 0.1);
+      border: 1px solid #7b61ff40;
+      border-radius: 8px;
+      color: #7b61ff;
       font-size: 12px;
-      padding: 0 12px;
+      padding: 0 14px;
       cursor: pointer;
     }
 
@@ -61,50 +57,43 @@
       display: flex; flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      position: relative;
+      gap: 6px;
     }
     .summon-circle {
-      width: 180px; height: 180px;
+      width: 160px; height: 160px;
       border-radius: 50%;
-      background: radial-gradient(circle, #3a2050 0%, #1a1030 40%, #0a0520 70%, #1a0f0a 100%);
-      border: 3px solid #c9a034;
+      background: radial-gradient(circle, #3a2060 0%, #1a1040 50%, #0d0d1a 100%);
+      border: 2px solid #7b61ff;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 20px #c9a03440, 0 0 40px #c9a03420, inset 0 0 20px #c9a03430;
+      box-shadow: 0 0 24px #7b61ff40, 0 0 48px #7b61ff18, inset 0 0 24px #7b61ff20;
     }
-    .summon-icon {
-      font-size: 48px;
-    }
-    .summon-glow {
-      position: absolute;
-      width: 220px; height: 220px;
-      border-radius: 50%;
-      border: 1px solid #c9a03430;
-    }
+    .summon-icon { font-size: 44px; }
 
     .pool-tabs {
       display: flex; flex-direction: row;
       gap: 4px;
     }
     .pool-tab {
-      flex: 1;
-      height: 32px;
-      background-color: #2a1a10;
-      border: 1px solid #5c4510;
-      border-radius: 4px;
-      color: #a89070;
-      font-size: 13px;
+      flex: 1; height: 34px;
+      background: rgba(26, 26, 62, 0.4);
+      border: 1px solid #2a2a4e;
+      border-radius: 10px;
+      color: #6a6a8e;
+      font-size: 12px;
       cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
+      display: flex; align-items: center; justify-content: center; gap: 4px;
     }
     .pool-tab.active {
-      background: linear-gradient(180deg, #5c4510, #3a2a08);
-      border-color: #c9a034;
-      color: #ffd700;
+      background: rgba(123, 97, 255, 0.15);
+      border-color: #7b61ff;
+      color: #7b61ff;
     }
-    .pool-tab .hot {
+    .hot-tag {
       font-size: 10px;
-      color: #cc3030;
+      background: rgba(255, 107, 157, 0.2);
+      border-radius: 4px;
+      padding: 1px 4px;
+      color: #ff6b9d;
     }
 
     .rate-info {
@@ -112,84 +101,76 @@
       justify-content: center;
       gap: 16px;
       font-size: 12px;
-      color: #a89070;
+      color: #6a6a8e;
     }
-    .rate-ssr { color: #ffa500; }
+    .rate-ssr { color: #ffd700; }
     .rate-sr { color: #c850ff; }
-    .rate-r { color: #4a8aff; }
+    .rate-r { color: #00d4ff; }
 
     .gacha-buttons {
       display: flex; flex-direction: row;
-      gap: 12px;
-      justify-content: center;
+      gap: 12px; justify-content: center;
     }
     .btn-gacha {
       width: 180px; height: 48px;
-      border-radius: 8px;
-      font-size: 16px; font-weight: bold;
+      border-radius: 12px;
+      font-size: 15px; font-weight: bold;
       cursor: pointer;
-      border: 2px solid;
+      border: none;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
     }
     .btn-single {
-      background: linear-gradient(180deg, #5c4510, #3a2a08);
-      border-color: #8b6914;
-      color: #ffd700;
+      background: rgba(123, 97, 255, 0.12);
+      border: 1px solid #7b61ff60;
+      color: #7b61ff;
     }
     .btn-ten {
-      background: linear-gradient(180deg, #8b2020, #6a1515);
-      border-color: #cc3030;
-      color: #ffd700;
+      background: linear-gradient(135deg, #ff6b9d, #c850ff);
+      color: #fff;
+      box-shadow: 0 0 20px #c850ff40;
     }
     .gacha-cost {
       font-size: 11px;
       font-weight: normal;
-      color: #a89070;
+      color: #8888aa;
     }
 
     .result-label {
-      font-size: 13px;
-      color: #c9a034;
+      font-size: 12px; color: #6a6a8e;
       text-align: center;
     }
 
     .result-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 6px;
+      gap: 5px;
     }
     .result-card {
-      height: 50px;
-      background-color: #2a1a10;
-      border: 2px solid #8a7a60;
-      border-radius: 6px;
+      height: 48px;
+      background: rgba(26, 26, 62, 0.4);
+      border: 1px solid #2a2a4e;
+      border-radius: 8px;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      font-size: 12px;
+      font-size: 11px;
     }
     .result-card.rarity-r {
-      border-color: #4a8aff;
+      border-color: #00d4ff60;
     }
     .result-card.rarity-sr {
-      border-color: #c850ff;
+      border-color: #c850ff60;
+      box-shadow: 0 0 8px #c850ff30;
     }
     .result-card.rarity-ssr {
-      border-color: #ffa500;
-      box-shadow: 0 0 6px #ffa50060;
+      border-color: #ffd70080;
+      box-shadow: 0 0 12px #ffd70040;
     }
-    .result-icon { font-size: 18px; }
-    .result-rarity { font-size: 10px; }
-
-    .frame-bottom {
-      height: 6px;
-      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
-    }
+    .result-icon { font-size: 16px; }
+    .result-rarity { font-size: 10px; color: #8888aa; }
   </style>
 </head>
 <body>
-  <div class="frame-top"></div>
-
   <div class="header">
     <div class="header-left">
       <button class="back-btn">◀</button>
@@ -199,14 +180,13 @@
   </div>
 
   <div class="summon-area">
-    <div class="summon-glow"></div>
     <div class="summon-circle">
       <span class="summon-icon">🔮</span>
     </div>
   </div>
 
   <div class="pool-tabs">
-    <button class="pool-tab active">限定池 <span class="hot">HOT</span></button>
+    <button class="pool-tab active">限定池 <span class="hot-tag">HOT</span></button>
     <button class="pool-tab">常驻池</button>
     <button class="pool-tab">友情池</button>
   </div>
@@ -219,11 +199,11 @@
 
   <div class="gacha-buttons">
     <button class="btn-gacha btn-single">
-      单抽×1
+      单抽 ×1
       <span class="gacha-cost">200 钻石</span>
     </button>
     <button class="btn-gacha btn-ten">
-      十连抽×10
+      十连 ×10
       <span class="gacha-cost">1800 钻石</span>
     </button>
   </div>
@@ -241,7 +221,5 @@
     <div class="result-card"><span class="result-icon">🛡</span><span class="result-rarity">R</span></div>
     <div class="result-card rarity-r"><span class="result-icon">⚔</span><span class="result-rarity">R</span></div>
   </div>
-
-  <div class="frame-bottom"></div>
 </body>
 </html>

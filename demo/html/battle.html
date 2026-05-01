@@ -7,18 +7,13 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       width: 600px; height: 500px;
-      background-color: #1a0f0a;
-      background-image: linear-gradient(180deg, #1a1020 0%, #1a0f0a 30%, #0f0a05 100%);
-      font-family: "SimHei", "Microsoft YaHei", serif;
+      background-color: #0d0d1a;
+      background-image: linear-gradient(180deg, #1a1040 0%, #0d0d1a 30%, #0a0a18 100%);
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
       display: flex; flex-direction: column;
       padding: 10px; gap: 6px;
-      color: #e8d5b5;
-      border: 3px solid #8b6914;
-    }
-
-    .frame-top {
-      height: 6px;
-      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
+      color: #e0e0f0;
+      border: 2px solid #7b61ff40;
     }
 
     .top-bar {
@@ -28,25 +23,27 @@
     }
     .turn-info {
       font-size: 16px; font-weight: bold;
-      color: #ffd700;
+      background: linear-gradient(90deg, #00d4ff, #7b61ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .top-controls {
       display: flex; flex-direction: row;
       gap: 6px;
     }
     .ctrl-btn {
-      width: 56px; height: 28px;
-      background-color: #2a1a10;
-      border: 1px solid #5c4510;
-      border-radius: 4px;
-      color: #c9a034;
+      width: 52px; height: 28px;
+      background: rgba(26, 26, 62, 0.5);
+      border: 1px solid #2a2a4e;
+      border-radius: 8px;
+      color: #6a6a8e;
       font-size: 12px;
       cursor: pointer;
     }
     .ctrl-btn.active {
-      background: linear-gradient(180deg, #5c4510, #3a2a08);
-      border-color: #c9a034;
-      color: #ffd700;
+      background: rgba(123, 97, 255, 0.15);
+      border-color: #7b61ff;
+      color: #7b61ff;
     }
 
     .battlefield {
@@ -55,7 +52,7 @@
       flex: 1;
     }
 
-    .enemy-row {
+    .enemy-row, .ally-row {
       display: flex; flex-direction: row;
       justify-content: center;
       gap: 16px;
@@ -67,45 +64,41 @@
       align-items: center;
       gap: 3px;
     }
-    .unit-card.active-turn {
-      filter: brightness(1.2);
-    }
     .unit-avatar {
-      width: 56px; height: 56px;
-      background-color: #2a1a10;
-      border: 2px solid #5c4510;
-      border-radius: 8px;
+      width: 52px; height: 52px;
+      background: rgba(26, 26, 62, 0.6);
+      border: 2px solid #2a2a4e;
+      border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 28px;
+      font-size: 26px;
     }
     .unit-card.active-turn .unit-avatar {
-      border-color: #ffd700;
-      box-shadow: 0 0 10px #c9a03480;
+      border-color: #00d4ff;
+      box-shadow: 0 0 12px #00d4ff50;
     }
     .unit-name {
-      font-size: 11px;
-      color: #a89070;
+      font-size: 10px; color: #6a6a8e;
     }
     .unit-hp-bar {
-      width: 70px; height: 6px;
-      background-color: #0a0505;
-      border: 1px solid #3a2510;
+      width: 68px; height: 5px;
+      background-color: #1a1a3e;
+      border: 1px solid #2a2a4e;
       border-radius: 3px;
     }
     .unit-hp-fill {
-      height: 4px;
-      background: linear-gradient(90deg, #8b2020, #cc3030);
+      height: 3px;
+      background: linear-gradient(90deg, #ff4466, #ff6b9d);
       border-radius: 2px;
     }
     .unit-mp-bar {
-      width: 70px; height: 4px;
-      background-color: #0a0505;
+      width: 68px; height: 3px;
+      background-color: #1a1a3e;
       border: 1px solid #1a2050;
       border-radius: 2px;
     }
     .unit-mp-fill {
-      height: 2px;
-      background: linear-gradient(90deg, #2040a0, #3060cc);
+      height: 1px;
+      background: linear-gradient(90deg, #4466ff, #00d4ff);
       border-radius: 1px;
     }
 
@@ -114,36 +107,30 @@
       align-items: center;
       justify-content: center;
       gap: 4px;
-      padding: 6px;
-      background-color: #1a0f0a;
-      border: 1px solid #3a2510;
-      border-radius: 6px;
+      padding: 6px 10px;
+      background: rgba(26, 26, 62, 0.4);
+      border: 1px solid #2a2a4e;
+      border-radius: 10px;
     }
     .speed-label {
-      font-size: 11px; color: #a89070;
-      margin-right: 8px;
+      font-size: 10px; color: #6a6a8e;
+      margin-right: 6px;
     }
     .speed-unit {
-      width: 32px; height: 32px;
-      background-color: #2a1a10;
-      border: 1px solid #5c4510;
+      width: 30px; height: 30px;
+      background: rgba(26, 26, 62, 0.6);
+      border: 1px solid #2a2a4e;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-size: 14px;
     }
     .speed-unit.current {
-      border-color: #ffd700;
-      box-shadow: 0 0 6px #c9a03460;
+      border-color: #00d4ff;
+      box-shadow: 0 0 8px #00d4ff40;
     }
     .speed-arrow {
-      font-size: 12px;
-      color: #5c4510;
-    }
-
-    .ally-row {
-      display: flex; flex-direction: row;
-      justify-content: center;
-      gap: 16px;
+      font-size: 10px;
+      color: #2a2a4e;
     }
 
     .skill-bar {
@@ -152,53 +139,44 @@
       gap: 4px;
     }
     .skill-btn {
-      height: 42px;
-      background-color: #2a1a10;
-      border: 1px solid #5c4510;
-      border-radius: 6px;
-      color: #e8d5b5;
-      font-size: 13px;
+      height: 40px;
+      background: rgba(26, 26, 62, 0.4);
+      border: 1px solid #2a2a4e;
+      border-radius: 10px;
+      color: #6a6a8e;
+      font-size: 12px;
       cursor: pointer;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
     }
-    .skill-btn .skill-name { font-size: 13px; }
-    .skill-btn .skill-cost { font-size: 10px; color: #a89070; }
+    .skill-btn .skill-name { font-size: 12px; }
+    .skill-btn .skill-cost { font-size: 9px; }
     .skill-btn.usable {
-      border-color: #8b6914;
+      border-color: #7b61ff40;
+      color: #c0c0e0;
     }
     .skill-btn.on-cd {
-      opacity: 0.4;
+      opacity: 0.3;
     }
     .skill-btn.no-mp {
-      opacity: 0.5;
-      color: #5c4510;
+      opacity: 0.4;
+      color: #3a3a5e;
     }
 
     .battle-log {
-      height: 40px;
-      background-color: #1a0f0a;
-      border: 1px solid #3a2510;
-      border-radius: 4px;
-      padding: 4px 8px;
+      height: 36px;
+      background: rgba(26, 26, 62, 0.3);
+      border: 1px solid #2a2a4e;
+      border-radius: 8px;
+      padding: 4px 10px;
       font-size: 11px;
-      color: #a89070;
+      color: #6a6a8e;
     }
-    .log-line {
-      padding: 1px 0;
-    }
-    .log-damage { color: #cc5050; }
-    .log-heal { color: #40c040; }
-
-    .frame-bottom {
-      height: 6px;
-      background: linear-gradient(90deg, transparent, #c9a034, #8b6914, #c9a034, transparent);
-    }
+    .log-damage { color: #ff6b9d; }
+    .log-heal { color: #00e89d; }
   </style>
 </head>
 <body>
-  <div class="frame-top"></div>
-
   <div class="top-bar">
     <span class="turn-info">回合 3 / 10</span>
     <div class="top-controls">
@@ -228,17 +206,17 @@
     </div>
 
     <div class="speed-bar">
-      <span class="speed-label">行动顺序</span>
+      <span class="speed-label">顺序</span>
       <div class="speed-unit current">👿</div>
-      <span class="speed-arrow">→</span>
+      <span class="speed-arrow">›</span>
       <div class="speed-unit">⚔</div>
-      <span class="speed-arrow">→</span>
+      <span class="speed-arrow">›</span>
       <div class="speed-unit">👹</div>
-      <span class="speed-arrow">→</span>
+      <span class="speed-arrow">›</span>
       <div class="speed-unit">🗡</div>
-      <span class="speed-arrow">→</span>
+      <span class="speed-arrow">›</span>
       <div class="speed-unit">👹</div>
-      <span class="speed-arrow">→</span>
+      <span class="speed-arrow">›</span>
       <div class="speed-unit">🛡</div>
     </div>
 
@@ -269,15 +247,13 @@
     <button class="skill-btn usable"><span class="skill-name">暗影斩</span><span class="skill-cost">MP 20</span></button>
     <button class="skill-btn no-mp"><span class="skill-name">终极奥义</span><span class="skill-cost">MP 80</span></button>
     <button class="skill-btn usable"><span class="skill-name">旋风斩</span><span class="skill-cost">MP 15</span></button>
-    <button class="skill-btn on-cd"><span class="skill-name">治疗术</span><span class="skill-cost">CD 2回合</span></button>
+    <button class="skill-btn on-cd"><span class="skill-name">治疗术</span><span class="skill-cost">CD 2</span></button>
     <button class="skill-btn usable"><span class="skill-name">防御</span><span class="skill-cost">MP 0</span></button>
   </div>
 
   <div class="battle-log">
-    <div class="log-line log-damage">暗影狼王 对 暗影剑士 造成 156 点伤害！</div>
-    <div class="log-line log-heal">铁壁卫士 使用了 坚固壁垒，全体防御 +30%</div>
+    <div class="log-damage">暗影狼王 对 暗影剑士 造成 156 伤害</div>
+    <div class="log-heal">铁壁卫士 使用了 坚固壁垒，全体防御 +30%</div>
   </div>
-
-  <div class="frame-bottom"></div>
 </body>
 </html>

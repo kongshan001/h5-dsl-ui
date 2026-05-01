@@ -6,173 +6,38 @@
     "props": {},
     "style": {
       "layout": "vertical",
-      "color": "#e8d5b5",
-      "fontFamily": "\"SimHei\", \"Microsoft YaHei\", serif",
+      "color": "#e0e0f0",
+      "fontFamily": "-apple-system, \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
       "padding": 12,
       "gap": 10,
       "width": 600,
       "height": 500,
       "border": {
-        "width": 3,
+        "width": 2,
         "style": "solid",
-        "color": "#8b6914"
+        "color": "#7b61ff40"
       },
       "boxSizing": "border-box",
       "gradient": {
         "type": "linear",
-        "angle": 180,
+        "angle": 160,
         "stops": [
           {
-            "color": "#2a1a10",
+            "color": "#1a1a3e",
             "pos": 0
           },
           {
-            "color": "#1a0f0a",
+            "color": "#0d0d1a",
             "pos": 40
           },
           {
-            "color": "#0f0a05",
+            "color": "#0a1628",
             "pos": 100
           }
         ]
       }
     },
     "children": [
-      {
-        "type": "Panel",
-        "props": {},
-        "style": {
-          "height": 6,
-          "boxSizing": "border-box",
-          "gradient": {
-            "type": "linear",
-            "angle": 90,
-            "stops": [
-              {
-                "color": "#00000000",
-                "pos": 0
-              },
-              {
-                "color": "#c9a034",
-                "pos": 25
-              },
-              {
-                "color": "#8b6914",
-                "pos": 50
-              },
-              {
-                "color": "#c9a034",
-                "pos": 75
-              },
-              {
-                "color": "#00000000",
-                "pos": 100
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "Panel",
-        "props": {},
-        "style": {
-          "layout": "horizontal",
-          "justifyContent": "space-between",
-          "alignItems": "center",
-          "boxSizing": "border-box",
-          "borderBottom": {
-            "width": 2,
-            "style": "solid",
-            "color": "#5c4510"
-          },
-          "paddingBottom": 6
-        },
-        "children": [
-          {
-            "type": "Panel",
-            "props": {},
-            "style": {
-              "layout": "horizontal",
-              "gap": 8,
-              "alignItems": "center",
-              "boxSizing": "border-box"
-            },
-            "children": [
-              {
-                "type": "Button",
-                "props": {
-                  "text": "◀"
-                },
-                "style": {
-                  "layout": "horizontal",
-                  "color": "#ffd700",
-                  "fontSize": 16,
-                  "cornerRadius": 4,
-                  "width": 32,
-                  "height": 32,
-                  "border": {
-                    "width": 1,
-                    "style": "solid",
-                    "color": "#8b6914"
-                  },
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "boxSizing": "border-box",
-                  "gradient": {
-                    "type": "linear",
-                    "angle": 180,
-                    "stops": [
-                      {
-                        "color": "#5c4510",
-                        "pos": 0
-                      },
-                      {
-                        "color": "#3a2a08",
-                        "pos": 100
-                      }
-                    ]
-                  }
-                }
-              },
-              {
-                "type": "Text",
-                "props": {
-                  "value": "副本选择"
-                },
-                "style": {
-                  "color": "#ffd700",
-                  "fontSize": 20,
-                  "bold": true,
-                  "letterSpacing": 4,
-                  "boxSizing": "border-box"
-                }
-              }
-            ]
-          },
-          {
-            "type": "Text",
-            "props": {
-              "value": "第三章 · 暗影森林"
-            },
-            "style": {
-              "bgColor": "#2a1a10",
-              "color": "#c9a034",
-              "fontSize": 14,
-              "cornerRadius": 4,
-              "paddingTop": 4,
-              "paddingBottom": 4,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "border": {
-                "width": 1,
-                "style": "solid",
-                "color": "#5c4510"
-              },
-              "boxSizing": "border-box"
-            }
-          }
-        ]
-      },
       {
         "type": "Panel",
         "props": {},
@@ -184,50 +49,56 @@
         },
         "children": [
           {
-            "type": "Text",
-            "props": {
-              "value": "通关进度 5/8"
-            },
-            "style": {
-              "color": "#a89070",
-              "fontSize": 12,
-              "boxSizing": "border-box"
-            }
-          },
-          {
             "type": "Panel",
             "props": {},
             "style": {
-              "bgColor": "#0a0505",
-              "cornerRadius": 4,
-              "width": 200,
-              "height": 8,
-              "border": {
-                "width": 1,
-                "style": "solid",
-                "color": "#3a2510"
-              },
+              "layout": "horizontal",
+              "gap": 10,
+              "alignItems": "center",
               "boxSizing": "border-box"
             },
             "children": [
               {
-                "type": "Panel",
-                "props": {},
+                "type": "Button",
+                "props": {
+                  "text": "◀"
+                },
                 "style": {
-                  "cornerRadius": 3,
-                  "widthPercent": 65.0,
-                  "height": 6,
+                  "layout": "horizontal",
+                  "color": "#7b61ff",
+                  "fontSize": 14,
+                  "cornerRadius": 8,
+                  "width": 32,
+                  "height": 32,
+                  "border": {
+                    "width": 1,
+                    "style": "solid",
+                    "color": "#7b61ff60"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "boxSizing": "border-box"
+                }
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "value": "副本选择"
+                },
+                "style": {
+                  "fontSize": 20,
+                  "bold": true,
                   "boxSizing": "border-box",
-                  "gradient": {
+                  "gradientText": {
                     "type": "linear",
                     "angle": 90,
                     "stops": [
                       {
-                        "color": "#c9a034",
+                        "color": "#00d4ff",
                         "pos": 0
                       },
                       {
-                        "color": "#ffd700",
+                        "color": "#7b61ff",
                         "pos": 100
                       }
                     ]
@@ -239,11 +110,95 @@
           {
             "type": "Text",
             "props": {
-              "value": "星数 12/24"
+              "value": "第三章 · 暗影森林"
             },
             "style": {
-              "color": "#a89070",
+              "color": "#00d4ff",
               "fontSize": 12,
+              "cornerRadius": 20,
+              "paddingTop": 4,
+              "paddingBottom": 4,
+              "paddingLeft": 14,
+              "paddingRight": 14,
+              "border": {
+                "width": 1,
+                "style": "solid",
+                "color": "#00d4ff40"
+              },
+              "boxSizing": "border-box"
+            }
+          }
+        ]
+      },
+      {
+        "type": "Panel",
+        "props": {},
+        "style": {
+          "layout": "horizontal",
+          "color": "#8888aa",
+          "fontSize": 12,
+          "justifyContent": "space-between",
+          "alignItems": "center",
+          "boxSizing": "border-box"
+        },
+        "children": [
+          {
+            "type": "Text",
+            "props": {
+              "value": "通关 5/8"
+            },
+            "style": {
+              "boxSizing": "border-box"
+            }
+          },
+          {
+            "type": "Panel",
+            "props": {},
+            "style": {
+              "bgColor": "#1a1a3e",
+              "cornerRadius": 3,
+              "width": 200,
+              "height": 6,
+              "border": {
+                "width": 1,
+                "style": "solid",
+                "color": "#2a2a4e"
+              },
+              "boxSizing": "border-box"
+            },
+            "children": [
+              {
+                "type": "Panel",
+                "props": {},
+                "style": {
+                  "cornerRadius": 2,
+                  "widthPercent": 65.0,
+                  "height": 4,
+                  "boxSizing": "border-box",
+                  "gradient": {
+                    "type": "linear",
+                    "angle": 90,
+                    "stops": [
+                      {
+                        "color": "#7b61ff",
+                        "pos": 0
+                      },
+                      {
+                        "color": "#00d4ff",
+                        "pos": 100
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "Text",
+            "props": {
+              "value": "★ 12/24"
+            },
+            "style": {
               "boxSizing": "border-box"
             }
           }
@@ -265,16 +220,18 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "#2a1a10",
-              "cornerRadius": 8,
-              "padding": 8,
+              "cornerRadius": 12,
+              "paddingTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 6,
+              "paddingRight": 6,
               "gap": 4,
               "border": {
-                "width": 2,
+                "width": 1,
                 "style": "solid",
-                "color": "#5c4510"
+                "color": "#2a2a4e"
               },
-              "borderColor": "#8b6914",
+              "borderColor": "#7b61ff60",
               "justifyContent": "center",
               "alignItems": "center",
               "boxSizing": "border-box"
@@ -286,7 +243,7 @@
                   "value": "3-1"
                 },
                 "style": {
-                  "color": "#c9a034",
+                  "color": "#7b61ff",
                   "fontSize": 16,
                   "bold": true,
                   "boxSizing": "border-box"
@@ -298,8 +255,8 @@
                   "value": "★★★"
                 },
                 "style": {
-                  "color": "#c9a034",
-                  "fontSize": 14,
+                  "color": "#ffd700",
+                  "fontSize": 13,
                   "boxSizing": "border-box"
                 }
               },
@@ -309,7 +266,7 @@
                   "value": "暗影狼"
                 },
                 "style": {
-                  "color": "#a89070",
+                  "color": "#8888aa",
                   "fontSize": 10,
                   "boxSizing": "border-box"
                 }
@@ -321,16 +278,18 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "#2a1a10",
-              "cornerRadius": 8,
-              "padding": 8,
+              "cornerRadius": 12,
+              "paddingTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 6,
+              "paddingRight": 6,
               "gap": 4,
               "border": {
-                "width": 2,
+                "width": 1,
                 "style": "solid",
-                "color": "#5c4510"
+                "color": "#2a2a4e"
               },
-              "borderColor": "#8b6914",
+              "borderColor": "#7b61ff60",
               "justifyContent": "center",
               "alignItems": "center",
               "boxSizing": "border-box"
@@ -342,7 +301,7 @@
                   "value": "3-2"
                 },
                 "style": {
-                  "color": "#c9a034",
+                  "color": "#7b61ff",
                   "fontSize": 16,
                   "bold": true,
                   "boxSizing": "border-box"
@@ -354,8 +313,8 @@
                   "value": "★★"
                 },
                 "style": {
-                  "color": "#c9a034",
-                  "fontSize": 14,
+                  "color": "#ffd700",
+                  "fontSize": 13,
                   "boxSizing": "border-box"
                 },
                 "children": [
@@ -371,7 +330,7 @@
                       "value": "★"
                     },
                     "style": {
-                      "color": "#4a3a28",
+                      "color": "#2a2a4e",
                       "boxSizing": "border-box"
                     }
                   }
@@ -383,7 +342,7 @@
                   "value": "毒蘑菇"
                 },
                 "style": {
-                  "color": "#a89070",
+                  "color": "#8888aa",
                   "fontSize": 10,
                   "boxSizing": "border-box"
                 }
@@ -395,16 +354,18 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "#2a1a10",
-              "cornerRadius": 8,
-              "padding": 8,
+              "cornerRadius": 12,
+              "paddingTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 6,
+              "paddingRight": 6,
               "gap": 4,
               "border": {
-                "width": 2,
+                "width": 1,
                 "style": "solid",
-                "color": "#5c4510"
+                "color": "#2a2a4e"
               },
-              "borderColor": "#8b6914",
+              "borderColor": "#7b61ff60",
               "justifyContent": "center",
               "alignItems": "center",
               "boxSizing": "border-box"
@@ -416,7 +377,7 @@
                   "value": "3-3"
                 },
                 "style": {
-                  "color": "#c9a034",
+                  "color": "#7b61ff",
                   "fontSize": 16,
                   "bold": true,
                   "boxSizing": "border-box"
@@ -428,8 +389,8 @@
                   "value": "★★★"
                 },
                 "style": {
-                  "color": "#c9a034",
-                  "fontSize": 14,
+                  "color": "#ffd700",
+                  "fontSize": 13,
                   "boxSizing": "border-box"
                 }
               },
@@ -439,7 +400,7 @@
                   "value": "树精卫"
                 },
                 "style": {
-                  "color": "#a89070",
+                  "color": "#8888aa",
                   "fontSize": 10,
                   "boxSizing": "border-box"
                 }
@@ -451,16 +412,18 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "#2a1a10",
-              "cornerRadius": 8,
-              "padding": 8,
+              "cornerRadius": 12,
+              "paddingTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 6,
+              "paddingRight": 6,
               "gap": 4,
               "border": {
-                "width": 2,
+                "width": 1,
                 "style": "solid",
-                "color": "#5c4510"
+                "color": "#2a2a4e"
               },
-              "borderColor": "#8b6914",
+              "borderColor": "#7b61ff60",
               "justifyContent": "center",
               "alignItems": "center",
               "boxSizing": "border-box"
@@ -472,7 +435,7 @@
                   "value": "3-4"
                 },
                 "style": {
-                  "color": "#c9a034",
+                  "color": "#7b61ff",
                   "fontSize": 16,
                   "bold": true,
                   "boxSizing": "border-box"
@@ -484,8 +447,8 @@
                   "value": "★"
                 },
                 "style": {
-                  "color": "#c9a034",
-                  "fontSize": 14,
+                  "color": "#ffd700",
+                  "fontSize": 13,
                   "boxSizing": "border-box"
                 },
                 "children": [
@@ -501,7 +464,7 @@
                       "value": "★★"
                     },
                     "style": {
-                      "color": "#4a3a28",
+                      "color": "#2a2a4e",
                       "boxSizing": "border-box"
                     }
                   }
@@ -513,7 +476,7 @@
                   "value": "幽灵蛛"
                 },
                 "style": {
-                  "color": "#a89070",
+                  "color": "#8888aa",
                   "fontSize": 10,
                   "boxSizing": "border-box"
                 }
@@ -525,16 +488,18 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "#2a1a10",
-              "cornerRadius": 8,
-              "padding": 8,
+              "cornerRadius": 12,
+              "paddingTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 6,
+              "paddingRight": 6,
               "gap": 4,
               "border": {
-                "width": 2,
+                "width": 1,
                 "style": "solid",
-                "color": "#5c4510"
+                "color": "#2a2a4e"
               },
-              "borderColor": "#8b6914",
+              "borderColor": "#7b61ff60",
               "justifyContent": "center",
               "alignItems": "center",
               "boxSizing": "border-box"
@@ -546,7 +511,7 @@
                   "value": "3-5"
                 },
                 "style": {
-                  "color": "#c9a034",
+                  "color": "#7b61ff",
                   "fontSize": 16,
                   "bold": true,
                   "boxSizing": "border-box"
@@ -558,8 +523,8 @@
                   "value": "★★★"
                 },
                 "style": {
-                  "color": "#c9a034",
-                  "fontSize": 14,
+                  "color": "#ffd700",
+                  "fontSize": 13,
                   "boxSizing": "border-box"
                 }
               },
@@ -569,7 +534,7 @@
                   "value": "暗影狼王"
                 },
                 "style": {
-                  "color": "#a89070",
+                  "color": "#8888aa",
                   "fontSize": 10,
                   "boxSizing": "border-box"
                 }
@@ -581,26 +546,21 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "#2a1a10",
-              "cornerRadius": 8,
-              "padding": 8,
+              "cornerRadius": 12,
+              "paddingTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 6,
+              "paddingRight": 6,
               "gap": 4,
               "border": {
-                "width": 2,
+                "width": 1,
                 "style": "solid",
-                "color": "#5c4510"
+                "color": "#2a2a4e"
               },
-              "borderColor": "#ffd700",
+              "borderColor": "#00d4ff",
               "justifyContent": "center",
               "alignItems": "center",
-              "boxSizing": "border-box",
-              "boxShadow": {
-                "offsetX": 0,
-                "offsetY": 0,
-                "blurRadius": 8,
-                "spreadRadius": 0,
-                "color": "#c9a03480"
-              }
+              "boxSizing": "border-box"
             },
             "children": [
               {
@@ -609,7 +569,7 @@
                   "value": "3-6"
                 },
                 "style": {
-                  "color": "#c9a034",
+                  "color": "#00d4ff",
                   "fontSize": 16,
                   "bold": true,
                   "boxSizing": "border-box"
@@ -621,8 +581,8 @@
                   "value": ""
                 },
                 "style": {
-                  "color": "#c9a034",
-                  "fontSize": 14,
+                  "color": "#ffd700",
+                  "fontSize": 13,
                   "boxSizing": "border-box"
                 },
                 "children": [
@@ -632,7 +592,7 @@
                       "value": "★★★"
                     },
                     "style": {
-                      "color": "#4a3a28",
+                      "color": "#2a2a4e",
                       "boxSizing": "border-box"
                     }
                   }
@@ -644,7 +604,7 @@
                   "value": "腐化树人"
                 },
                 "style": {
-                  "color": "#a89070",
+                  "color": "#8888aa",
                   "fontSize": 10,
                   "boxSizing": "border-box"
                 }
@@ -656,15 +616,17 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "#2a1a10",
-              "cornerRadius": 8,
-              "opacity": 0.4,
-              "padding": 8,
+              "cornerRadius": 12,
+              "opacity": 0.3,
+              "paddingTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 6,
+              "paddingRight": 6,
               "gap": 4,
               "border": {
-                "width": 2,
+                "width": 1,
                 "style": "solid",
-                "color": "#5c4510"
+                "color": "#2a2a4e"
               },
               "justifyContent": "center",
               "alignItems": "center",
@@ -677,8 +639,8 @@
                   "value": "🔒"
                 },
                 "style": {
-                  "color": "#5c4510",
-                  "fontSize": 20,
+                  "color": "#3a3a5e",
+                  "fontSize": 18,
                   "boxSizing": "border-box"
                 }
               },
@@ -688,7 +650,7 @@
                   "value": "3-7"
                 },
                 "style": {
-                  "color": "#5c4510",
+                  "color": "#7b61ff",
                   "fontSize": 16,
                   "bold": true,
                   "boxSizing": "border-box"
@@ -701,15 +663,17 @@
             "props": {},
             "style": {
               "layout": "vertical",
-              "bgColor": "#2a1a10",
-              "cornerRadius": 8,
-              "opacity": 0.4,
-              "padding": 8,
+              "cornerRadius": 12,
+              "opacity": 0.3,
+              "paddingTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 6,
+              "paddingRight": 6,
               "gap": 4,
               "border": {
-                "width": 2,
+                "width": 1,
                 "style": "solid",
-                "color": "#5c4510"
+                "color": "#2a2a4e"
               },
               "justifyContent": "center",
               "alignItems": "center",
@@ -722,8 +686,8 @@
                   "value": "🔒"
                 },
                 "style": {
-                  "color": "#5c4510",
-                  "fontSize": 20,
+                  "color": "#3a3a5e",
+                  "fontSize": 18,
                   "boxSizing": "border-box"
                 }
               },
@@ -733,7 +697,7 @@
                   "value": "3-8"
                 },
                 "style": {
-                  "color": "#5c4510",
+                  "color": "#7b61ff",
                   "fontSize": 16,
                   "bold": true,
                   "boxSizing": "border-box"
@@ -755,19 +719,18 @@
           {
             "type": "Button",
             "props": {
-              "text": "第一章 · 新手村"
+              "text": "新手村"
             },
             "style": {
               "layout": "horizontal",
-              "bgColor": "#2a1a10",
-              "color": "#a89070",
-              "fontSize": 13,
-              "cornerRadius": 4,
-              "height": 32,
+              "color": "#6a6a8e",
+              "fontSize": 12,
+              "cornerRadius": 10,
+              "height": 34,
               "border": {
                 "width": 1,
                 "style": "solid",
-                "color": "#5c4510"
+                "color": "#2a2a4e"
               },
               "justifyContent": "center",
               "alignItems": "center",
@@ -778,19 +741,18 @@
           {
             "type": "Button",
             "props": {
-              "text": "第二章 · 幽暗矿洞"
+              "text": "幽暗矿洞"
             },
             "style": {
               "layout": "horizontal",
-              "bgColor": "#2a1a10",
-              "color": "#a89070",
-              "fontSize": 13,
-              "cornerRadius": 4,
-              "height": 32,
+              "color": "#6a6a8e",
+              "fontSize": 12,
+              "cornerRadius": 10,
+              "height": 34,
               "border": {
                 "width": 1,
                 "style": "solid",
-                "color": "#5c4510"
+                "color": "#2a2a4e"
               },
               "justifyContent": "center",
               "alignItems": "center",
@@ -801,56 +763,41 @@
           {
             "type": "Button",
             "props": {
-              "text": "第三章 · 暗影森林"
+              "text": "暗影森林"
             },
             "style": {
               "layout": "horizontal",
-              "color": "#ffd700",
-              "fontSize": 13,
-              "cornerRadius": 4,
-              "height": 32,
+              "color": "#7b61ff",
+              "fontSize": 12,
+              "cornerRadius": 10,
+              "height": 34,
               "border": {
                 "width": 1,
                 "style": "solid",
-                "color": "#5c4510"
+                "color": "#2a2a4e"
               },
-              "borderColor": "#c9a034",
+              "borderColor": "#7b61ff",
               "justifyContent": "center",
               "alignItems": "center",
               "boxSizing": "border-box",
-              "flex": 1.0,
-              "gradient": {
-                "type": "linear",
-                "angle": 180,
-                "stops": [
-                  {
-                    "color": "#5c4510",
-                    "pos": 0
-                  },
-                  {
-                    "color": "#3a2a08",
-                    "pos": 100
-                  }
-                ]
-              }
+              "flex": 1.0
             }
           },
           {
             "type": "Button",
             "props": {
-              "text": "第四章 · 熔岩地窟"
+              "text": "熔岩地窟"
             },
             "style": {
               "layout": "horizontal",
-              "bgColor": "#2a1a10",
-              "color": "#a89070",
-              "fontSize": 13,
-              "cornerRadius": 4,
-              "height": 32,
+              "color": "#6a6a8e",
+              "fontSize": 12,
+              "cornerRadius": 10,
+              "height": 34,
               "border": {
                 "width": 1,
                 "style": "solid",
-                "color": "#5c4510"
+                "color": "#2a2a4e"
               },
               "justifyContent": "center",
               "alignItems": "center",
@@ -867,42 +814,27 @@
           "layout": "horizontal",
           "gap": 8,
           "justifyContent": "center",
-          "boxSizing": "border-box",
-          "paddingTop": 4
+          "boxSizing": "border-box"
         },
         "children": [
           {
             "type": "Button",
             "props": {
-              "text": "扫荡10次"
+              "text": "扫荡 10 次"
             },
             "style": {
-              "color": "#ffd700",
+              "color": "#7b61ff",
               "fontSize": 14,
               "bold": true,
-              "cornerRadius": 6,
+              "cornerRadius": 10,
               "width": 160,
               "height": 40,
               "border": {
                 "width": 1,
                 "style": "solid"
               },
-              "borderColor": "#8b6914",
-              "boxSizing": "border-box",
-              "gradient": {
-                "type": "linear",
-                "angle": 180,
-                "stops": [
-                  {
-                    "color": "#4a3a28",
-                    "pos": 0
-                  },
-                  {
-                    "color": "#3a2a18",
-                    "pos": 100
-                  }
-                ]
-              }
+              "borderColor": "#7b61ff60",
+              "boxSizing": "border-box"
             }
           },
           {
@@ -911,28 +843,35 @@
               "text": "进入战斗"
             },
             "style": {
-              "color": "#ffd700",
+              "color": "#fff",
               "fontSize": 14,
               "bold": true,
-              "cornerRadius": 6,
+              "cornerRadius": 10,
               "width": 160,
               "height": 40,
               "border": {
                 "width": 1,
                 "style": "solid"
               },
-              "borderColor": "#cc3030",
+              "borderColor": "transparent",
               "boxSizing": "border-box",
+              "boxShadow": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "blurRadius": 16,
+                "spreadRadius": 0,
+                "color": "#7b61ff40"
+              },
               "gradient": {
                 "type": "linear",
-                "angle": 180,
+                "angle": 135,
                 "stops": [
                   {
-                    "color": "#8b2020",
+                    "color": "#7b61ff",
                     "pos": 0
                   },
                   {
-                    "color": "#6a1515",
+                    "color": "#00d4ff",
                     "pos": 100
                   }
                 ]
@@ -940,40 +879,6 @@
             }
           }
         ]
-      },
-      {
-        "type": "Panel",
-        "props": {},
-        "style": {
-          "height": 6,
-          "boxSizing": "border-box",
-          "gradient": {
-            "type": "linear",
-            "angle": 90,
-            "stops": [
-              {
-                "color": "#00000000",
-                "pos": 0
-              },
-              {
-                "color": "#c9a034",
-                "pos": 25
-              },
-              {
-                "color": "#8b6914",
-                "pos": 50
-              },
-              {
-                "color": "#c9a034",
-                "pos": 75
-              },
-              {
-                "color": "#00000000",
-                "pos": 100
-              }
-            ]
-          }
-        }
       }
     ]
   }
